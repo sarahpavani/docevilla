@@ -1,13 +1,34 @@
+/* reset css */
+* {
+    /* margem externa */
+    margin: 0%;
+}
+
+
 body{
 /*cor de fundo*/
-background-color: #ece8ec;
+background-color: #fff3e7;
 
 /* Cor do texto */
 color: #000 (0, 0, 0); 
+}
+/* seletor para os <A> */
+
+a {
+/* propriedade e valor */
+text-decoration: none;
+color: #ad795d;
+}
 
 
 
-
-
-
+/* header */
+header {
+/* row */
+display:flex ;
+justify-content: space-between;
+align-items: center;
+background-color: #e9bc8b;
+/* largura ou comprimento */
+width: 100%;
 }
