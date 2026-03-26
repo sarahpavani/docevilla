@@ -33,3 +33,11 @@ background-color: #e9bc8b;
 /* largura ou comprimento */
 width: 100%;
 }
+    /* ul */
+.menu {
+    list-style: none;
+    /* lista horizontal */
+    display: flex;
+    /* espaço */
+    gap: 1rem; /* um rem */
+}
