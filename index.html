@@ -22,44 +22,45 @@
         
         <!-- Logo -->
         <div class="header-logo">
-            <a href="">
+            <a href="home">
                 Docevilla
             </a>
         </div>
 
         <!-- Menu desktop/ Pc -->
-         <nav>
-            <ul>
+         <nav class="menu-desktop">
+            <ul class="menu">
                 <li>
-                    <a href="">
-                        <span> Home </span>
+                    <!-- cria link  --> <!-- h ref  -->
+                    <a href="#home" class="menu-link active">
+                        <span class="menu-texto">   home </span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <span> Produtos </span>
+                    <a href="#produtos" class="menu-link">
+                        <span class="menu-texto">Produtos </span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <span> Sobre </span>
+                    <a href="#sobre" class="menu-link">
+                        <span class="menu-texto">Sobre </span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <span> Contato </span>
+                    <a href="#contato" class="menu-link">
+                        <span class="menu-texto">Contato </span>
                     </a>
                 </li>
             </ul>
          </nav>
 
          <!-- icone trocar por tema -->
-          <div>
+          <div class="header-toggle">
 
             <!-- icone sol ou lua -->
-             <i class="bi bi-brightness-high"></i>
+             <i class="bi bi-brightness-high" id="toggleTheme"></i>
             <!-- botão hamburguer -->
-             <button>
+             <button class="btn-menu-mobile" id="menuHamburger">
                 <i class="bi bi-list"></i>
              </button>
           </div>
