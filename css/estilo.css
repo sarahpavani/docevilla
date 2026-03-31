@@ -40,4 +40,31 @@ width: 100%;
     display: flex;
     /* espaço */
     gap: 1rem; /* um rem */
+
+}
+/* tag nav */
+.menu-desktop {
+    display: none;  
+}
+/* Responsivo */
+
+/* daq pra cima mobile */
+
+/* serve para as telas maiores */
+
+/* telas maiores que 768px */
+
+@media (min-width: 768px) {
+    header {
+        /* espaço interno */
+         padding: 1rem 6rem;
+         justify-content: ;
+         gap: ;
+    }
+    /* nav */
+    .menu-desktop {
+        display: flex;
+
+    }
+
 }
