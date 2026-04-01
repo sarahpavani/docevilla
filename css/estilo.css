@@ -18,7 +18,7 @@ color: #000 (0, 0, 0);
 a {
 /* propriedade e valor */
 text-decoration: none;
-color: #ad795d;
+color: #8f191f;
 }
 
 
@@ -29,7 +29,7 @@ header {
 display:flex ;
 justify-content: space-between;
 align-items: center;
-background-color: #e9bc8b;
+background-color: #f7d2d3;
 /* largura ou comprimento */
 width: 100%;
 }
@@ -45,6 +45,10 @@ width: 100%;
 /* tag nav */
 .menu-desktop {
     display: none;  
+}
+/* logo */
+.logo {
+    width: 12rem;
 }
 /* Responsivo */
 
