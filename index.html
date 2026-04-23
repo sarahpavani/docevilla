@@ -46,66 +46,61 @@
     <button class="dark-toggle" id="darkToggle" aria-label="Alternar modo escuro" title="Modo escuro / claro">
       <span class="dt-knob"></span>
     </button>
+    <button class="nav-user-btn" id="userBtn" aria-label="Área do Cliente">👤</button>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="home">
-    <div class="hero-deco">
-      <div class="hd-circle hd1"></div>
-      <div class="hd-circle hd2"></div>
+  <!-- ===== NEW DELICATE HERO ===== -->
+  <section class="hero-new" id="home">
+    <div class="hero-new-bg">
+      <img src="img/hero-bakery.jpg" alt="Vintage Bakery Scene" class="hnbg-img">
+      <div class="hnbg-overlay"></div>
     </div>
-    <span class="rf rf1">✦</span><span class="rf rf2">♥</span>
-    <span class="rf rf3">✦</span><span class="rf rf4">♥</span>
+    
+    <div class="hero-new-content">
+      <span class="hn-label">✦ Confeitaria Artesanal & Atemporal ✦</span>
+      <h1 class="hn-title">Doces que<br>traduzem <em>emoções</em></h1>
+      <p class="hn-desc">Na Docevilla, resgatamos a delicadeza do vintage em cada detalhe, transformando ingredientes selecionados em memórias inesquecíveis.</p>
+      
+      <div class="hn-btns">
+        <a href="#produtos" class="btn-hn-primary">Explorar Coleção</a>
+        <a href="#contato" class="btn-hn-outline">Fazer Pedido</a>
+      </div>
+    </div>
 
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-badge"><span>✦</span> Confeitaria Artesanal Retrô <span>✦</span></div>
-        <h1>Doces que<br><em>encantam</em> com<br><span class="hw">estética vintage</span></h1>
-        <p>Na Docevilla, cada criação carrega a magia do retrô: ingredientes selecionados, decorações únicas feitas à
-          mão e muito amor em cada detalhe.</p>
-        <div class="hero-btns">
-          <a href="#produtos" class="btn-primary">✦ Ver Produtos</a>
-          <a href="#contato" class="btn-secondary">Fazer Pedido →</a>
-        </div>
-        <div class="hero-tags">
-          <span>🎂 Bolos</span><span>🧁 Cupcakes</span><span>🍩 Donuts</span>
-          <span>🍫 Chocolates</span><span>🥧 Tortas</span>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="polaroid" id="heroPol">
-          <div class="pol-frame">
-            <div class="pol-img">
-              <!-- Bolo de casamento vintage rosa com flores de chantilly, cereja e decoração retrô -->
-              <img src="img/bolo1.jpg" alt="Bolo retrô Docevilla" loading="eager" />
-            </div>
-            <p class="pol-caption"><em>Cake Retrô ♥</em></p>
-          </div>
-          <span class="pstar s1">✦</span>
-          <span class="pstar s2">♥</span>
-          <span class="pstar s3">✦</span>
-        </div>
-        <!-- SECONDARY HERO IMAGE (Floating Sticker) -->
-        <div class="hero-sub-visual">
-          <div class="polaroid ps2">
-            <div class="pol-frame">
-              <div class="pol-img">
-                <img src="img/bolo_coracao_rosa.png" alt="Bolo Coração Docevilla" />
-              </div>
-            </div>
-          </div>
-          <div class="retro-stamp"><span>Doce</span><em>Villa</em></div>
-        </div>
-        <div class="fbadge fb1">⭐ 4.9 / 5 estrelas</div>
-        <div class="fbadge fb2">♥ Feito com amor</div>
-        <div class="fbadge fb3">✦ 100% Artesanal</div>
+    <!-- Background Marquee Carousel -->
+    <div class="hero-marquee">
+      <div class="marquee-track">
+        <span>VINTAGE BAKERY</span><span>✦</span>
+        <span>DOCEVILLA</span><span>✦</span>
+        <span>ARTESANAL</span><span>✦</span>
+        <span>DELICADEZA</span><span>✦</span>
+        <span>ROMANTISMO</span><span>✦</span>
+        <!-- Repeat for continuous scroll -->
+        <span>VINTAGE BAKERY</span><span>✦</span>
+        <span>DOCEVILLA</span><span>✦</span>
+        <span>ARTESANAL</span><span>✦</span>
+        <span>DELICADEZA</span><span>✦</span>
+        <span>ROMANTISMO</span><span>✦</span>
       </div>
     </div>
-    <div class="hero-arrow">↓</div>
-    <div class="lace-divider"></div>
+
+    <div class="hn-scroll">
+      <span class="hn-scroll-text">Descubra a doçura</span>
+      <div class="hn-scroll-line"></div>
+    </div>
+    
+    <!-- Floating Decorative Elements (Enhanced) -->
+    <div class="hn-deco">
+      <span class="hnd hnd-1">🌸</span>
+      <span class="hnd hnd-2">✦</span>
+      <span class="hnd hnd-3">♥</span>
+      <span class="hnd hnd-4">✨</span>
+      <span class="hnd hnd-5">🌸</span>
+      <span class="hnd hnd-6">✦</span>
+    </div>
   </section>
 
   <!-- ===== CARROSSEL DE INSPIRAÇÃO ===== -->
@@ -121,7 +116,7 @@
         <div class="swiper-slide">
           <div class="pol-slide" data-swiper-parallax="-100">
             <div class="pol-img" data-swiper-parallax="50">
-              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80"
+              <img src="img/bolo7.png"
                 alt="Bolo Coração Retrô" />
             </div>
             <p class="pol-cap" data-swiper-parallax="-200">Amor em cada fatia ♥</p>
@@ -131,7 +126,7 @@
         <div class="swiper-slide">
           <div class="pol-slide ps-tilt-right" data-swiper-parallax="-100">
             <div class="pol-img" data-swiper-parallax="50">
-              <img src="https://images.unsplash.com/photo-1464349095431-fe9a21285b19b?w=800&q=80"
+              <img src="img/cupcakes.png"
                 alt="Cupcakes Coloridos" />
             </div>
             <p class="pol-cap" data-swiper-parallax="-200">Doçura Colorida 🧁</p>
@@ -141,7 +136,7 @@
         <div class="swiper-slide">
           <div class="pol-slide ps-tilt-left" data-swiper-parallax="-100">
             <div class="pol-img" data-swiper-parallax="50">
-              <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80" alt="Bakery Display" />
+              <img src="img/vitrine.png" alt="Bakery Display" />
             </div>
             <p class="pol-cap" data-swiper-parallax="-200">Nossa Vitrine 🥐</p>
           </div>
@@ -150,7 +145,7 @@
         <div class="swiper-slide">
           <div class="pol-slide" data-swiper-parallax="-100">
             <div class="pol-img" data-swiper-parallax="50">
-              <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=800&q=80" alt="Donuts Pink" />
+              <img src="img/donuts.png" alt="Donuts Pink" />
             </div>
             <p class="pol-cap" data-swiper-parallax="-200">Donuts Vintage 🍩</p>
           </div>
@@ -159,7 +154,7 @@
         <div class="swiper-slide">
           <div class="pol-slide ps-tilt-right" data-swiper-parallax="-100">
             <div class="pol-img" data-swiper-parallax="50">
-              <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800&q=80" alt="Cookies" />
+              <img src="img/hero_bolo_morango.png" alt="Cookies" />
             </div>
             <p class="pol-cap" data-swiper-parallax="-200">Momento Especial ☕</p>
           </div>
@@ -256,7 +251,7 @@
       <div class="carousel-track" id="carouselTrack">
 
         <div class="gift-slide">
-          <div class="gs-img"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&q=80"
+          <div class="gs-img"><img src="img/cesta.png"
               alt="Cesta Vintage Completa" loading="lazy" /></div>
           <div class="gs-body">
             <span class="gs-label">🎁 Kit Presente</span>
@@ -271,8 +266,7 @@
         </div>
 
         <div class="gift-slide">
-          <div class="gs-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
-              alt="Kit Amor e Doçura" loading="lazy" /></div>
+          <div class="gs-img"><img src="img/cesta2.png" alt="Kit Amor e Doçura" loading="lazy" /></div>
           <div class="gs-body">
             <span class="gs-label">💕 Romântico</span>
             <h3>Kit Amor &amp; Doçura</h3>
@@ -286,7 +280,7 @@
         </div>
 
         <div class="gift-slide">
-          <div class="gs-img"><img src="https://images.unsplash.com/photo-1607478900766-efe13248b125?w=600&q=80"
+          <div class="gs-img"><img src="img/cesta2.png"
               alt="Kit Mãe Rainha" loading="lazy" /></div>
           <div class="gs-body">
             <span class="gs-label">🌸 Especial</span>
@@ -403,7 +397,7 @@
               <div class="ch-deco">🎂 Especialmente para você</div>
             </div>
             <div class="ch-img">
-              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1000&q=80" alt="Bolos Vintage" />
+              <img src="img/destaque.png" alt="Bolos Vintage" />
             </div>
           </div>
         </div>
@@ -417,7 +411,7 @@
               <div class="ch-deco">🧁 Doçura em cada detalhe</div>
             </div>
             <div class="ch-img">
-              <img src="https://images.unsplash.com/photo-1464349095431-fe9a21285b19b?w=1000&q=80" alt="Cupcakes" />
+              <img src="img/destaque2.png" alt="Cupcakes" />
             </div>
           </div>
         </div>
@@ -431,7 +425,7 @@
               <div class="ch-deco">🍩 Um toque de nostalgia</div>
             </div>
             <div class="ch-img">
-              <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=1000&q=80" alt="Donuts" />
+              <img src="img/donut.png" alt="Donuts" />
             </div>
           </div>
         </div>
@@ -445,7 +439,7 @@
               <div class="ch-deco">🍫 Luxo artesanal</div>
             </div>
             <div class="ch-img">
-              <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=1000&q=80" alt="Chocolates" />
+              <img src="img/chocolates.png" alt="Chocolates" />
             </div>
           </div>
         </div>
@@ -482,6 +476,67 @@
       <div class="swiper-pagination cat-pagination"></div>
     </div>
 
+    <!-- ===== SEARCH & FILTERS ===== -->
+    <div class="prod-filters reveal">
+      <div class="search-wrap">
+        <input type="text" id="smartSearch" placeholder="🔍 Busque por doce, ingrediente ou ocasião..." autocomplete="off">
+        <div id="searchSuggestions" class="search-suggestions"></div>
+      </div>
+
+      <div class="filter-controls">
+        <div class="filter-group">
+          <label>💰 Preço:</label>
+          <select id="filterPrice">
+            <option value="all">Todos</option>
+            <option value="0-100">Até R$ 100</option>
+            <option value="100-200">R$ 100 - R$ 200</option>
+            <option value="200+">Acima de R$ 200</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>💒 Ocasião:</label>
+          <select id="filterOccasion">
+            <option value="all">Todas</option>
+            <option value="aniversario">Aniversário</option>
+            <option value="casamento">Casamento</option>
+            <option value="cha">Chá de Bebê</option>
+            <option value="corporativo">Corporativo</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>🍃 Dietas:</label>
+          <select id="filterDiet">
+            <option value="all">Padrão</option>
+            <option value="vegano">Vegano</option>
+            <option value="sem-acucar">Sem Açúcar</option>
+            <option value="sem-lactose">Sem Lactose</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Floating Chatbot -->
+    <button class="ai-chat-trigger" id="aiChatBtn" title="Assistente DoceVilla">
+      <span class="ai-pulse"></span>
+      🤖
+    </button>
+
+    <div class="ai-chat-window" id="aiChatWindow">
+      <div class="aic-header">
+        <div class="aic-title">🤖 Assistente DoceVilla</div>
+        <button id="closeAiChat">✕</button>
+      </div>
+      <div class="aic-body" id="aiChatBody">
+        <div class="ai-msg bot">Olá! Sou sua assistente virtual. Em que posso adoçar seu dia hoje? ✨</div>
+      </div>
+      <div class="aic-footer">
+        <input type="text" id="aiInput" placeholder="Pergunte algo...">
+        <button id="sendAiMsg">▶</button>
+      </div>
+    </div>
+
     <div class="prod-grid" id="prodGrid">
 
       <!-- ══════════════════════════════════
@@ -504,14 +559,13 @@
           <div class="pstars">★★★★★ <small>(87)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 198 <em>/ unid.</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Bolo Vintage Cereja', 198, 'img/bolo3.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
 
       <!-- Bolo formato coração rosa com mousse de morango e decoração vintage -->
-      <article class="pcard reveal rd1" data-cat="bolos">
+      <article class="pcard reveal rd1" data-cat="bolos" data-price="178" data-occasion="casamento" data-diet="sem-lactose" data-ingredients="Mousse de morango fresco, leite condensado zero lactose, farinha de amêndoas, ovos, manteiga de coco, corante natural de beterraba.">
         <div class="pcard-img">
           <img src="img/bolomorango2.png" alt="Bolo Coração Rosa" loading="lazy" />
           <span class="pbadge bd-pop">♥ Favorito</span>
@@ -526,14 +580,13 @@
           <div class="pstars">★★★★★ <small>(112)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 178 <em>/ unid.</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Bolo Coração Rosa', 178, 'img/bolomorango2.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
 
       <!-- Bolo floral aquarela com flores de buttercream pintadas à mão -->
-      <article class="pcard reveal rd2" data-cat="bolos">
+      <article class="pcard reveal rd2" data-cat="bolos" data-price="245" data-occasion="casamento" data-diet="padrao" data-ingredients="Massa de baunilha, coulis de framboesa, cream cheese, buttercream de merengue suíço, raspas de limão siciliano.">
         <div class="pcard-img">
           <img src="img/bolodevo.png" alt="Bolo Floral Aquarela" loading="lazy" />
           <span class="pbadge bd-new">🌸 Novidade</span>
@@ -548,8 +601,7 @@
           <div class="pstars">★★★★★ <small>(73)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 245 <em>/ unid.</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Bolo Floral Aquarela', 245, 'img/bolodevo.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -570,8 +622,7 @@
           <div class="pstars">★★★★★ <small>(54)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 320 <em>/ unid.</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Bolo Carrossel Retrô', 320, 'img/bolo4.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -592,8 +643,7 @@
           <div class="pstars">★★★★★ <small>(145)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 219 <em>/ unid.</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Choco Velvet Retrô', 219, 'img/bolo5.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -614,8 +664,7 @@
           <div class="pstars">★★★★☆ <small>(68)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 189 <em>/ unid.</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Limão Siciliano Merengue', 189, 'img/bolo6.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -625,7 +674,7 @@
       ══════════════════════════════════ -->
 
       <!-- Kit de cupcakes com cobertura pink estilo Paris vintage -->
-      <article class="pcard reveal" data-cat="cupcakes">
+      <article class="pcard reveal" data-cat="cupcakes" data-price="120" data-occasion="cha" data-diet="padrao" data-ingredients="Massa amanteigada, chocolate belga, creme de avelã, extrato de baunilha, corantes alimentares premium.">
         <div class="pcard-img">
           <img src="img/cupcake.png" alt="Kit Paris Vintage" loading="lazy" />
           <span class="pbadge bd-pop">♥ Favorito</span>
@@ -640,8 +689,7 @@
           <div class="pstars">★★★★★ <small>(203)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 120 <em>/ kit 12</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Kit Paris Vintage', 120, 'img/cupcake.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -662,8 +710,7 @@
           <div class="pstars">★★★★★ <small>(96)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 88 <em>/ kit 6</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Kit Rosas Retrô', 88, 'img/cupcake2.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -684,8 +731,7 @@
           <div class="pstars">★★★★★ <small>(59)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 115 <em>/ kit 9</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Kit Borboletas Vintage', 115, 'img/cupcake3.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -693,7 +739,7 @@
       <!-- Cupcakes escuros com decoração de estrelas e luas de açúcar, pó dourado -->
       <article class="pcard reveal" data-cat="cupcakes">
         <div class="pcard-img">
-          <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=600&q=80" alt="Kit Noite Estrelada"
+          <img src="img/cupcakeescuro.png" alt="Kit Noite Estrelada"
             loading="lazy" />
           <span class="pbadge bd-dest">✦ Destaque</span>
           <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
@@ -707,8 +753,7 @@
           <div class="pstars">★★★★★ <small>(48)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 135 <em>/ kit 12</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Kit Noite Estrelada', 135, 'img/cupcakeescuro.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -716,7 +761,7 @@
       <!-- Cupcakes com flores, borboletas e joaninhas estilo jardim vintage -->
       <article class="pcard reveal rd1" data-cat="cupcakes">
         <div class="pcard-img">
-          <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=600&q=80" alt="Kit Jardim Secreto"
+          <img src="img/cupcakess.png" alt="Kit Jardim Secreto"
             loading="lazy" />
           <span class="pbadge bd-pop">♥ Favorito</span>
           <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
@@ -730,8 +775,7 @@
           <div class="pstars">★★★★★ <small>(71)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 105 <em>/ kit 9</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Kit Jardim Secreto', 105, 'img/cupcakess.png')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -741,7 +785,7 @@
       ══════════════════════════════════ -->
 
       <!-- Donuts glaceados em pink e vermelho estilo retrô anos 50 -->
-      <article class="pcard reveal" data-cat="donuts">
+      <article class="pcard reveal" data-cat="donuts" data-price="98" data-occasion="aniversario" data-diet="vegano" data-ingredients="Farinha de trigo orgânica, leite de amêndoas, óleo de coco, açúcar demerara, extrato de hibisco para o glacê.">
         <div class="pcard-img">
           <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80" alt="Kit Retrô Pink"
             loading="lazy" />
@@ -757,8 +801,7 @@
           <div class="pstars">★★★★★ <small>(167)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 98 <em>/ kit 12</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Kit Retrô Pink', 98, 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -780,8 +823,7 @@
           <div class="pstars">★★★★★ <small>(89)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 72 <em>/ kit 6</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Kit Jardim Florido', 72, 'https://images.unsplash.com/photo-1527515637462-cff94ebb84ce?w=600&q=80')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -803,8 +845,7 @@
           <div class="pstars">★★★★★ <small>(122)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 115 <em>/ kit 9</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Kit Chocolate Luxo', 115, 'https://images.unsplash.com/photo-1556040220-4096d522378d?w=600&q=80')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -826,8 +867,7 @@
           <div class="pstars">★★★★★ <small>(78)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 108 <em>/ kit 12</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Kit Arco-Íris Vintage', 108, 'https://images.unsplash.com/photo-1514517604298-cf80e0fb7f1e?w=600&q=80')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -849,8 +889,7 @@
           <div class="pstars">★★★★★ <small>(54)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 68 <em>/ kit 6</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Kit Festivo Personalizado', 68, 'https://images.unsplash.com/photo-1631206753348-db44968fd440?w=600&q=80')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -876,8 +915,7 @@
           <div class="pstars">★★★★★ <small>(198)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 145 <em>/ cx 16</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Caixa de Bombons Retrô', 145, 'https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600&q=80')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -899,8 +937,7 @@
           <div class="pstars">★★★★★ <small>(267)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 89 <em>/ cx 12</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Morangos com Chocolate', 89, 'https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&q=80')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -922,8 +959,7 @@
           <div class="pstars">★★★★★ <small>(143)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 112 <em>/ kit 4</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Tabletes Artesanais', 112, 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&q=80')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -945,8 +981,7 @@
           <div class="pstars">★★★★★ <small>(91)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 165 <em>/ cx 12</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Trufas Douradas', 165, 'https://images.unsplash.com/photo-1511381939415-e44571765e30?w=600&q=80')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -968,8 +1003,7 @@
           <div class="pstars">★★★★★ <small>(312)</small></div>
           <div class="pfoot">
             <span class="pprice">R$ 135 <em>/ cx 20</em></span>
-            <button class="btn-pedir"
-              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            <button class="btn-pedir" onclick="addToCart('Brigadeiros de Luxo', 135, 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80')">Adicionar ♥</button>
           </div>
         </div>
       </article>
@@ -1025,7 +1059,7 @@
       </article>
 
       <!-- Torta floresta negra com camadas de chocolate, chantilly e cerejas maraschino -->
-      <article class="pcard reveal rd1" data-cat="tortas">
+      <article class="pcard reveal rd1" data-cat="bolos" data-price="198" data-occasion="aniversario" data-diet="padrao" data-ingredients="Farinha de trigo premium, açúcar refinado, ovos caipiras, manteiga sem sal, extrato de baunilha, chantilly artesanal, cerejas maraschino frescas.">
         <div class="pcard-img">
           <img src="https://images.unsplash.com/photo-1488900128323-21503983d706?w=600&q=80" alt="Torta Floresta Negra"
             loading="lazy" />
@@ -1262,65 +1296,206 @@
     <div class="lace-divider"></div>
   </section>
 
-  <!-- ===== SOBRE NÓS ===== -->
+  <!-- ===== SOBRE NÓS (EXPANDIDO) ===== -->
   <section class="sobre lace-bg" id="sobre">
     <div class="lace-divider" style="position: absolute; top: 0; transform: rotate(180deg);"></div>
+    
+    <!-- História -->
     <div class="sobre-inner">
       <div class="sobre-visual reveal">
-        <!-- Confeiteira decorando bolo artesanal em ateliê vintage -->
         <div class="sv-main">
-          <img src="https://images.unsplash.com/photo-1616690248015-ced1fba71f1a?w=600&q=80" alt="Confeitaria Docevilla"
-            loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1616690248015-ced1fba71f1a?w=600&q=80" alt="Confeitaria Docevilla" loading="lazy" />
         </div>
-        <!-- kit de cupcakes rosas artesanais no ateliê -->
         <div class="sv-sm sv-top">
-          <img src="https://images.unsplash.com/photo-1590577976322-3cec97a7084b?w=300&q=80" alt="Cupcakes artesanais"
-            loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1590577976322-3cec97a7084b?w=300&q=80" alt="Cupcakes artesanais" loading="lazy" />
         </div>
-        <!-- Morangos cobertos de chocolate decorados -->
         <div class="sv-sm sv-bot">
-          <img src="https://images.unsplash.com/photo-1536657010-2157a7bc52b3?w=300&q=80" alt="Doces artesanais"
-            loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1536657010-2157a7bc52b3?w=300&q=80" alt="Doces artesanais" loading="lazy" />
         </div>
         <div class="sv-deco1">♥</div>
         <div class="sv-deco2">✦</div>
       </div>
       <div class="sobre-content reveal rd2">
-        <p class="sec-label">✦ Nossa História ✦</p>
-        <h2><span class="fleuron">❧</span> Uma paixão que virou <em>arte vintage</em> <span class="fleuron">☙</span>
-        </h2>
-        <p>A Docevilla nasceu em 2016 das mãos da confeiteira Isabela Melo, que desde criança encontrava felicidade
-          entre farinha e chocolate. O que começou como brincadeira na cozinha da avó se transformou em um ateliê de
-          doces finos com estética retrô encantadora.</p>
-        <p>Cada peça carrega ingredientes cuidadosamente selecionados, técnicas aprendidas com os melhores confeiteiros
-          do Brasil e da Europa, e uma pitada insubstituível de amor e nostalgia.</p>
+        <p class="sec-label">✦ Nossa Jornada ✦</p>
+        <h2><span class="fleuron">❧</span> Do sonho à <em>arte vintage</em> <span class="fleuron">☙</span></h2>
+        <p>A Docevilla nasceu em 2016, fruto do sonho de Isabela Melo em resgatar a doçura dos tempos de outrora. O que começou como uma pequena produção na cozinha de casa, inspirada nos cadernos de receitas de sua avó, floresceu em um ateliê que é referência em estética e sabor.</p>
+        <p>Hoje, cada doce que sai de nossa cozinha carrega não apenas ingredientes premium, mas uma narrativa de carinho, técnica e a busca incessante pela perfeição artesanal.</p>
         <div class="sobre-items">
-          <div class="si reveal rd1">
+          <div class="si reveal">
             <div class="si-icon">🌿</div>
-            <div><strong>Ingredientes Naturais</strong>
-              <p>Sem conservantes artificiais, sempre frescos.</p>
-            </div>
-          </div>
-          <div class="si reveal rd2">
-            <div class="si-icon">🏆</div>
-            <div><strong>Premiada & Reconhecida</strong>
-              <p>Melhor confeitaria artesanal por 3 anos.</p>
-            </div>
-          </div>
-          <div class="si reveal rd3">
-            <div class="si-icon">💝</div>
-            <div><strong>Feito sob Encomenda</strong>
-              <p>Cada pedido é único e personalizado.</p>
-            </div>
+            <div><strong>Ingredientes Reais</strong><p>Farinha premium, ovos caipiras e manteiga pura.</p></div>
           </div>
           <div class="si reveal">
             <div class="si-icon">🎨</div>
-            <div><strong>Estética Vintage</strong>
-              <p>Design exclusivo retrô em cada detalhe.</p>
-            </div>
+            <div><strong>Arte Comestível</strong><p>Pintura à mão e decoração artística exclusiva.</p></div>
           </div>
         </div>
-        <a href="#contato" class="btn-primary">Fazer meu pedido ♥</a>
+      </div>
+    </div>
+
+    <!-- Missão, Visão, Valores -->
+    <div class="mvv-grid reveal">
+      <div class="mvv-card">
+        <div class="mvv-icon">🎯</div>
+        <h3>Missão</h3>
+        <p>Transformar momentos especiais em memórias inesquecíveis através da confeitaria artística e afetiva.</p>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-icon">🔭</div>
+        <h3>Visão</h3>
+        <p>Ser a maior referência em confeitaria vintage e personalizada do país, unindo tradição e inovação.</p>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-icon">💎</div>
+        <h3>Valores</h3>
+        <p>Qualidade inegociável, ética artesanal, transparência e amor em cada pequeno detalhe.</p>
+      </div>
+    </div>
+
+    <!-- Cozinha/Equipe Gallery -->
+    <div class="kitchen-gallery reveal">
+      <div class="sec-header">
+        <p class="sec-label">✦ Bastidores ✦</p>
+        <h2>Onde a <em>mágica acontece</em></h2>
+      </div>
+      <div class="kg-grid">
+        <div class="kg-item">
+          <img src="https://images.unsplash.com/photo-1556216790-6449a212354c?w=600&q=80" alt="Nossa Cozinha" loading="lazy">
+          <div class="kg-overlay"><span>Nossa Cozinha</span></div>
+        </div>
+        <div class="kg-item">
+          <img src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=600&q=80" alt="Produção Artesanal" loading="lazy">
+          <div class="kg-overlay"><span>Produção Artesanal</span></div>
+        </div>
+        <div class="kg-item">
+          <img src="https://images.unsplash.com/photo-1581615438101-717088716503?w=600&q=80" alt="Nossa Equipe" loading="lazy">
+          <div class="kg-overlay"><span>Equipe Especialista</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diferenciais -->
+    <div class="diferenciais-section reveal">
+      <div class="dif-inner">
+        <div class="dif-content">
+          <h3>Por que a <em>DoceVilla?</em></h3>
+          <ul class="dif-list">
+            <li><strong>✨ Produção 100% Artesanal:</strong> Nada de máquinas industriais. Cada detalhe é feito à mão.</li>
+            <li><strong>🍓 Frutas e Ervas Frescas:</strong> Colhemos o melhor da estação para nossos recheios e decorações.</li>
+            <li><strong>🍫 Chocolate Belga Original:</strong> Utilizamos apenas os melhores blends para uma experiência premium.</li>
+            <li><strong>🕰️ Design Exclusivo:</strong> Seus doces terão uma estética que você não encontra em nenhum outro lugar.</li>
+          </ul>
+        </div>
+        <div class="dif-img">
+          <img src="https://images.unsplash.com/photo-1510832198440-a52376950479?w=600&q=80" alt="Diferenciais" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="lace-divider"></div>
+  </section>
+
+  <!-- ===== MONTE SEU BOLO (SIMULADOR INTERATIVO) ===== -->
+  <section class="monte-bolo reveal" id="simulador">
+    <div class="sec-header">
+      <p class="sec-label">✦ Personalização Extrema ✦</p>
+      <h2><span class="fleuron">❧</span> Crie sua <em>obra de arte</em> <span class="fleuron">☙</span></h2>
+      <p>Escolha cada camada e veja seu bolo ganhar vida em tempo real.</p>
+    </div>
+
+    <div class="sim-container">
+      <div class="sim-visual">
+        <div class="cake-preview" id="cakePreview">
+          <div class="cake-layer layer-top" id="layerTop"></div>
+          <div class="cake-layer layer-mid" id="layerMid"></div>
+          <div class="cake-layer layer-base" id="layerBase"></div>
+          <div class="cake-topping" id="cakeTopping"></div>
+          <div class="cake-plate"></div>
+        </div>
+      </div>
+
+      <div class="sim-controls">
+        <div class="sim-group">
+          <label>🎨 Cobertura:</label>
+          <div class="sim-options">
+            <button onclick="updateCake('topping', '#fff', 'Chantilly')" style="background:#fff"></button>
+            <button onclick="updateCake('topping', '#f8bbd0', 'Morango')" style="background:#f8bbd0"></button>
+            <button onclick="updateCake('topping', '#3e2723', 'Chocolate')" style="background:#3e2723"></button>
+          </div>
+        </div>
+        <div class="sim-group">
+          <label>🍰 Massa:</label>
+          <select id="simMassa" onchange="updateCake('massa', this.value)">
+            <option value="Baunilha">Baunilha (Clássica)</option>
+            <option value="Chocolate">Chocolate Belga</option>
+            <option value="Red Velvet">Red Velvet</option>
+          </select>
+        </div>
+        <div class="sim-group">
+          <label>✨ Decoração:</label>
+          <select id="simDeco" onchange="updateCake('deco', this.value)">
+            <option value="none">Nenhuma</option>
+            <option value="flowers">Flores Comestíveis</option>
+            <option value="gold">Folhas de Ouro</option>
+            <option value="pearls">Pérolas de Açúcar</option>
+          </select>
+        </div>
+        <div class="sim-total">
+          <span>Estimativa: <strong id="simPrice">R$ 240,00</strong></span>
+          <button class="btn-primary" onclick="addSimulatedCakeToCart()">Adicionar ao Carrinho ♥</button>
+        </div>
+      </div>
+    </div>
+    <div class="lace-divider"></div>
+  </section>
+
+  <!-- ===== ASSINATURA DOCEVILLA ===== -->
+  <section class="assinatura lace-bg reveal" id="assinatura">
+    <div class="assinatura-inner">
+      <div class="ass-text">
+        <p class="sec-label">✦ Clube de Vantagens ✦</p>
+        <h2>Assinatura <em>DoceVilla</em></h2>
+        <p>Receba uma caixa misteriosa de doces exclusivos todo mês na sua porta. Prioridade em encomendas e brindes artesanais.</p>
+        <ul class="ass-features">
+          <li>✨ 12 Doces Variados por mês</li>
+          <li>🚚 Frete Grátis em todas as compras</li>
+          <li>🎁 Brinde exclusivo de aniversário</li>
+          <li>💎 Acesso antecipado a novos sabores</li>
+        </ul>
+        <div class="ass-price">
+          <span>R$ 89,90 <em>/ mês</em></span>
+          <button class="btn-primary">Assinar Agora ✦</button>
+        </div>
+      </div>
+      <div class="ass-img">
+        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80" alt="Caixa de Assinatura" loading="lazy">
+      </div>
+    </div>
+    <div class="lace-divider"></div>
+  </section>
+
+  <!-- ===== DOCEMOMENTOS (GALERIA DE CLIENTES) ===== -->
+  <section class="galeria-clientes reveal" id="galeria">
+    <div class="sec-header">
+      <p class="sec-label">✦ #DoceMomentos ✦</p>
+      <h2>Histórias reais, <em>vidas adoçadas</em></h2>
+    </div>
+    <div class="gc-grid">
+      <div class="gc-item">
+        <img src="https://images.unsplash.com/photo-1464347601390-25e2842a37f7?w=400&q=80" alt="Cliente 1">
+        <div class="gc-tag">@marina_doces</div>
+      </div>
+      <div class="gc-item">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80" alt="Cliente 2">
+        <div class="gc-tag">@pedro_viana</div>
+      </div>
+      <div class="gc-item">
+        <img src="https://images.unsplash.com/photo-1558961363-fa4f0c5f6244?w=400&q=80" alt="Cliente 3">
+        <div class="gc-tag">@bia_festas</div>
+      </div>
+      <div class="gc-item">
+        <img src="https://images.unsplash.com/photo-1481391243133-f96216d51df7?w=400&q=80" alt="Cliente 4">
+        <div class="gc-tag">@casal_vintage</div>
       </div>
     </div>
     <div class="lace-divider"></div>
@@ -1540,7 +1715,7 @@
       </div>
     </div>
     <div class="footer-btm">
-      <p>© 2025 Docevilla – Todos os direitos reservados.</p>
+      <p>© 2025 Docevilla – Todos os direitos reservados. <a href="javascript:void(0)" id="adminTrigger" style="opacity: 0.2; color: inherit; text-decoration: none;">⚙</a></p>
       <p>Feito com ♥ e arte vintage</p>
     </div>
   </footer>
@@ -1548,6 +1723,1082 @@
   <div id="sparkles" class="sparkle-wrap" aria-hidden="true"></div>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
+  <!-- ===== CART UI ===== -->
+  <button class="cart-toggle" id="cartToggle" aria-label="Ver Carrinho" style="display: none;">
+    <span class="cart-count">0</span>
+    <span class="cart-icon">🛒</span>
+  </button>
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Seu Carrinho <em>Doce</em></h2>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">Seu carrinho está vazio 🌸</div>
+    </div>
+
+    <!-- ===== CHECKOUT OPTIONS ===== -->
+    <div class="cart-checkout-extras">
+      <div class="cc-section">
+        <label>🚚 Calcular Frete:</label>
+        <div class="cc-input-row">
+          <input type="text" id="cartZip" placeholder="00000-000">
+          <button onclick="calcShip()">Calcular</button>
+        </div>
+        <div id="shipRes" class="cc-info"></div>
+      </div>
+
+      <div class="cc-section">
+        <label>📅 Data de Entrega/Retirada:</label>
+        <input type="date" id="cartDate">
+      </div>
+
+      <div class="cc-section">
+        <label>💳 Pagamento:</label>
+        <div class="cc-pay-options">
+          <label><input type="radio" name="pMethod" value="Pix" checked> Pix</label>
+          <label><input type="radio" name="pMethod" value="Cartão"> Cartão</label>
+          <label><input type="radio" name="pMethod" value="Boleto"> Boleto</label>
+        </div>
+      </div>
+
+      <div class="cc-section">
+        <label>🎟️ Cupom:</label>
+        <div class="cc-input-row">
+          <input type="text" id="cartCoupon" placeholder="CÓDIGO">
+          <button onclick="applyC()">Aplicar</button>
+        </div>
+        <div id="couponRes" class="cc-info"></div>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-detailed">
+        <div class="cs-line"><span>Subtotal:</span> <span id="cartSubtotal">R$ 0,00</span></div>
+        <div class="cs-line"><span>Frete:</span> <span id="cartShipping">R$ 0,00</span></div>
+        <div class="cs-line cs-disc"><span>Desconto:</span> <span id="cartDiscount">- R$ 0,00</span></div>
+        <div class="cs-line total"><span>Total:</span> <span id="cartTotalAmount">R$ 0,00</span></div>
+      </div>
+      <button class="btn-checkout" id="checkoutBtn">Finalizar Pedido via WhatsApp 🎀</button>
+    </div>
+  </div>
+
+  <!-- ===== CUSTOMER AREA DRAWER ===== -->
+  <div class="user-drawer" id="userDrawer">
+    <div class="ud-header">
+      <h2>Minha Área <em>Doce</em></h2>
+      <button class="ud-close" id="userClose">✕</button>
+    </div>
+    
+    <div id="udContent">
+      <!-- Profile Info (Logged In) -->
+      <div id="userProfileView" style="display: none;">
+          <div class="up-info">
+            <div class="up-avatar">👤</div>
+            <div class="up-text">
+              <h3 id="upName">Nome do Cliente</h3>
+              <p id="upEmail">cliente@email.com</p>
+              <div class="up-points">✨ <strong>150</strong> Pontos DoceVilla</div>
+            </div>
+          </div>
+
+          <div class="up-loyalty-bar">
+            <div class="up-lb-fill" style="width: 60%;"></div>
+            <span>Faltam 50 pontos para seu próximo brinde! 🎁</span>
+          </div>
+
+          <div class="up-tabs">
+            <button class="up-tab active" data-utab="orders">Pedidos</button>
+            <button class="up-tab" data-utab="favs">Favoritos</button>
+            <button class="up-tab" data-utab="dates">Datas</button>
+            <button class="up-tab" data-utab="addr">Endereços</button>
+          </div>
+
+          <div class="up-panes">
+            <!-- Orders Pane -->
+            <div class="up-pane active" id="pane-orders">
+              <div id="orderHistoryList">
+                <div class="up-empty">Nenhum pedido realizado ainda 🌸</div>
+              </div>
+            </div>
+            <!-- Favs Pane -->
+            <div class="up-pane" id="pane-favs">
+              <div id="userFavsList">
+                <div class="up-empty">Você ainda não favoritou nenhum doce ♥</div>
+              </div>
+            </div>
+            <!-- Dates Pane -->
+            <div class="up-pane" id="pane-dates">
+              <div class="up-dates-list">
+                <div class="date-item">🎂 <strong>Meu Aniversário:</strong> 15 de Maio</div>
+                <div class="date-item">💒 <strong>Aniversário de Casamento:</strong> 20 de Junho</div>
+              </div>
+              <button class="btn-add-addr">+ Lembrar Nova Data</button>
+            </div>
+            <!-- Addresses Pane -->
+            <div class="up-pane" id="pane-addr">
+              <div id="userAddrList"></div>
+              <button class="btn-add-addr" onclick="addNewAddr()">+ Adicionar Endereço</button>
+            </div>
+          </div>
+
+        <button class="btn-logout" id="logoutBtn">Sair da Conta</button>
+      </div>
+
+      <!-- Not Logged In View -->
+      <div id="userGuestView">
+        <div class="ug-msg">
+          <p>Acesse sua conta para ver seus pedidos e favoritos.</p>
+          <button class="btn-login-trigger" id="loginTrigger">Entrar ou Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ADMIN DASHBOARD MODAL ===== -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="modal-content admin-modal">
+      <button class="modal-close" id="closeAdmin">✕</button>
+      <div class="admin-header">
+        <h2>📊 Painel Administrativo <em>DoceVilla</em></h2>
+      </div>
+      
+      <div class="admin-grid">
+        <aside class="admin-sidebar">
+          <button class="admin-tab active" data-atab="orders">📦 Pedidos</button>
+          <button class="admin-tab" data-atab="stock">🍏 Estoque</button>
+          <button class="admin-tab" data-atab="reports">📈 Relatórios</button>
+        </aside>
+        
+        <main class="admin-main">
+          <!-- Admin Orders -->
+          <div class="admin-pane active" id="ap-orders">
+            <h3>Pedidos Recentes</h3>
+            <div id="adminOrdersList" class="admin-list">
+              <div class="up-empty">Nenhum pedido processado hoje.</div>
+            </div>
+          </div>
+          
+          <!-- Admin Stock -->
+          <div class="admin-pane" id="ap-stock">
+            <h3>Controle de Insumos</h3>
+            <div class="stock-grid">
+              <div class="stock-item"><span>Farinha Premium</span> <strong>85%</strong> <div class="stock-bar"><div style="width: 85%"></div></div></div>
+              <div class="stock-item"><span>Chocolate Belga</span> <strong>40%</strong> <div class="stock-bar warning"><div style="width: 40%"></div></div></div>
+              <div class="stock-item"><span>Manteiga Pura</span> <strong>12%</strong> <div class="stock-bar danger"><div style="width: 12%"></div></div></div>
+            </div>
+          </div>
+
+          <!-- Admin Reports -->
+          <div class="admin-pane" id="ap-reports">
+            <h3>Desempenho de Vendas</h3>
+            <div class="report-stats">
+              <div class="stat-card"><h4>Vendas Hoje</h4><p>R$ 1.240,00</p></div>
+              <div class="stat-card"><h4>Pedidos</h4><p>18</p></div>
+              <div class="stat-card"><h4>Ticket Médio</h4><p>R$ 68,80</p></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-content auth-modal">
+      <button class="modal-close" id="closeAuth">✕</button>
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tabLogin">Login</button>
+        <button class="auth-tab" id="tabRegister">Cadastro</button>
+      </div>
+
+      <div class="auth-forms">
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form active">
+          <div class="c-field full">
+            <label>E-mail:</label>
+            <input type="email" id="loginEmail" required>
+          </div>
+          <div class="c-field full">
+            <label>Senha:</label>
+            <input type="password" id="loginPass" required>
+          </div>
+          <button type="submit" class="btn-modal-buy">Entrar ♥</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="auth-form">
+          <div class="c-field full">
+            <label>Nome Completo:</label>
+            <input type="text" id="regName" required>
+          </div>
+          <div class="c-field full">
+            <label>E-mail:</label>
+            <input type="email" id="regEmail" required>
+          </div>
+          <div class="c-field full">
+            <label>Senha:</label>
+            <input type="password" id="regPass" required>
+          </div>
+          <button type="submit" class="btn-modal-buy">Criar Conta 🎀</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">✕</button>
+      
+      <div class="modal-grid">
+        <div class="modal-gallery">
+          <div class="main-img-wrap">
+            <img id="modalMainImg" src="" alt="Produto">
+          </div>
+          <div class="thumb-strip" id="modalThumbs"></div>
+        </div>
+
+        <div class="modal-info">
+          <div class="modal-badge" id="modalBadge">✦ Destaque</div>
+          <h2 id="modalTitle">Nome do Produto</h2>
+          <div class="modal-stars">★★★★★ <span id="modalReviewCount">(12 avaliações)</span></div>
+          <p class="modal-price" id="modalPrice">R$ 0,00</p>
+          
+          <div class="modal-description">
+            <h3>Sobre esta delícia ❧</h3>
+            <p id="modalDescFull"></p>
+          </div>
+
+          <div class="modal-ingredients">
+            <h3>Ingredientes 🌿</h3>
+            <p id="modalIngredientsText"></p>
+          </div>
+
+          <!-- ===== CUSTOMIZATION FORM ===== -->
+          <div id="customizationSection" class="modal-custom-form" style="display: none;">
+            <h3>Personalize seu Pedido ♥</h3>
+            
+            <div class="custom-grid">
+              <div class="c-field">
+                <label>Massa:</label>
+                <select id="custMassa">
+                  <option>Baunilha Bourbon</option>
+                  <option>Chocolate Belga</option>
+                  <option>Red Velvet</option>
+                  <option>Limão Siciliano</option>
+                  <option>Nozes</option>
+                </select>
+              </div>
+              <div class="c-field">
+                <label>Recheio:</label>
+                <select id="custRecheio">
+                  <option>Brigadeiro Gourmet</option>
+                  <option>Ninho com Morangos</option>
+                  <option>Doce de Leite com Nozes</option>
+                  <option>Pistache</option>
+                  <option>Ganache de Frutas Vermelhas</option>
+                </select>
+              </div>
+              <div class="c-field">
+                <label>Cobertura:</label>
+                <select id="custCobertura">
+                  <option>Buttercream de Baunilha</option>
+                  <option>Chantilly Estabilizado</option>
+                  <option>Ganache Chocolate</option>
+                  <option>Fondant Vintage</option>
+                </select>
+              </div>
+              <div class="c-field">
+                <label>Tamanho:</label>
+                <select id="custTamanho">
+                  <option>Pequeno (10-15 fatias)</option>
+                  <option>Médio (20-25 fatias)</option>
+                  <option>Grande (30-40 fatias)</option>
+                  <option>Andares (Sob consulta)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="c-field full">
+              <label>Tema ou Inspiração:</label>
+              <input type="text" id="custTema" placeholder="Ex: Anos 50, Floral, Safari Rosa...">
+            </div>
+
+            <div class="c-field full">
+              <label>Imagem de Referência:</label>
+              <div class="upload-btn-wrapper">
+                <button class="btn-upload">Upload de Referência 📸</button>
+                <input type="file" id="custFile" accept="image/*" />
+                <span id="fileNameDisplay" class="file-name-hint">Nenhum arquivo selecionado</span>
+              </div>
+            </div>
+
+            <div class="c-field full">
+              <label>Instruções Especiais:</label>
+              <textarea id="custInst" placeholder="Conte-nos mais detalhes para tornar seu doce único..."></textarea>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <div class="qty-control">
+              <button onclick="changeModalQty(-1)">-</button>
+              <input type="number" id="modalQty" value="1" min="1">
+              <button onclick="changeModalQty(1)">+</button>
+            </div>
+            <button class="btn-modal-buy" id="modalAddToCart">Adicionar ao Carrinho ♥</button>
+          </div>
+
+          <div class="modal-trust">
+            <span>🚚 Entrega agendada</span>
+            <span>🎀 Embalagem para presente</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-reviews-section">
+        <h3>Experiências 💖</h3>
+        <div class="reviews-list">
+          <div class="review-item">
+            <div class="ri-head"><strong>Mariana S.</strong> <span>★★★★★</span></div>
+            <p>"Simplesmente divino! A decoração é uma verdadeira obra de arte."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LIGHTBOX (FULLSCREEN IMAGE) ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose">✕</button>
+    <div class="lb-container">
+      <img id="lbImg" src="" alt="Zoomed Product">
+    </div>
+    <div class="lb-zoom-hint">Clique para dar Zoom 🔍</div>
+  </div>
+
+  <script>
+    // ===== LIGHTBOX LOGIC =====
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    let isZoomed = false;
+
+    function openLightbox(src) {
+      lbImg.src = src;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      resetZoom();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      if (!document.querySelector('.modal-overlay.open')) {
+        document.body.style.overflow = '';
+      }
+      resetZoom();
+    }
+
+    function resetZoom() {
+      isZoomed = false;
+      lbImg.style.transform = 'scale(1)';
+      lbImg.style.cursor = 'zoom-in';
+    }
+
+    lbImg.addEventListener('click', (e) => {
+      isZoomed = !isZoomed;
+      if (isZoomed) {
+        lbImg.style.transform = 'scale(2)';
+        lbImg.style.cursor = 'zoom-out';
+      } else {
+        resetZoom();
+      }
+    });
+
+    // Move image with mouse when zoomed
+    lightbox.addEventListener('mousemove', (e) => {
+      if (!isZoomed) return;
+      const { clientX: x, clientY: y } = e;
+      const { innerWidth: w, innerHeight: h } = window;
+      const moveX = (x / w - 0.5) * -100;
+      const moveY = (y / h - 0.5) * -100;
+      lbImg.style.transform = `scale(2) translate(${moveX}%, ${moveY}%)`;
+    });
+
+    document.getElementById('lbClose').onclick = closeLightbox;
+    lightbox.onclick = (e) => { if (e.target === lightbox || e.target.classList.contains('lb-container')) closeLightbox(); };
+
+    // ===== PRODUCT MODAL LOGIC =====
+    const pModal = document.getElementById('productModal');
+    let mCurrentProd = null;
+
+    // Attach Lightbox to main modal image
+    document.getElementById('modalMainImg').addEventListener('click', function() {
+      openLightbox(this.src);
+    });
+
+    function openProductModal(name, price, img, cat, desc, ingredients) {
+      mCurrentProd = { name, price, img, cat, desc };
+      document.getElementById('modalTitle').textContent = name;
+      document.getElementById('modalPrice').textContent = `R$ ${price.toFixed(2)}`;
+      document.getElementById('modalMainImg').src = img;
+      document.getElementById('modalDescFull').textContent = desc + " Nossa receita artesanal utiliza ingredientes premium para garantir uma experiência inesquecível de sabor e nostalgia.";
+      document.getElementById('modalIngredientsText').textContent = ingredients || "Farinha de trigo, açúcar, ovos, manteiga e ingredientes secretos da DoceVilla.";
+      document.getElementById('modalQty').value = 1;
+      
+      // Toggle customization for customizable products
+      const custSection = document.getElementById('customizationSection');
+      if (cat.includes('Bolos') || cat.includes('Kits')) {
+        custSection.style.display = 'block';
+      } else {
+        custSection.style.display = 'none';
+      }
+
+      const thumbs = document.getElementById('modalThumbs');
+      thumbs.innerHTML = `
+        <img src="${img}" class="active" onclick="setMImg(this.src, this)">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=200&q=80" onclick="setMImg(this.src, this)">
+        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b19b?w=200&q=80" onclick="setMImg(this.src, this)">
+      `;
+      pModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Handle file name display
+    document.getElementById('custFile').onchange = function() {
+      document.getElementById('fileNameDisplay').textContent = this.files[0] ? this.files[0].name : 'Nenhum arquivo selecionado';
+    };
+
+    function closePModal() {
+      pModal.classList.remove('open');
+      document.body.style.overflow = '';
+      // Reset form
+      document.getElementById('custTema').value = '';
+      document.getElementById('custInst').value = '';
+      document.getElementById('custFile').value = '';
+      document.getElementById('fileNameDisplay').textContent = 'Nenhum arquivo selecionado';
+    }
+
+    function setMImg(src, t) {
+      document.getElementById('modalMainImg').src = src;
+      document.querySelectorAll('.thumb-strip img').forEach(i => i.classList.remove('active'));
+      t.classList.add('active');
+    }
+
+    function changeModalQty(d) {
+      const i = document.getElementById('modalQty');
+      let v = parseInt(i.value) + d;
+      if (v < 1) v = 1;
+      i.value = v;
+    }
+
+    document.getElementById('closeModal').onclick = closePModal;
+    pModal.onclick = (e) => { if(e.target === pModal) closePModal(); };
+
+    document.getElementById('modalAddToCart').onclick = () => {
+      const q = parseInt(document.getElementById('modalQty').value);
+      
+      let customization = null;
+      if (document.getElementById('customizationSection').style.display === 'block') {
+        customization = {
+          massa: document.getElementById('custMassa').value,
+          recheio: document.getElementById('custRecheio').value,
+          cobertura: document.getElementById('custCobertura').value,
+          tamanho: document.getElementById('custTamanho').value,
+          tema: document.getElementById('custTema').value,
+          instrucoes: document.getElementById('custInst').value,
+          hasImage: !!document.getElementById('custFile').files[0]
+        };
+      }
+
+      for(let i=0; i<q; i++) addToCart(mCurrentProd.name, mCurrentProd.price, mCurrentProd.img, customization);
+      closePModal();
+    };
+
+    // Advanced Filtering
+    const filterPrice = document.getElementById('filterPrice');
+    const filterOccasion = document.getElementById('filterOccasion');
+    const filterDiet = document.getElementById('filterDiet');
+
+    function applyFilters() {
+      const pRange = filterPrice.value;
+      const occ = filterOccasion.value;
+      const diet = filterDiet.value;
+
+      document.querySelectorAll('.pcard').forEach(card => {
+        const price = parseFloat(card.dataset.price || 0);
+        const cOcc = card.dataset.occasion || 'all';
+        const cDiet = card.dataset.diet || 'all';
+
+        let show = true;
+
+        // Price Filter
+        if (pRange !== 'all') {
+          if (pRange === '0-100' && price > 100) show = false;
+          if (pRange === '100-200' && (price <= 100 || price > 200)) show = false;
+          if (pRange === '200+' && price <= 200) show = false;
+        }
+
+        // Occasion Filter
+        if (occ !== 'all' && cOcc !== occ) show = false;
+
+        // Diet Filter
+        if (diet !== 'all' && cDiet !== diet) show = false;
+
+        if (show) {
+          card.classList.remove('hidden');
+          card.style.opacity = '1';
+          card.style.display = 'block';
+        } else {
+          card.classList.add('hidden');
+          card.style.opacity = '0';
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    filterPrice.onchange = applyFilters;
+    filterOccasion.onchange = applyFilters;
+    filterDiet.onchange = applyFilters;
+
+    // Attach click to cards
+    document.querySelectorAll('.pcard').forEach(c => {
+      c.addEventListener('click', (e) => {
+        if (e.target.closest('.pheart') || e.target.closest('.btn-pedir') || e.target.closest('.pheart-wrap')) return;
+        const name = c.querySelector('h3').textContent;
+        const pStr = c.querySelector('.pprice').textContent.replace('R$ ', '').split(' ')[0];
+        const price = parseFloat(pStr);
+        const img = c.querySelector('.pcard-img img').src;
+        const cat = c.querySelector('.pcat').textContent;
+        const desc = c.querySelector('p').textContent;
+        const ingredients = c.dataset.ingredients;
+        openProductModal(name, price, img, cat, desc, ingredients);
+      });
+    });
+
+    // ===== CART LOGIC =====
+    let cart = JSON.parse(localStorage.getItem('docevilla_cart')) || [];
+    let shippingValue = 0;
+    let discountValue = 0;
+
+    function saveCart() {
+      localStorage.setItem('docevilla_cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function addToCart(name, price, img, customization = null) {
+      if (customization) {
+        cart.push({ name, price, img, quantity: 1, customization });
+      } else {
+        const existing = cart.find(item => item.name === name && !item.customization);
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ name, price, img, quantity: 1 });
+        }
+      }
+      saveCart();
+      openCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      saveCart();
+    }
+
+    function updateQuantity(index, delta) {
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        removeFromCart(index);
+      } else {
+        saveCart();
+      }
+    }
+
+    // New Checkout Functions
+    function calcShip() {
+      const zip = document.getElementById('cartZip').value.trim();
+      if (zip.length < 8) {
+        document.getElementById('shipRes').textContent = "CEP inválido";
+        return;
+      }
+      shippingValue = 25.00; // Mock value
+      document.getElementById('shipRes').textContent = "🚚 Frete Estimado: R$ 25,00";
+      updateCartUI();
+    }
+
+    function applyC() {
+      const c = document.getElementById('cartCoupon').value.toUpperCase();
+      if (c === 'DOCEVILLA10') {
+        discountValue = 0.1;
+        document.getElementById('couponRes').textContent = "✅ Cupom aplicado: 10% OFF";
+      } else {
+        discountValue = 0;
+        document.getElementById('couponRes').textContent = "❌ Cupom inválido";
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const itemsContainer = document.getElementById('cartItems');
+      const countBadge = document.querySelector('.cart-count');
+      
+      let subtotal = 0;
+      let totalCount = 0;
+      
+      if (cart.length === 0) {
+        itemsContainer.innerHTML = '<div class="cart-empty">Seu carrinho está vazio 🌸</div>';
+        shippingValue = 0;
+        discountValue = 0;
+      } else {
+        itemsContainer.innerHTML = cart.map((item, index) => {
+          totalCount += item.quantity;
+          subtotal += item.price * item.quantity;
+          
+          let custDetails = "";
+          if (item.customization) {
+            custDetails = `<div class="item-cust-summary">✨ Personalizado: ${item.customization.tamanho} / ${item.customization.massa}</div>`;
+          }
+
+          return `
+            <div class="cart-item">
+              <img src="${item.img}" alt="${item.name}">
+              <div class="ci-details">
+                <h4>${item.name}</h4>
+                ${custDetails}
+                <p>R$ ${item.price.toFixed(2)}</p>
+                <div class="ci-qty">
+                  <button onclick="updateQuantity(${index}, -1)">-</button>
+                  <span>${item.quantity}</span>
+                  <button onclick="updateQuantity(${index}, 1)">+</button>
+                </div>
+              </div>
+              <button class="ci-remove" onclick="removeFromCart(${index})">✕</button>
+            </div>
+          `;
+        }).join('');
+      }
+      
+      const discAmt = subtotal * discountValue;
+      const total = subtotal + shippingValue - discAmt;
+
+      countBadge.textContent = totalCount;
+      document.getElementById('cartSubtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
+      document.getElementById('cartShipping').textContent = `R$ ${shippingValue.toFixed(2)}`;
+      document.getElementById('cartDiscount').textContent = `- R$ ${discAmt.toFixed(2)}`;
+      document.getElementById('cartTotalAmount').textContent = `R$ ${total.toFixed(2)}`;
+      
+      document.getElementById('cartToggle').style.display = totalCount > 0 ? 'flex' : 'none';
+    }
+
+    function openCart() {
+      document.getElementById('cartDrawer').classList.add('open');
+    }
+
+    function closeCart() {
+      document.getElementById('cartDrawer').classList.remove('open');
+    }
+
+    document.getElementById('cartToggle').addEventListener('click', openCart);
+    document.getElementById('cartClose').addEventListener('click', closeCart);
+
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      if (cart.length === 0) return;
+      
+      const payMethod = document.querySelector('input[name="pMethod"]:checked').value;
+      const date = document.getElementById('cartDate').value || "Não informada";
+      const zip = document.getElementById('cartZip').value || "Não informado";
+
+      let message = "Olá DoceVilla! Gostaria de fazer um pedido:\n\n";
+      cart.forEach(item => {
+        message += `*• ${item.quantity}x ${item.name}* - R$ ${(item.price * item.quantity).toFixed(2)}\n`;
+        if (item.customization) {
+          message += `   - Massa: ${item.customization.massa}\n`;
+          message += `   - Recheio: ${item.customization.recheio}\n`;
+          message += `   - Cobertura: ${item.customization.cobertura}\n`;
+          message += `   - Tamanho: ${item.customization.tamanho}\n`;
+          if (item.customization.tema) message += `   - Tema: ${item.customization.tema}\n`;
+          if (item.customization.instrucoes) message += `   - Obs: ${item.customization.instrucoes}\n`;
+        }
+      });
+      
+      message += `\n--- Resumo ---\n`;
+      message += `💰 Subtotal: ${document.getElementById('cartSubtotal').textContent}\n`;
+      message += `🚚 Frete: ${document.getElementById('cartShipping').textContent} (CEP: ${zip})\n`;
+      if (discountValue > 0) message += `🎟️ Desconto: ${document.getElementById('cartDiscount').textContent}\n`;
+      message += `*Total Final: ${document.getElementById('cartTotalAmount').textContent}*\n\n`;
+      
+      message += `📅 Data de Entrega: ${date}\n`;
+      message += `💳 Método de Pagamento: ${payMethod}`;
+      
+      const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    });
+
+    // ===== ADMIN LOGIC =====
+    const adminModal = document.getElementById('adminModal');
+    document.getElementById('adminTrigger').onclick = () => adminModal.classList.add('open');
+    document.getElementById('closeAdmin').onclick = () => adminModal.classList.remove('open');
+
+    document.querySelectorAll('.admin-tab').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.admin-tab').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.admin-pane').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(`ap-${btn.dataset.atab}`).classList.add('active');
+      };
+    });
+
+    function loadAdminOrders() {
+      // Mock: in real app, we'd pull ALL users' orders from a DB.
+      // Here we just show the current user's as a demonstration.
+      const list = document.getElementById('adminOrdersList');
+      if (currentUser && currentUser.orders && currentUser.orders.length > 0) {
+        list.innerHTML = currentUser.orders.map(o => `
+          <div class="admin-order-card">
+            <div><strong>${currentUser.name}</strong> (${o.date})</div>
+            <div>${o.items.length} itens - R$ ${o.total.toFixed(2)}</div>
+            <span class="status-badge">Pendente</span>
+          </div>
+        `).join('');
+      }
+    }
+    loadAdminOrders();
+
+    // ===== SMART SEARCH LOGIC =====
+    const smartSearch = document.getElementById('smartSearch');
+    smartSearch.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('.pcard').forEach(card => {
+        const name = card.querySelector('h3').textContent.toLowerCase();
+        const ingredients = (card.dataset.ingredients || '').toLowerCase();
+        const occasion = (card.dataset.occasion || '').toLowerCase();
+        
+        if (name.includes(q) || ingredients.includes(q) || occasion.includes(q)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+    // ===== CAKE SIMULATOR LOGIC =====
+    let simState = { topping: 'Chantilly', massa: 'Baunilha', deco: 'none', color: '#fff' };
+    
+    window.updateCake = (part, value, label) => {
+      if (part === 'topping') {
+        simState.color = value;
+        simState.topping = label;
+        document.getElementById('cakeTopping').style.background = value;
+      } else if (part === 'massa') {
+        simState.massa = value;
+        const color = value === 'Chocolate' ? '#3e2723' : (value === 'Red Velvet' ? '#b71c1c' : '#f0f0f0');
+        document.querySelectorAll('.cake-layer').forEach(l => l.style.background = color);
+      } else if (part === 'deco') {
+        simState.deco = value;
+        // Simple visual feedback for deco
+        const preview = document.getElementById('cakePreview');
+        if (value === 'gold') preview.style.filter = 'drop-shadow(0 0 5px gold)';
+        else if (value === 'pearls') preview.style.filter = 'drop-shadow(0 0 5px white)';
+        else preview.style.filter = 'none';
+      }
+    };
+
+    window.addSimulatedCakeToCart = () => {
+      const item = {
+        id: 'sim-' + Date.now(),
+        name: `Bolo Personalizado (${simState.massa})`,
+        price: 240,
+        img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&q=80',
+        custom: simState
+      };
+      cart.push(item);
+      updateCartUI();
+      showToast("Bolo personalizado adicionado! 🍰");
+    };
+
+    // ===== BEHAVIORAL TRACKING & RECOMMENDATIONS =====
+    let productViews = JSON.parse(localStorage.getItem('docevilla_views')) || {};
+
+    function trackView(prodId) {
+      productViews[prodId] = (productViews[prodId] || 0) + 1;
+      localStorage.setItem('docevilla_views', JSON.stringify(productViews));
+      updateRecommendations();
+    }
+
+    function updateRecommendations() {
+      // Logic to find most viewed and show "Recommended for you"
+      const sorted = Object.entries(productViews).sort((a,b) => b[1] - a[1]);
+      if (sorted.length > 0) {
+        const topId = sorted[0][0];
+        // In a real app, we'd highlight this product
+      }
+    }
+
+    // ===== URGENCY & CROSS-SELL =====
+    function applyUrgency() {
+      const cards = document.querySelectorAll('.pcard');
+      cards.forEach((c, idx) => {
+        if (idx % 3 === 0) {
+          const badge = document.createElement('span');
+          badge.className = 'pbadge bd-urgency';
+          badge.textContent = '🔥 Últimas Unidades';
+          c.querySelector('.pcard-img').appendChild(badge);
+        }
+      });
+    }
+    applyUrgency();
+
+    // ===== AI KNOWLEDGE BASE & LOGIC =====
+    const doceCatalog = [
+      { name: "Bolo Vintage Cereja", price: 198, cat: "Bolos", ingredients: "Cereja Maraschino, Baunilha, Chantilly", occasion: "Aniversário" },
+      { name: "Bolo Coração Rosa", price: 178, cat: "Bolos", ingredients: "Morango, Mousse, Leite Condensado", occasion: "Casamento, Romance" },
+      { name: "Donuts Retrô Pink", price: 98, cat: "Donuts", ingredients: "Hibisco, Leite Amêndoas (Vegano)", occasion: "Café, Festa" },
+      { name: "Kit Noivado Luxo", price: 580, cat: "Kits", ingredients: "Champagne, Chocolate Belga", occasion: "Casamento, Noivado" },
+      { name: "Torta Floresta Negra", price: 210, cat: "Tortas", ingredients: "Cacau 70%, Cerejas, Kirsch", occasion: "Aniversário, Jantar" }
+    ];
+
+    const aiChatBtn = document.getElementById('aiChatBtn');
+    const aiChatWindow = document.getElementById('aiChatWindow');
+    const aiChatBody = document.getElementById('aiChatBody');
+    const aiInput = document.getElementById('aiInput');
+    const sendAiMsg = document.getElementById('sendAiMsg');
+
+    aiChatBtn.onclick = () => aiChatWindow.classList.toggle('open');
+    document.getElementById('closeAiChat').onclick = () => aiChatWindow.classList.remove('open');
+
+    function addChatMsg(text, type) {
+      const msg = document.createElement('div');
+      msg.className = `ai-msg ${type}`;
+      msg.innerHTML = text;
+      aiChatBody.appendChild(msg);
+      aiChatBody.scrollTop = aiChatBody.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+      const tid = document.createElement('div');
+      tid.className = 'ai-msg bot typing';
+      tid.id = 'aiTyping';
+      tid.textContent = '...';
+      aiChatBody.appendChild(tid);
+      aiChatBody.scrollTop = aiChatBody.scrollHeight;
+    }
+
+    function hideTypingIndicator() {
+      const tid = document.getElementById('aiTyping');
+      if(tid) tid.remove();
+    }
+
+    sendAiMsg.onclick = () => {
+      const q = aiInput.value.trim();
+      if (!q) return;
+      addChatMsg(q, 'user');
+      aiInput.value = '';
+
+      showTypingIndicator();
+
+      setTimeout(() => {
+        hideTypingIndicator();
+        let reply = "";
+        const lowerQ = q.toLowerCase();
+
+        // 1. Search Logic
+        const found = doceCatalog.filter(d => 
+          lowerQ.includes(d.name.toLowerCase()) || 
+          lowerQ.includes(d.cat.toLowerCase()) || 
+          lowerQ.includes(d.ingredients.toLowerCase())
+        );
+
+        if (lowerQ.includes('olá') || lowerQ.includes('oi')) {
+          reply = "Olá! Sou a Assistente DoceVilla. Posso te sugerir um doce, falar sobre ingredientes ou ajudar com seu pedido. O que deseja?";
+        } 
+        else if (found.length > 0) {
+          const item = found[0];
+          reply = `Encontrei algo perfeito: <strong>${item.name}</strong>! Ele leva ${item.ingredients} e custa R$ ${item.price.toFixed(2)}. Combina muito com ${item.occasion}. Quer ver mais detalhes?`;
+        }
+        else if (lowerQ.includes('combina') || lowerQ.includes('sugere')) {
+          reply = "Para uma experiência inesquecível, eu recomendo combinar nosso <strong>Bolo Vintage</strong> com um café fresquinho ou nossa <strong>Torta Floresta Negra</strong> com um vinho do porto. 🍷";
+        }
+        else if (lowerQ.includes('vegano') || lowerQ.includes('sem açúcar')) {
+          reply = "Temos opções inclusivas! Nossos <strong>Donuts Retrô</strong> são totalmente veganos. Quer que eu te mostre a lista completa de produtos saudáveis?";
+        }
+        else if (lowerQ.includes('preço') || lowerQ.includes('valor')) {
+          reply = "Nossos preços variam de R$ 15 (unidades individuais) até R$ 580 (Kits de Luxo). Qual a sua faixa de orçamento para que eu possa te ajudar?";
+        }
+        else {
+          reply = "Entendi! Como sou uma IA focada em doçuras, posso te ajudar a encontrar o doce perfeito. Tente me perguntar sobre 'bolos', 'kits para presente' ou 'opções veganas'.";
+        }
+
+        addChatMsg(reply, 'bot');
+      }, 1200);
+    };
+
+    aiInput.onkeypress = (e) => { if(e.key === 'Enter') sendAiMsg.click(); };
+
+    // ===== CUSTOMER AREA LOGIC =====
+    let currentUser = JSON.parse(localStorage.getItem('docevilla_user')) || null;
+
+    function updateUserUI() {
+      const guestView = document.getElementById('userGuestView');
+      const profileView = document.getElementById('userProfileView');
+      
+      if (currentUser) {
+        guestView.style.display = 'none';
+        profileView.style.display = 'block';
+        document.getElementById('upName').textContent = currentUser.name;
+        document.getElementById('upEmail').textContent = currentUser.email;
+        loadOrderHistory();
+        loadFavorites();
+        loadAddresses();
+      } else {
+        guestView.style.display = 'block';
+        profileView.style.display = 'none';
+      }
+    }
+
+    // Auth
+    const authModal = document.getElementById('authModal');
+    const userDrawer = document.getElementById('userDrawer');
+
+    document.getElementById('userBtn').onclick = () => userDrawer.classList.add('open');
+    document.getElementById('userClose').onclick = () => userDrawer.classList.remove('open');
+    document.getElementById('loginTrigger').onclick = () => authModal.classList.add('open');
+    document.getElementById('closeAuth').onclick = () => authModal.classList.remove('open');
+
+    // Tab Logic for Auth
+    document.getElementById('tabLogin').onclick = () => {
+      document.getElementById('tabLogin').classList.add('active');
+      document.getElementById('tabRegister').classList.remove('active');
+      document.getElementById('loginForm').classList.add('active');
+      document.getElementById('registerForm').classList.remove('active');
+    };
+    document.getElementById('tabRegister').onclick = () => {
+      document.getElementById('tabRegister').classList.add('active');
+      document.getElementById('tabLogin').classList.remove('active');
+      document.getElementById('registerForm').classList.add('active');
+      document.getElementById('loginForm').classList.remove('active');
+    };
+
+    // Simulated Registration
+    document.getElementById('registerForm').onsubmit = (e) => {
+      e.preventDefault();
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      currentUser = { name, email, orders: [], favs: [], addresses: [] };
+      localStorage.setItem('docevilla_user', JSON.stringify(currentUser));
+      authModal.classList.remove('open');
+      updateUserUI();
+    };
+
+    // Simulated Login
+    document.getElementById('loginForm').onsubmit = (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      if (!currentUser || currentUser.email !== email) {
+        currentUser = { name: "Doce Amante", email: email, orders: [], favs: [], addresses: [] };
+      }
+      localStorage.setItem('docevilla_user', JSON.stringify(currentUser));
+      authModal.classList.remove('open');
+      updateUserUI();
+    };
+
+    document.getElementById('logoutBtn').onclick = () => {
+      currentUser = null;
+      localStorage.removeItem('docevilla_user');
+      updateUserUI();
+    };
+
+    // User Tabs (Orders, Favs, Addr)
+    document.querySelectorAll('.up-tab').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.up-tab').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.up-pane').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(`pane-${btn.dataset.utab}`).classList.add('active');
+      };
+    });
+
+    function loadOrderHistory() {
+      const list = document.getElementById('orderHistoryList');
+      if (!currentUser.orders || currentUser.orders.length === 0) {
+        list.innerHTML = '<div class="up-empty">Nenhum pedido realizado ainda 🌸</div>';
+        return;
+      }
+      list.innerHTML = currentUser.orders.map((order, idx) => `
+        <div class="order-card">
+          <div class="oc-head">
+            <strong>Pedido #${1000 + idx}</strong>
+            <span>${order.date}</span>
+          </div>
+          <div class="oc-items">${order.items.map(i => `${i.quantity}x ${i.name}`).join(', ')}</div>
+          <div class="oc-foot">
+            <span>R$ ${order.total.toFixed(2)}</span>
+            <button onclick="repeatOrder(${idx})" class="btn-repeat">Repetir Pedido ↺</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function repeatOrder(idx) {
+      const order = currentUser.orders[idx];
+      order.items.forEach(item => {
+        for(let i=0; i<item.quantity; i++) {
+          addToCart(item.name, item.price, item.img, item.customization);
+        }
+      });
+      userDrawer.classList.remove('open');
+      openCart();
+    }
+
+    function loadFavorites() {
+      const list = document.getElementById('userFavsList');
+      list.innerHTML = '<div class="up-empty">Você ainda não favoritou nenhum doce ♥</div>';
+    }
+
+    function loadAddresses() {
+      const list = document.getElementById('userAddrList');
+      if (!currentUser.addresses || currentUser.addresses.length === 0) {
+        list.innerHTML = '<div class="up-empty">Nenhum endereço salvo</div>';
+        return;
+      }
+      list.innerHTML = currentUser.addresses.map((a, idx) => `
+        <div class="addr-card">
+          <p>${a}</p>
+          <button onclick="removeAddr(${idx})">✕</button>
+        </div>
+      `).join('');
+    }
+
+    function addNewAddr() {
+      const addr = prompt("Digite o endereço completo:");
+      if (addr) {
+        currentUser.addresses.push(addr);
+        localStorage.setItem('docevilla_user', JSON.stringify(currentUser));
+        loadAddresses();
+      }
+    }
+
+    function removeAddr(idx) {
+      currentUser.addresses.splice(idx, 1);
+      localStorage.setItem('docevilla_user', JSON.stringify(currentUser));
+      loadAddresses();
+    }
+
+    // Sync Checkout with History
+    const originalCheckout = document.getElementById('checkoutBtn').onclick;
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      if (currentUser && cart.length > 0) {
+        const newOrder = {
+          date: new Date().toLocaleDateString(),
+          items: [...cart],
+          total: parseFloat(document.getElementById('cartTotalAmount').textContent.replace('R$ ', ''))
+        };
+        currentUser.orders.push(newOrder);
+        localStorage.setItem('docevilla_user', JSON.stringify(currentUser));
+      }
+    });
+
+    updateUserUI();
+    updateCartUI();
+  </script>
 </body>
 
 </html>
