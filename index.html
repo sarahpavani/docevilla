@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DoceVilla – Confeitaria Vintage Romântica</title>
+  <meta name="description"
+    content="DoceVilla – Confeitaria artesanal vintage com bolos, cupcakes, donuts, chocolates, tortas e kits presente. Feito com amor e estética retrô única." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      transition: background .4s ease, color .4s ease
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mesh-bg" aria-hidden="true">
+    <div class="mesh-blob b1"></div>
+    <div class="mesh-blob b2"></div>
+    <div class="mesh-blob b3"></div>
+    <div class="mesh-blob b4"></div>
+    <div class="mesh-blob b5"></div>
+  </div>
+
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="nav-logo">
+      Doce<em>villa</em>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#produtos" class="nav-link">Cardápio</a></li>
+      <li><a href="#wizard" class="nav-link">Monte seu Bolo</a></li>
+      <li><a href="#sobre" class="nav-link">Sobre</a></li>
+      <li><a href="#contato" class="nav-link">Contato</a></li>
+    </ul>
+    <div class="nav-utils">
+      <button class="btn-cro secondary" onclick="location.href='#wizard'" style="padding: 0.8rem 1.5rem; min-height: 44px; font-size: 0.8rem;">Encomendar agora</button>
+      
+      <button class="nav-user-btn" id="userBtn" aria-label="Minha Conta">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </button>
+
+      <button class="dark-toggle" id="darkToggle" aria-label="Alternar modo escuro">
+        <span class="dt-knob"></span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== NEW DELICATE HERO ===== -->
+  <section class="hero-new" id="home">
+    <div class="hero-new-bg">
+      <img src="img/hero-bakery.jpg" alt="Vintage Bakery Scene" class="hnbg-img">
+      <div class="hnbg-overlay"></div>
+    </div>
+    
+    <div class="hero-new-content">
+      <span class="hn-label">♥ Confeitaria Artesanal & Atemporal ♥</span>
+      <h1 class="hn-title">Doces que<br>traduzem <em>emoções</em></h1>
+      <p class="hn-desc">Na Docevilla, resgatamos a delicadeza e a sofisticação em cada detalhe, transformando ingredientes selecionados em memórias inesquecíveis.</p>
+      
+      <div class="hn-btns">
+        <a href="#produtos" class="btn-cro primary">Explorar Coleção</a>
+        <a href="#wizard" class="btn-cro secondary">Monte seu Bolo</a>
+      </div>
+    </div>
+
+    <!-- Background Marquee Carousel -->
+    <div class="hero-marquee">
+      <div class="marquee-track">
+        <span>HAUTE PÂTISSERIE</span><span>♥</span>
+        <span>DOCEVILLA</span><span>♥</span>
+        <span>ARTESANAL</span><span>♥</span>
+        <span>EXCLUSIVIDADE</span><span>♥</span>
+        <span>SOFISTICAÇÃO</span><span>♥</span>
+        <!-- Repeat for continuous scroll -->
+        <span>HAUTE PÂTISSERIE</span><span>♥</span>
+        <span>DOCEVILLA</span><span>♥</span>
+        <span>ARTESANAL</span><span>♥</span>
+        <span>EXCLUSIVIDADE</span><span>♥</span>
+        <span>SOFISTICAÇÃO</span><span>♥</span>
+      </div>
+    </div>
+
+    <div class="hn-scroll">
+      <span class="hn-scroll-text">Descubra a doçura</span>
+      <div class="hn-scroll-line"></div>
+    </div>
+    
+    <!-- Floating Decorative Elements (Enhanced) -->
+    <div class="hn-deco">
+      <span class="hnd hnd-1">♥</span>
+      <span class="hnd hnd-2">♥</span>
+    </div>
+  </section>
+
+  <!-- ===== CARROSSEL DE INSPIRAÇÃO ===== -->
+  <section class="insp-carousel lace-bg">
+    <div class="sec-header reveal">
+      <p class="sec-label">♥ Vitrine de Inspiração ♥</p>
+      <h2>Nossa <em>Galeria</em> de Inspiração</h2>
+    </div>
+
+    <div class="swiper insp-swiper reveal">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="insp-card" data-swiper-parallax="-100">
+            <div class="insp-img" data-swiper-parallax="50">
+              <img src="img/bolo7.png" alt="Bolo Coração" />
+            </div>
+            <p class="insp-cap" data-swiper-parallax="-200">Amor em cada fatia</p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="insp-card" data-swiper-parallax="-100">
+            <div class="insp-img" data-swiper-parallax="50">
+              <img src="img/cupcakes.png" alt="Cupcakes Coloridos" />
+            </div>
+            <p class="insp-cap" data-swiper-parallax="-200">Doçura Colorida</p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="insp-card" data-swiper-parallax="-100">
+            <div class="insp-img" data-swiper-parallax="50">
+              <img src="img/vitrine.png" alt="Exposição de Doces" />
+            </div>
+            <p class="insp-cap" data-swiper-parallax="-200">Nossa Vitrine</p>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="insp-card" data-swiper-parallax="-100">
+            <div class="insp-img" data-swiper-parallax="50">
+              <img src="img/donuts.png" alt="Donuts Artesanais" />
+            </div>
+            <p class="insp-cap" data-swiper-parallax="-200">Donuts Exclusivos</p>
+          </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <div class="pol-slide ps-tilt-right" data-swiper-parallax="-100">
+            <div class="pol-img" data-swiper-parallax="50">
+              <img src="img/hero_bolo_morango.png" alt="Cookies" />
+            </div>
+            <p class="pol-cap" data-swiper-parallax="-200">Momento Especial ♥</p>
+          </div>
+        </div>
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next insp-next"></div>
+      <div class="swiper-button-prev insp-prev"></div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination insp-pagination"></div>
+    </div>
+    <div class="lace-divider"></div>
+  </section>
+
+  <!-- ===== HIGHLIGHTS (Destaques) ===== -->
+  <section class="highlights lace-bg" id="destaques">
+    <div class="sec-header reveal">
+      <p class="sec-label">♥ Em Destaque ♥</p>
+      <h2>Nossos <em>preferidos</em> do momento</h2>
+      <p>Selecionados com carinho — os produtos mais amados da nossa vitrine vintage.</p>
+    </div>
+    <div class="hl-grid">
+
+      <!-- Bolo Vintage Cereja destaque -->
+      <div class="highlight-card reveal">
+        <div class="hl-glow"></div>
+        <div class="hl-img">
+          <img src="img/bolo1.png" alt="Bolo Vintage Cereja" loading="lazy" />
+        </div>
+        <div class="hl-body">
+          <span class="hl-cat"> Bolo</span>
+          <div class="hl-badge">♥ Mais Pedido</div>
+          <h3>Bolo Vintage Cereja</h3>
+          <p>Chantilly artesanal e cerejas ao maraschino com decoração retrô anos 50 feita à mão.</p>
+          <div class="hl-foot">
+            <span class="hl-price">R$ 198 <em>/ unid.</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Morangos com Chocolate destaque -->
+      <div class="highlight-card reveal rd1">
+        <div class="hl-glow"></div>
+        <div class="hl-img">
+          <img src="img/morango.png" alt="Morangos com Chocolate" loading="lazy" />
+        </div>
+        <div class="hl-body">
+          <span class="hl-cat"> Chocolate</span>
+          <div class="hl-badge">♥ Favorito</div>
+          <h3>Morangos com Chocolate</h3>
+          <p>Morangos belgas cobertos de chocolate branco e amargo com pó dourado comestível.</p>
+          <div class="hl-foot">
+            <span class="hl-price">R$ 89 <em>/ cx 12</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kit Rosas Retrô destaque -->
+      <div class="highlight-card reveal rd2">
+        <div class="hl-glow"></div>
+        <div class="hl-img">
+          <img src="img/flores.PNG" alt="Kit Rosas Retrô" loading="lazy" />
+        </div>
+        <div class="hl-body">
+          <span class="hl-cat"> Cupcake</span>
+          <div class="hl-badge"> Romântico</div>
+          <h3>Kit Rosas Retrô</h3>
+          <p>6 cupcakes com rosas de buttercream vintage em caixa com fita de cetim e cartão.</p>
+          <div class="hl-foot">
+            <span class="hl-price">R$ 88 <em>/ kit 6</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="lace-divider"></div>
+  </section>
+
+  <!-- ===== PARA PRESENTEAR (Carrossel) ===== -->
+  <section class="gift-carousel lace-bg" id="presentear">
+    <div class="sec-header reveal">
+      <p class="sec-label">♥ Kits Presente ♥</p>
+      <h2>Presentes que <em>encantam</em></h2>
+      <p>Kits e combos especiais pensados com amor para tornar cada momento inesquecível.</p>
+    </div>
+
+    <div class="carousel-track-wrap">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="gift-slide">
+          <div class="gs-img"><img src="img/cesta.png"
+              alt="Cesta Vintage Completa" loading="lazy" /></div>
+          <div class="gs-body">
+            <span class="gs-label">♥ Kit Presente</span>
+            <h3>Cesta Vintage Completa</h3>
+            <p>Cesta de vime com cupcakes, bombons, chocolate e geleia gourmet em embalagem luxo.</p>
+            <div class="gs-foot">
+              <span class="gs-price">R$ 285</span>
+              <button class="btn-pedir"
+                onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gift-slide">
+          <div class="gs-img"><img src="img/cesta2.png" alt="Kit Amor e Doçura" loading="lazy" /></div>
+          <div class="gs-body">
+            <span class="gs-label">♥ Romântico</span>
+            <h3>Kit Amor &amp; Doçura</h3>
+            <p>Caixa coração com bombons, morangos cobertos e cupcakes de rosas — perfeito para datas especiais.</p>
+            <div class="gs-foot">
+              <span class="gs-price">R$ 230</span>
+              <button class="btn-pedir"
+                onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gift-slide">
+          <div class="gs-img"><img src="img/cesta2.png"
+              alt="Kit Mãe Rainha" loading="lazy" /></div>
+          <div class="gs-body">
+            <span class="gs-label">♥ Especial</span>
+            <h3>Kit Mãe Rainha</h3>
+            <p>Mini bolo personalizado, trufas douradas e chá de flores em caixa floral vintage com laço de veludo.</p>
+            <div class="gs-foot">
+              <span class="gs-price">R$ 320</span>
+              <button class="btn-pedir"
+                onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gift-slide">
+          <div class="gs-img"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b19b?w=600&q=80"
+              alt="Kit Festa Surpresa" loading="lazy" /></div>
+          <div class="gs-body">
+            <span class="gs-label">♥ Festa</span>
+            <h3>Kit Festa Surpresa</h3>
+            <p>12 cupcakes, bolo smash, 20 brigadeiros e donuts com decoração vintage completa para mesa de doces.</p>
+            <div class="gs-foot">
+              <span class="gs-price">R$ 450</span>
+              <button class="btn-pedir"
+                onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gift-slide">
+          <div class="gs-img"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80"
+              alt="Kit Noivado Luxo" loading="lazy" /></div>
+          <div class="gs-body">
+            <span class="gs-label"> Noivado</span>
+            <h3>Kit Noivado Luxo</h3>
+            <p>Bolo de noivado 2 andares, bombons em veludo e gravura dos nomes em chocolate belga branco.</p>
+            <div class="gs-foot">
+              <span class="gs-price">R$ 580</span>
+              <button class="btn-pedir"
+                onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <button class="carr-btn" id="carrPrev" aria-label="Anterior">‹</button>
+      <div class="carr-dots" id="carrDots"></div>
+      <button class="carr-btn" id="carrNext" aria-label="Próximo">›</button>
+    </div>
+    <div class="div-gradient"></div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <div class="stats-bar gingham-bg">
+    <div class="div-ornamental" style="position: absolute; top: 0; transform: rotate(180deg); opacity: 0.5;"><span>♥</span></div>
+    <div class="stats-inner">
+      <div class="stat reveal"><span class="sn" data-count="1200">0</span><span class="sl">Pedidos entregues</span>
+      </div>
+      <div class="sdiv">♥</div>
+      <div class="stat reveal rd1"><span class="sn" data-count="8">0</span><span class="sl">Anos de experiência</span>
+      </div>
+      <div class="sdiv">♥</div>
+      <div class="stat reveal rd2"><span class="sn" data-count="500">0</span><span class="sl">Clientes felizes</span>
+      </div>
+      <div class="sdiv">♥</div>
+      <div class="stat reveal rd3"><span class="sn" data-count="60">0</span><span class="sl">Sabores exclusivos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PRODUTOS ===== -->
+  <section class="produtos lace-bg" id="produtos">
+    <div class="sec-header reveal">
+      <p class="sec-label">♥ Nossos Produtos ♥</p>
+      <h2><span class="fleuron">❧</span> Delícias <em>artesanais</em> <span class="fleuron">☙</span></h2>
+      <p>Do clássico ao surpreendente — cada peça é uma obra de arte vintage feita com amor.</p>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-cat="todos" id="tab-todos">♥ Todos</button>
+      <button class="tab" data-cat="bolos" id="tab-bolos"> Bolos</button>
+      <button class="tab" data-cat="cupcakes" id="tab-cupcakes"> Cupcakes</button>
+      <button class="tab" data-cat="donuts" id="tab-donuts"> Donuts</button>
+      <button class="tab" data-cat="chocolates" id="tab-chocolates"> Chocolates</button>
+      <button class="tab" data-cat="tortas" id="tab-tortas"> Tortas</button>
+      <button class="tab tab-gift" data-cat="presentes" id="tab-presentes"> Presentear</button>
+    </div>
+
+    <!-- ===== CATEGORY HEADER CAROUSEL (FLUIDO) ===== -->
+    <div class="swiper cat-header-swiper reveal">
+      <div class="swiper-wrapper">
+        <!-- Slide Todos -->
+        <div class="swiper-slide" data-cat-link="todos">
+          <div class="cat-hero">
+            <div class="ch-text">
+              <h3>Delícias Artesanais</h3>
+              <p>Explore nossa coleção completa de doces feitos à mão com estética vintage e ingredientes prêmium.</p>
+              <div class="ch-deco">❧ Docevilla ❧</div>
+            </div>
+            <div class="ch-img">
+              <img src="img/b.png" alt="Docevilla Vitrine" />
+            </div>
+          </div>
+        </div>
+        <!-- Slide Bolos -->
+        <div class="swiper-slide" data-cat-link="bolos">
+          <div class="cat-hero">
+            <div class="ch-text">
+              <h3>Bolos Vintage</h3>
+              <p>Inspirados na elegância dos anos 50, combinam massas aeradas e decorações artesanais que transformam
+                momentos em memórias.</p>
+              <div class="ch-deco">🎂 Especialmente para você</div>
+            </div>
+            <div class="ch-img">
+              <img src="img/destaque.png" alt="Bolos Vintage" />
+            </div>
+          </div>
+        </div>
+        <!-- Slide Cupcakes -->
+        <div class="swiper-slide" data-cat-link="cupcakes">
+          <div class="cat-hero">
+            <div class="ch-text">
+              <h3>Joias de Cupcakes</h3>
+              <p>Charmosa confeitaria parisiense em cada unidade, com rosas de buttercream e toda a delicadeza do estilo
+                clássico.</p>
+              <div class="ch-deco">🧁 Doçura em cada detalhe</div>
+            </div>
+            <div class="ch-img">
+              <img src="img/destaque2.png" alt="Cupcakes" />
+            </div>
+          </div>
+        </div>
+        <!-- Slide Donuts -->
+        <div class="swiper-slide" data-cat-link="donuts">
+          <div class="cat-hero">
+            <div class="ch-text">
+              <h3>Donuts Estilizados</h3>
+              <p>Com coberturas acetinadas que parecem saídas de um filme, nossos donuts unem textura perfeita a um
+                design retrô apaixonante.</p>
+              <div class="ch-deco">🍩 Um toque de nostalgia</div>
+            </div>
+            <div class="ch-img">
+              <img src="img/donut.png" alt="Donuts" />
+            </div>
+          </div>
+        </div>
+        <!-- Slide Chocolates -->
+        <div class="swiper-slide" data-cat-link="chocolates">
+          <div class="cat-hero">
+            <div class="ch-text">
+              <h3>Chocolates Belgas</h3>
+              <p>Bombons e trufas que são verdadeiras esculturas comestíveis, revelando camadas de sabor intenso com
+                ingredientes selecionados.</p>
+              <div class="ch-deco">🍫 Luxo artesanal</div>
+            </div>
+            <div class="ch-img">
+              <img src="img/chocolates.png" alt="Chocolates" />
+            </div>
+          </div>
+        </div>
+        <!-- Slide Tortas -->
+        <div class="swiper-slide" data-cat-link="tortas">
+          <div class="cat-hero">
+            <div class="ch-text">
+              <h3>Tortas Especiais</h3>
+              <p>Frutas frescas e cremes aveludados capturando a essência das confeitarias europeias tradicionais e o
+                toque artesanal Docevilla.</p>
+              <div class="ch-deco">🥧 Tradição e frescor</div>
+            </div>
+            <div class="ch-img">
+              <img src="https://images.unsplash.com/photo-1519915028121-7d3463d5b1ff?w=1000&q=80" alt="Tortas" />
+            </div>
+          </div>
+        </div>
+        <!-- Slide Kits -->
+        <div class="swiper-slide" data-cat-link="presentes">
+          <div class="cat-hero">
+            <div class="ch-text">
+              <h3>Presentes que Encantam</h3>
+              <p>Kits exclusivos reunidos em embalagens de luxo com fitas de cetim, perfeitos para transformar datas em
+                eventos inesquecíveis.</p>
+              <div class="ch-deco">🎁 Feito para presentear</div>
+            </div>
+            <div class="ch-img">
+              <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=1000&q=80" alt="Kits Presente" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Swiper Pagination (Subtle Hearts) -->
+      <div class="swiper-pagination cat-pagination"></div>
+    </div>
+
+    <!-- ===== SEARCH & FILTERS ===== -->
+    <div class="prod-filters reveal">
+      <div class="search-wrap">
+        <input type="text" id="smartSearch" placeholder="🔍 Busque por doce, ingrediente ou ocasião..." autocomplete="off">
+        <div id="searchSuggestions" class="search-suggestions"></div>
+      </div>
+
+      <div class="filter-controls">
+        <div class="filter-group">
+          <label>💰 Preço:</label>
+          <select id="filterPrice">
+            <option value="all">Todos</option>
+            <option value="0-100">Até R$ 100</option>
+            <option value="100-200">R$ 100 - R$ 200</option>
+            <option value="200+">Acima de R$ 200</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>💒 Ocasião:</label>
+          <select id="filterOccasion">
+            <option value="all">Todas</option>
+            <option value="aniversario">Aniversário</option>
+            <option value="casamento">Casamento</option>
+            <option value="cha">Chá de Bebê</option>
+            <option value="corporativo">Corporativo</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>🍃 Dietas:</label>
+          <select id="filterDiet">
+            <option value="all">Padrão</option>
+            <option value="vegano">Vegano</option>
+            <option value="sem-acucar">Sem Açúcar</option>
+            <option value="sem-lactose">Sem Lactose</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="prod-grid" id="prodGrid">
+
+      <!-- ══════════════════════════════════
+           🎂  BOLOS
+      ══════════════════════════════════ -->
+
+      <!-- Bolo rosa com chantilly, cereja e decoração vintage anos 50 -->
+      <article class="pcard reveal" data-cat="bolos">
+        <div class="pcard-img">
+          <img src="img/bolo3.png" alt="Bolo Vintage Cereja" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🎂 Bolos</span>
+          <h3>Bolo Vintage Cereja</h3>
+          <p>Inspirado nos anos 50 com massa de baunilha, chantilly artesanal e cerejas ao maraschino. Decorado com
+            laços vintage e rendas de açúcar feitas à mão.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 198 <em>/ unid.</em></span>
+            <button class="btn-pedir" onclick="addToCart('Bolo Vintage Cereja', 198, 'img/bolo3.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bolo formato coração rosa com mousse de morango e decoração vintage -->
+      <article class="pcard reveal rd1" data-cat="bolos" data-price="178" data-occasion="casamento" data-diet="sem-lactose" data-ingredients="Mousse de morango fresco, leite condensado zero lactose, farinha de amêndoas, ovos, manteiga de coco, corante natural de beterraba.">
+        <div class="pcard-img">
+          <img src="img/bolomorango2.png" alt="Bolo Coração Rosa" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🎂 Bolos</span>
+          <h3>Bolo Coração Rosa</h3>
+          <p>Formato coração com mousse de morango, ganache rosa e pétalas de açúcar. Decorado com corações dourados e
+            laço de fondant artesanal.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 178 <em>/ unid.</em></span>
+            <button class="btn-pedir" onclick="addToCart('Bolo Coração Rosa', 178, 'img/bolomorango2.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bolo floral aquarela com flores de buttercream pintadas à mão -->
+      <article class="pcard reveal rd2" data-cat="bolos" data-price="245" data-occasion="casamento" data-diet="padrao" data-ingredients="Massa de baunilha, coulis de framboesa, cream cheese, buttercream de merengue suíço, raspas de limão siciliano.">
+        <div class="pcard-img">
+          <img src="img/bolodevo.png" alt="Bolo Floral Aquarela" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🎂 Bolos</span>
+          <h3>Bolo Floral Aquarela</h3>
+          <p>Coberto com flores de buttercream pintadas em efeito aquarela vintage. Recheio de framboesa com creme de
+            cream cheese e toque de limão siciliano.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 245 <em>/ unid.</em></span>
+            <button class="btn-pedir" onclick="addToCart('Bolo Floral Aquarela', 245, 'img/bolodevo.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bolo de múltiplos andares decorado com decoração elaborada tipo carrossel -->
+      <article class="pcard reveal" data-cat="bolos">
+        <div class="pcard-img">
+          <img src="img/bolo4.png" alt="Bolo Carrossel Retrô" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🎂 Bolos</span>
+          <h3>Bolo Carrossel Retrô</h3>
+          <p>4 andares com tema carrossel vintage, cavalinhos de açúcar artesanais e faixas coloridas. Topo
+            personalizado com seu nome em letras douradas.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 320 <em>/ unid.</em></span>
+            <button class="btn-pedir" onclick="addToCart('Bolo Carrossel Retrô', 320, 'img/bolo4.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bolo red velvet chocolate belga com cobertura cream cheese e pérolas douradas -->
+      <article class="pcard reveal rd1" data-cat="bolos">
+        <div class="pcard-img">
+          <img src="img/bolo5.png" alt="Choco Velvet Retrô" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🎂 Bolos</span>
+          <h3>Choco Velvet Retrô</h3>
+          <p>Red velvet de chocolate belga com cobertura de cream cheese, arabescos de chocolate e pérolas comestíveis
+            douradas. Elegância em cada fatia.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 219 <em>/ unid.</em></span>
+            <button class="btn-pedir" onclick="addToCart('Choco Velvet Retrô', 219, 'img/bolo5.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bolo de limão siciliano com merengue italiano queimado, raspas cristalizadas -->
+      <article class="pcard reveal rd2" data-cat="bolos">
+        <div class="pcard-img">
+          <img src="img/bolo6.png" alt="Limão Siciliano Merengue" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🎂 Bolos</span>
+          <h3>Limão Siciliano Merengue</h3>
+          <p>Massa leve de limão siciliano com merengue italiano queimado artesanalmente. Raspas cristalizadas e flores
+            brancas de açúcar decoram o topo.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 189 <em>/ unid.</em></span>
+            <button class="btn-pedir" onclick="addToCart('Limão Siciliano Merengue', 189, 'img/bolo6.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════
+           🧁  CUPCAKES
+      ══════════════════════════════════ -->
+
+      <!-- Kit de cupcakes com cobertura pink estilo Paris vintage -->
+      <article class="pcard reveal" data-cat="cupcakes" data-price="120" data-occasion="cha" data-diet="padrao" data-ingredients="Massa amanteigada, chocolate belga, creme de avelã, extrato de baunilha, corantes alimentares premium.">
+        <div class="pcard-img">
+          <img src="img/cupcake.png" alt="Kit Paris Vintage" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🧁 Cupcakes</span>
+          <h3>Kit Paris Vintage</h3>
+          <p>12 cupcakes com decoração Torre Eiffel, flores de buttercream rosé e toppers personalizados. Recheios:
+            nutella, brigadeiro belga e morango.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 120 <em>/ kit 12</em></span>
+            <button class="btn-pedir" onclick="addToCart('Kit Paris Vintage', 120, 'img/cupcake.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cupcakes com rosas de buttercream estilo vintage, caixa com fita de cetim -->
+      <article class="pcard reveal rd1" data-cat="cupcakes">
+        <div class="pcard-img">
+          <img src="img/cupcake2.png" alt="Kit Rosas Retrô" loading="lazy" />
+          <span class="pbadge bd-new">🌸 Novidade</span>,StartLine:1,TargetContent:
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🧁 Cupcakes</span>
+          <h3>Kit Rosas Retrô</h3>
+          <p>6 cupcakes com rosas de buttercream vintage. Cada um com sabor diferente, em caixa com fita de cetim e
+            cartão caligrafia personalizado incluso.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 88 <em>/ kit 6</em></span>
+            <button class="btn-pedir" onclick="addToCart('Kit Rosas Retrô', 88, 'img/cupcake2.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cupcakes decorados com borboletas em wafer paper pintadas à mão -->
+      <article class="pcard reveal rd2" data-cat="cupcakes">
+        <div class="pcard-img">
+          <img src="img/cupcake3.png" alt="Kit Borboletas Vintage" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🧁 Cupcakes</span>
+          <h3>Kit Borboletas Vintage</h3>
+          <p>9 cupcakes com asas de borboleta individuais em wafer paper pintadas à mão. Buttercream de baunilha com
+            granulado pérola e arabesco dourado.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 115 <em>/ kit 9</em></span>
+            <button class="btn-pedir" onclick="addToCart('Kit Borboletas Vintage', 115, 'img/cupcake3.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cupcakes escuros com decoração de estrelas e luas de açúcar, pó dourado -->
+      <article class="pcard reveal" data-cat="cupcakes">
+        <div class="pcard-img">
+          <img src="img/cupcakeescuro.png" alt="Kit Noite Estrelada" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🧁 Cupcakes</span>
+          <h3>Kit Noite Estrelada</h3>
+          <p>12 cupcakes com luas e constelações de açúcar pintadas à mão com pó dourado comestível. Sabores escuros e
+            intensos para os apreciadores.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 135 <em>/ kit 12</em></span>
+            <button class="btn-pedir" onclick="addToCart('Kit Noite Estrelada', 135, 'img/cupcakeescuro.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cupcakes com flores, borboletas e joaninhas estilo jardim vintage -->
+      <article class="pcard reveal rd1" data-cat="cupcakes">
+        <div class="pcard-img">
+          <img src="img/cupcakess.png" alt="Kit Jardim Secreto" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🧁 Cupcakes</span>
+          <h3>Kit Jardim Secreto</h3>
+          <p>9 cupcakes decorados com flores, borboletas e joaninhas de açúcar estilo jardim vintage. Sabores de
+            lavanda, limão e baunilha francesa.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 105 <em>/ kit 9</em></span>
+            <button class="btn-pedir" onclick="addToCart('Kit Jardim Secreto', 105, 'img/cupcakess.png')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════
+           🍩  DONUTS
+      ══════════════════════════════════ -->
+
+      <!-- Donuts glaceados em pink e vermelho estilo retrô anos 50 -->
+      <article class="pcard reveal" data-cat="donuts" data-price="98" data-occasion="aniversario" data-diet="vegano" data-ingredients="Farinha de trigo orgânica, leite de amêndoas, óleo de coco, açúcar demerara, extrato de hibisco para o glacê.">
+        <div class="pcard-img">
+          <img src="img/donuts2.png" alt="Kit Retrô Pink"
+            loading="lazy" />
+          <span class="pbadge bd-dest">♥ Destaque</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🍩 Donuts</span>
+          <h3>Kit Retrô Pink</h3>
+          <p>12 donuts glaceados em tons rosas com granulado vintage, corações e sprinkles retrô. Massa artesanal
+            amanteigada com textura macia e deliciosa.</p>
+          <div class="pflavors"><span>🍓 Morango</span><span>🍦 Baunilha</span><span>🍒 Cereja</span></div>
+          <div class="pstars">★★★★★ <small>(167)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 98 <em>/ kit 12</em></span>
+            <button class="btn-pedir" onclick="addToCart('Kit Retrô Pink', 98, 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Donuts decorados com flores comestíveis reais e glacê pastel artesanal -->
+      <article class="pcard reveal rd1" data-cat="donuts">
+        <div class="pcard-img">
+          <img src="img/donuts3.png" alt="Kit Jardim Florido"
+            loading="lazy" />
+          <span class="pbadge bd-pop">♥ Floral</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🍩 Donuts</span>
+          <h3>Kit Jardim Florido</h3>
+          <p>6 donuts decorados com flores comestíveis reais e glacê artesanal em tons pastel. Cada donut tem decoração
+            floral única e exclusiva feita à mão.</p>
+          <div class="pflavors"><span>💜 Lavanda</span><span>🌸 Rosa</span><span>🍋 Limão</span></div>
+          <div class="pstars">★★★★★ <small>(89)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 72 <em>/ kit 6</em></span>
+            <button class="btn-pedir" onclick="addToCart('Kit Jardim Florido', 72, 'https://images.unsplash.com/photo-1527515637462-cff94ebb84ce?w=600&q=80')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Donuts cobertos com chocolate belga, pó dourado e drizzle bicolor -->
+      <article class="pcard reveal rd2" data-cat="donuts">
+        <div class="pcard-img">
+          <img src="img/donuts4.png" alt="Kit Chocolate Luxo"
+            loading="lazy" />
+          <span class="pbadge bd-new">♥ Premium</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🍩 Donuts</span>
+          <h3>Kit Chocolate Luxo</h3>
+          <p>9 donuts cobertos de chocolate belga, decorados com pó dourado comestível, transferências de chocolate
+            artesanal e drizzle bicolor sofisticado.</p>
+          <div class="pflavors"><span>🍫 Chocolate</span><span>☕ Café</span><span>🌰 Avelã</span></div>
+          <div class="pstars">★★★★★ <small>(122)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 115 <em>/ kit 9</em></span>
+            <button class="btn-pedir" onclick="addToCart('Kit Chocolate Luxo', 115, 'https://images.unsplash.com/photo-1556040220-4096d522378d?w=600&q=80')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Donuts coloridos com glacê arco-íris tons pastel estilo vintage galático -->
+      <article class="pcard reveal" data-cat="donuts">
+        <div class="pcard-img">
+          <img src="img/donuts5.png" alt="Kit Arco-Íris Vintage"
+            loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🍩 Donuts</span>
+          <h3>Kit Arco-Íris Vintage</h3>
+          <p>12 donuts com glacê em arco-íris de tons pastel e decoração galática retrô. Massa macia recheada com creme
+            de baunilha e compota de frutas frescas.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 108 <em>/ kit 12</em></span>
+            <button class="btn-pedir" onclick="addToCart('Kit Arco-Íris Vintage', 108, 'https://images.unsplash.com/photo-1514517604298-cf80e0fb7f1e?w=600&q=80')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Donuts temáticos personalizados para festas com glacê artesanal e sprinkles -->
+      <article class="pcard reveal rd1" data-cat="donuts">
+        <div class="pcard-img">
+          <img src="img/donuts6.png"
+            alt="Kit Festivo Personalizado" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat">🍩 Donuts</span>
+          <h3>Kit Festivo Personalizado</h3>
+          <p>6 donuts personalizados com decoração temática para qualquer festa. Glacê artesanal exclusivo e toppers de
+            wafer paper pintados à mão.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 68 <em>/ kit 6</em></span>
+            <button class="btn-pedir" onclick="addToCart('Kit Festivo Personalizado', 68, 'https://images.unsplash.com/photo-1631206753348-db44968fd440?w=600&q=80')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════
+             CHOCOLATES
+      ══════════════════════════════════ -->
+
+      <!-- Caixa forrada com seda e 16 bombons de chocolate belga assortidos -->
+      <article class="pcard reveal" data-cat="chocolates">
+        <div class="pcard-img">
+          <img src="img/chocolates1.png" alt="Caixa de Bombons Retrô"
+            loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Chocolates</span>
+          <h3>Caixa de Bombons Retrô</h3>
+          <p>16 bombons de chocolate belga em caixa vintage forrada de seda. Recheios de ganache, caramelo, pistache,
+            maracujá e framboesa. Exclusividade pura.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 145 <em>/ cx 16</em></span>
+            <button class="btn-pedir" onclick="addToCart('Caixa de Bombons Retrô', 145, 'https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600&q=80')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Morangos belgas cobertos com chocolate branco e amargo, pó dourado e pistache -->
+      <article class="pcard reveal rd1" data-cat="chocolates">
+        <div class="pcard-img">
+          <img src="img/chocolates2.png"
+            alt="Morangos com Chocolate" loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Chocolates</span>
+          <h3>Morangos com Chocolate</h3>
+          <p>12 morangos belgas cobertos com chocolate branco e meio amargo, decorados com drizzle, pó dourado
+            comestível e pistache triturado artesanalmente.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 89 <em>/ cx 12</em></span>
+            <button class="btn-pedir" onclick="addToCart('Morangos com Chocolate', 89, 'https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&q=80')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Barras de chocolate artesanal com sal marinho, nozes, frutas e flores -->
+      <article class="pcard reveal rd2" data-cat="chocolates">
+        <div class="pcard-img">
+          <img src="img/chocolates3.png" alt="Tabletes Artesanais"
+            loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Chocolates</span>
+          <h3>Tabletes Artesanais</h3>
+          <p>4 barras artesanais com inclusions premium: sal marinho, frutas secas, nozes e flores comestíveis. Embrulho
+            em papel kraft com lacre de cera vintage.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 112 <em>/ kit 4</em></span>
+            <button class="btn-pedir" onclick="addToCart('Tabletes Artesanais', 112, 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&q=80')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Trufas envoltas em pó ouro comestível em caixinha veludo retrô com cetim -->
+      <article class="pcard reveal" data-cat="chocolates">
+        <div class="pcard-img">
+          <img src="img/chocolates4.png" alt="Trufas Douradas"
+            loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Chocolates</span>
+          <h3>Trufas Douradas</h3>
+          <p>12 trufas envoltas em pó dourado comestível, cada uma com recheio diferente. Apresentadas em caixinha de
+            veludo com laço e fita de cetim retrô.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 165 <em>/ cx 12</em></span>
+            <button class="btn-pedir" onclick="addToCart('Trufas Douradas', 165, 'https://images.unsplash.com/photo-1511381939415-e44571765e30?w=600&q=80')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Brigadeiros gourmet de pistache, fromage, sal himalaia e laranjeira -->
+      <article class="pcard reveal rd1" data-cat="chocolates">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Brigadeiros de Luxo"
+            loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Chocolates</span>
+          <h3>Brigadeiros de Luxo</h3>
+          <p>20 brigadeiros gourmet em sabores únicos: fromage blanc, pistache italiano, sal do Himalaia e flor de
+            laranjeira. Cobertura de granulado belga artisanal.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 135 <em>/ cx 20</em></span>
+            <button class="btn-pedir" onclick="addToCart('Brigadeiros de Luxo', 135, 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80')">Adicionar ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Caixa coração com bombons, trufas e morangos cobertos para datas especiais -->
+      <article class="pcard reveal rd2" data-cat="chocolates">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1582716401301-b2407dc7563d?w=600&q=80" alt="Caixa Coração Luxo"
+            loading="lazy" />
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Chocolates</span>
+          <h3>Caixa Coração Luxo</h3>
+          <p>Caixa em forma de coração com bombons, trufas e morangos cobertos organizados artisticamente. Perfeita para
+            datas comemorativas e declarações de amor.</p>
+
+          <div class="pfoot">
+            <span class="pprice">R$ 198 <em>/ unid.</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════
+             TORTAS
+      ══════════════════════════════════ -->
+
+      <!-- Torta com massa sablée, creme de baunilha e morangos frescos em espiral -->
+      <article class="pcard reveal" data-cat="tortas">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80" alt="Torta Morango Vintage"
+            loading="lazy" />
+          <span class="pbadge bd-dest"> Clássica</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Tortas</span>
+          <h3>Torta Morango Vintage</h3>
+          <p>Massa sablée, creme de baunilha francesa, morangos frescos em espiral e glaze espelhado rosê. Estética de
+            vitrine parisiense dos anos 50.</p>
+          <div class="pflavors"><span> Morango</span><span>Baunilha</span><span> Creme</span></div>
+          <div class="pstars">★★★★★ <small>(156)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 138 <em>/ unid.</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Torta floresta negra com camadas de chocolate, chantilly e cerejas maraschino -->
+      <article class="pcard reveal rd1" data-cat="bolos" data-price="198" data-occasion="aniversario" data-diet="padrao" data-ingredients="Farinha de trigo premium, açúcar refinado, ovos caipiras, manteiga sem sal, extrato de baunilha, chantilly artesanal, cerejas maraschino frescas.">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1488900128323-21503983d706?w=600&q=80" alt="Torta Floresta Negra"
+            loading="lazy" />
+          <span class="pbadge bd-pop"> Favorita</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Tortas</span>
+          <h3>Torta Floresta Negra</h3>
+          <p>Camadas de chocolate, chantilly e cerejas ao maraschino, decorada com arabescos de chocolate belga amargo e
+            raspas. Sabor clássico inesquecível.</p>
+          <div class="pflavors"><span> Chocolate</span><span> Cereja</span><span> Chantilly</span></div>
+          <div class="pstars">★★★★★ <small>(201)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 165 <em>/ unid.</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Torta de limão siciliano com merengue italiano queimado na hora -->
+      <article class="pcard reveal rd2" data-cat="tortas">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1519915028121-7d3463d5b1ff?w=600&q=80" alt="Torta Limão Merengue"
+            loading="lazy" />
+          <span class="pbadge bd-new"> Novidade</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Tortas</span>
+          <h3>Torta Limão Merengue</h3>
+          <p>Massa folhada crocante, curd de limão siciliano e merengue italiano queimado na hora. Raspas cristalizadas
+            e flores brancas de açúcar finalizam.</p>
+          <div class="pflavors"><span> Limão</span><span> Merengue</span><span> Floral</span></div>
+          <div class="pstars">★★★★★ <small>(134)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 149 <em>/ unid.</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Torta americana de maçã com açúcar mascavo, canela e crosta trançada artesanal -->
+      <article class="pcard reveal" data-cat="tortas">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1568571780765-9f7c6f840e66?w=600&q=80" alt="Maçã e Canela Vintage"
+            loading="lazy" />
+          <span class="pbadge bd-dest"> Tradicional</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Tortas</span>
+          <h3>Maçã & Canela Vintage</h3>
+          <p>Maçãs caramelizadas no açúcar mascavo, canela em pó e crosta amanteigada decorada com trança artesanal
+            rústica. Sabor de vovó com toque gourmet.</p>
+          <div class="pflavors"><span> Maçã</span><span> Canela</span><span> Caramelo</span></div>
+          <div class="pstars">★★★★★ <small>(175)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 129 <em>/ unid.</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Torta tropical de coco e maracujá com gelatina espelhada dourada -->
+      <article class="pcard reveal rd1" data-cat="tortas">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Torta Coco e Maracujá"
+            loading="lazy" />
+          <span class="pbadge bd-pop"> Tropical</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Tortas</span>
+          <h3>Torta Coco & Maracujá</h3>
+          <p>Massa de coco com mousse de maracujá, finalizada com gelatina espelhada dourada e flores tropicais de
+            açúcar. Equilíbrio perfeito entre doce e ácido.</p>
+          <div class="pflavors"><span> Coco</span><span> Maracujá</span><span> Tropical</span></div>
+          <div class="pstars">★★★★★ <small>(87)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 158 <em>/ unid.</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══════════════════════════════════
+             PARA PRESENTEAR
+      ══════════════════════════════════ -->
+
+      <!-- Cesta de vime com cupcakes, bombons, barra de chocolate e geleia gourmet -->
+      <article class="pcard reveal" data-cat="presentes">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&q=80" alt="Cesta Vintage Completa"
+            loading="lazy" />
+          <span class="pbadge bd-dest"> Destaque</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Kits Presente</span>
+          <h3>Cesta Vintage Completa</h3>
+          <p>Cesta de vime decorada com 6 cupcakes, 12 bombons, barra de chocolate, geleia gourmet e cartão caligrafia
+            personalizado. Embalagem luxo lacrada.</p>
+          <div class="pflavors"><span> Cupcakes</span><span> Chocolates</span><span> Geleia</span></div>
+          <div class="pstars">★★★★★ <small>(223)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 285 <em>/ kit</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Combo romântico: caixa coração, morangos cobertos, cupcakes de rosas e cartão -->
+      <article class="pcard reveal rd1" data-cat="presentes">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Kit Amor e Doçura"
+            loading="lazy" />
+          <span class="pbadge bd-pop">♥ Favorito</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Kits Presente</span>
+          <h3>Kit Amor & Doçura</h3>
+          <p>Combo romântico: caixa coração com bombons, 6 morangos cobertos, 4 cupcakes de rosas e cartão caligrafia.
+            Para o dia dos namorados e datas especiais.</p>
+          <div class="pflavors"><span> Morango</span><span> Cupcakes</span><span> Bombons</span></div>
+          <div class="pstars">★★★★★ <small>(189)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 230 <em>/ kit</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Kit dia das mães: mini bolo, trufas douradas, chá floral e caixa vintage veludo -->
+      <article class="pcard reveal rd2" data-cat="presentes">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1607478900766-efe13248b125?w=600&q=80" alt="Kit Mãe Rainha"
+            loading="lazy" />
+          <span class="pbadge bd-new"> Novidade</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Kits Presente</span>
+          <h3>Kit Mãe Rainha</h3>
+          <p>Mini bolo (15cm) personalizado, trufas douradas, chá de flores premium e flor de açúcar artesanal.
+            Embalagem em caixa floral vintage com laço de veludo.</p>
+          <div class="pflavors"><span> Mini Bolo</span><span> Trufas</span><span> Chá</span></div>
+          <div class="pstars">★★★★★ <small>(145)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 320 <em>/ kit</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Kit completo de festa: cupcakes, bolo smash, brigadeiros e donuts -->
+      <article class="pcard reveal" data-cat="presentes">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b19b?w=600&q=80" alt="Kit Festa Surpresa"
+            loading="lazy" />
+          <span class="pbadge bd-dest">♥ Destaque</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Kits Presente</span>
+          <h3>Kit Festa Surpresa</h3>
+          <p>Para festas completas: 12 cupcakes temáticos, 1 bolo smash, 20 brigadeiros e 1 box de donuts. Inclui
+            decoração vintage para mesa de doces completa.</p>
+          <div class="pflavors"><span> Cupcakes</span><span> Bolo</span><span> Donuts</span></div>
+          <div class="pstars">★★★★★ <small>(98)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 450 <em>/ kit</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mini kit compacto: cupcakes, bombons e morangos em caixinha vintage com laço -->
+      <article class="pcard reveal rd1" data-cat="presentes">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1423515959295-f76e34a16c74?w=600&q=80" alt="Mini Kit Carinho"
+            loading="lazy" />
+          <span class="pbadge bd-pop">♥ Favorito</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Kits Presente</span>
+          <h3>Mini Kit Carinho</h3>
+          <p>4 cupcakes, 8 bombons e 2 morangos cobertos em caixinha de papelão vintage lacrada com laço de cetim.
+            Compacto, lindo e irresistível como presente.</p>
+          <div class="pflavors"><span> Cupcakes</span><span> Bombons</span><span> Morango</span></div>
+          <div class="pstars">★★★★★ <small>(267)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 118 <em>/ kit</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Kit de noivado premium: bolo 2 andares, bombons e gravura dos nomes em chocolate -->
+      <article class="pcard reveal rd2" data-cat="presentes">
+        <div class="pcard-img">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80" alt="Kit Noivado Luxo"
+            loading="lazy" />
+          <span class="pbadge bd-new"> Novidade</span>
+          <button class="pheart" onclick="toggleHeart(this)" aria-label="Favoritar">♡</button>
+        </div>
+        <div class="pcard-body">
+          <span class="pcat"> Kits Presente</span>
+          <h3>Kit Noivado Luxo</h3>
+          <p>Bolo de noivado em 2 andares, 12 bombons de luxo em veludo, champagne de maçã e gravura dos nomes em
+            chocolate branco belga. Memória eterna.</p>
+          <div class="pflavors"><span> Bolo</span><span> Bombons</span><span> Champagne</span></div>
+          <div class="pstars">★★★★★ <small>(74)</small></div>
+          <div class="pfoot">
+            <span class="pprice">R$ 580 <em>/ kit</em></span>
+            <button class="btn-pedir"
+              onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir ♥</button>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /prod-grid -->
+    <div class="div-ornamental"><span>♥ ♥ ♥</span></div>
+  </section>
+
+  <!-- ===== SOBRE NÓS (EXPANDIDO) ===== -->
+  <section class="sobre lace-bg" id="sobre">
+    <div class="lace-divider" style="position: absolute; top: 0; transform: rotate(180deg);"></div>
+    
+    <div class="sec-header reveal" style="padding-top: 3rem;">
+      <p class="sec-label">♥ Sobre Nós ♥</p>
+      <h2><span class="fleuron">❧</span> Nossa <em>Essência</em> <span class="fleuron">☙</span></h2>
+      <p>Criando conexões emocionais através de sabores inesquecíveis.</p>
+    </div>
+
+    <!-- 4.1 História -->
+    <div class="sobre-inner">
+      <div class="sobre-visual reveal">
+        <div class="sv-main">
+          <img src="https://images.unsplash.com/photo-1616690248015-ced1fba71f1a?w=600&q=80" alt="Confeitaria Docevilla" loading="lazy" />
+        </div>
+        <div class="sv-sm sv-top">
+          <img src="https://images.unsplash.com/photo-1590577976322-3cec97a7084b?w=300&q=80" alt="Cupcakes artesanais" loading="lazy" />
+        </div>
+        <div class="sv-sm sv-bot">
+          <img src="https://images.unsplash.com/photo-1536657010-2157a7bc52b3?w=300&q=80" alt="Doces artesanais" loading="lazy" />
+        </div>
+        <div class="sv-deco1">♥</div>
+        <div class="sv-deco2">♥</div>
+      </div>
+      <div class="sobre-content reveal rd2">
+        <p class="sec-label">♥ 4.1 História ♥</p>
+        <h2><span class="fleuron">❧</span> Origem e <em>Inspiração</em> <span class="fleuron">☙</span></h2>
+        <p>A Docevilla nasceu em 2016, fruto do sonho de resgatar a doçura dos tempos de outrora. O que começou como uma pequena produção na cozinha de casa, inspirada nos cadernos de receitas da avó, floresceu em um ateliê que é referência em estética e sabor.</p>
+        <p>Nossa maior inspiração é a beleza das confeitarias parisienses dos anos 50, traduzida em doces com alma e repletos de memórias afetivas.</p>
+        <div class="sobre-items">
+          <div class="si reveal">
+            <div class="si-icon"></div>
+            <div><strong>Ingredientes Reais</strong><p>Farinha premium, ovos caipiras e manteiga pura.</p></div>
+          </div>
+          <div class="si reveal">
+            <div class="si-icon"></div>
+            <div><strong>Arte Comestível</strong><p>Pintura à mão e decoração artística exclusiva.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4.2 Missão, Visão, Valores -->
+    <div class="sec-header reveal" style="margin-top: 5rem;">
+      <p class="sec-label">♥ 4.2 Nosso Propósito ♥</p>
+      <h2>Missão, Visão e <em>Valores</em></h2>
+    </div>
+    <div class="mvv-grid reveal">
+      <div class="mvv-card">
+        <div class="mvv-icon"></div>
+        <h3>Missão</h3>
+        <p>Transformar momentos especiais em memórias inesquecíveis através da confeitaria artística e afetiva, criando conexões reais com cada cliente.</p>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-icon">♥</div>
+        <h3>Visão</h3>
+        <p>Ser a maior referência em confeitaria vintage e personalizada do país, encantando o mundo com doces que unem tradição e estética impecável.</p>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-icon">♥</div>
+        <h3>Valores</h3>
+        <p>Qualidade inegociável, ética em cada processo, trabalho artesanal autêntico, transparência e amor absoluto nos mínimos detalhes.</p>
+      </div>
+    </div>
+
+    <!-- 4.3 Bastidores -->
+    <div class="kitchen-gallery reveal" style="margin-top: 5rem;">
+      <div class="sec-header">
+        <p class="sec-label">♥ 4.3 Bastidores ♥</p>
+        <h2>A <em>Arte</em> da Produção</h2>
+        <p>Nosso processo é 100% artesanal, onde a mágica acontece longe das máquinas industriais.</p>
+      </div>
+      <div class="kg-grid">
+        <div class="kg-item">
+          <img src="https://images.unsplash.com/photo-1556216790-6449a212354c?w=600&q=80" alt="Nossa Cozinha" loading="lazy">
+          <div class="kg-overlay"><span>O Ateliê</span></div>
+        </div>
+        <div class="kg-item">
+          <img src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=600&q=80" alt="Produção Artesanal" loading="lazy">
+          <div class="kg-overlay"><span>Preparo Manual</span></div>
+        </div>
+        <div class="kg-item">
+          <img src="https://images.unsplash.com/photo-1510832198440-a52376950479?w=600&q=80" alt="Decoração e Finalização" loading="lazy">
+          <div class="kg-overlay"><span>Decoração com Amor</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4.4 Equipe -->
+    <div class="equipe-section reveal" style="margin-top: 5rem; margin-bottom: 2rem;">
+      <div class="sobre-inner" style="flex-direction: row-reverse;">
+        <div class="sobre-visual reveal rd1">
+          <div class="sv-main" style="border-radius: var(--r-full) var(--r-full) 0 0;">
+            <img src="https://images.unsplash.com/photo-1581615438101-717088716503?w=600&q=80" alt="Confeiteira Isabela Melo" loading="lazy" />
+          </div>
+          <div class="sv-deco1" style="left: -20px; right: auto;">♥</div>
+          <div class="sv-deco2" style="left: 10px; right: auto;">♥</div>
+        </div>
+        <div class="sobre-content reveal">
+          <p class="sec-label">♥ 4.4 Equipe ♥</p>
+          <h2>Conheça quem faz a <em>magia</em></h2>
+          <p>Liderada pela Chef Confeiteira Isabela Melo, nossa equipe é formada por apaixonadas pela confeitaria clássica. Trabalhamos como uma verdadeira família, onde confeiteiros, decoradores e atendentes compartilham o mesmo brilho no olhar a cada bolo finalizado. É essa energia contagiante que torna cada doce tão especial e repleto de afeto.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-ornamental"><span>♥ ♥ ♥</span></div>
+  </section>
+
+  <!-- ===== MONTE SEU BOLO (WIZARD INTERATIVO) ===== -->
+  <section class="monte-bolo reveal" id="wizard">
+    <div class="sec-header">
+      <p class="sec-label">♥ Módulo Exclusivo ♥</p>
+      <h2>Monte Seu Bolo <em>Personalizado</em></h2>
+      <p>Crie o bolo dos seus sonhos passo a passo e veja a mágica acontecer.</p>
+    </div>
+
+    <div class="wizard-container">
+      
+      <!-- LADO ESQUERDO: CONTROLES DO WIZARD -->
+      <div class="wizard-left">
+        <div class="w-progress-container">
+          <div class="w-progress-bar" id="wProgressBar" style="width: 14.28%;"></div>
+          <div class="wizard-progress">
+            <div class="wp-step active" data-step="1" title="Tamanho"><span>1</span><small>Tamanho</small></div>
+            <div class="wp-step" data-step="2" title="Massa"><span>2</span><small>Massa</small></div>
+            <div class="wp-step" data-step="3" title="Recheio"><span>3</span><small>Recheio</small></div>
+            <div class="wp-step" data-step="4" title="Cobertura"><span>4</span><small>Cobertura</small></div>
+            <div class="wp-step" data-step="5" title="Decoração"><span>5</span><small>Decoração</small></div>
+            <div class="wp-step" data-step="6" title="Detalhes"><span>6</span><small>Detalhes</small></div>
+            <div class="wp-step" data-step="7" title="Resumo"><span>7</span><small>Resumo</small></div>
+          </div>
+        </div>
+
+        <div class="wizard-steps">
+          
+          <!-- ETAPA 1: TAMANHO -->
+          <div class="w-step-pane active" id="wStep1">
+            <h3>1. Tamanho do Bolo</h3>
+            <p>Escolha o rendimento ideal para a sua celebração.</p>
+            <div class="w-grid w-grid-3">
+              <div class="w-card" onclick="selectWizardOption('tamanho', 'Pequeno', 80, this)">
+                <div class="wc-icon"></div>
+                <h4>Pequeno</h4>
+                <span>6 a 8 pessoas</span>
+                <strong>R$ 80,00</strong>
+              </div>
+              <div class="w-card" onclick="selectWizardOption('tamanho', 'Médio', 120, this)">
+                <div class="wc-icon"></div>
+                <h4>Médio</h4>
+                <span>10 a 15 pessoas</span>
+                <strong>R$ 120,00</strong>
+              </div>
+              <div class="w-card" onclick="selectWizardOption('tamanho', 'Grande', 180, this)">
+                <div class="wc-icon"></div>
+                <h4>Grande</h4>
+                <span>20+ pessoas</span>
+                <strong>R$ 180,00</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- ETAPA 2: MASSA -->
+          <div class="w-step-pane" id="wStep2">
+            <h3>2. Sabor da Massa</h3>
+            <p>O coração do seu bolo. Selecione uma opção.</p>
+            <div class="w-grid w-grid-2">
+              <div class="w-card" onclick="selectWizardOption('massa', 'Baunilha', 0, this, '#fffacd')">
+                <h4>Baunilha Clássica</h4>
+                <span>Aroma suave e fofinha</span>
+              </div>
+              <div class="w-card" onclick="selectWizardOption('massa', 'Chocolate', 0, this, '#3e2723')">
+                <h4>Chocolate Belga</h4>
+                <span>Derrete na boca</span>
+              </div>
+              <div class="w-card" onclick="selectWizardOption('massa', 'Red Velvet', 10, this, '#8b0000')">
+                <h4>Red Velvet</h4>
+                <span>O clássico veludo vermelho</span>
+                <strong class="w-add">+ R$ 10,00</strong>
+              </div>
+              <div class="w-card" onclick="selectWizardOption('massa', 'Amanteigada', 0, this, '#ffe4b5')">
+                <h4>Amanteigada</h4>
+                <span>Saborosa e estruturada</span>
+              </div>
+              <div class="w-card" onclick="selectWizardOption('massa', 'Integral', 8, this, '#d2b48c')">
+                <h4>Integral com Maçã</h4>
+                <span>Leve e saudável</span>
+                <strong class="w-add">+ R$ 8,00</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- ETAPA 3: RECHEIO -->
+          <div class="w-step-pane" id="wStep3">
+            <h3>3. Recheios</h3>
+            <p>Escolha até 2 opções. (Selecionar 2 recheios adiciona +R$10)</p>
+            <div class="w-list">
+              <label class="w-check-card">
+                <input type="checkbox" name="w_recheio" value="Brigadeiro" data-price="0" onchange="handleRecheio(this)">
+                <span>Brigadeiro Gourmet</span>
+              </label>
+              <label class="w-check-card">
+                <input type="checkbox" name="w_recheio" value="Beijinho" data-price="0" onchange="handleRecheio(this)">
+                <span>Beijinho Cremoso</span>
+              </label>
+              <label class="w-check-card">
+                <input type="checkbox" name="w_recheio" value="Doce de Leite" data-price="0" onchange="handleRecheio(this)">
+                <span>Doce de Leite Artesanal</span>
+              </label>
+              <label class="w-check-card">
+                <input type="checkbox" name="w_recheio" value="Ninho com Nutella" data-price="15" onchange="handleRecheio(this)">
+                <span>Ninho com Nutella <strong class="w-add">+ R$ 15,00</strong></span>
+              </label>
+              <label class="w-check-card">
+                <input type="checkbox" name="w_recheio" value="Morango Fresco" data-price="10" onchange="handleRecheio(this)">
+                <span>Morango Fresco <strong class="w-add">+ R$ 10,00</strong></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- ETAPA 4: COBERTURA -->
+          <div class="w-step-pane" id="wStep4">
+            <h3>4. Cobertura Externa</h3>
+            <p>O acabamento perfeito para o seu doce.</p>
+            <div class="w-grid w-grid-2">
+              <div class="w-card" onclick="selectWizardOption('cobertura', 'Chantilly', 0, this)">
+                <h4>Chantilly</h4>
+                <span>Leve e delicado</span>
+              </div>
+              <div class="w-card" onclick="selectWizardOption('cobertura', 'Buttercream', 10, this)">
+                <h4>Buttercream</h4>
+                <span>Liso e impecável</span>
+                <strong class="w-add">+ R$ 10,00</strong>
+              </div>
+              <div class="w-card" onclick="selectWizardOption('cobertura', 'Ganache', 15, this)">
+                <h4>Ganache Blend</h4>
+                <span>Chocolate nobre e brilhante</span>
+                <strong class="w-add">+ R$ 15,00</strong>
+              </div>
+              <div class="w-card" onclick="selectWizardOption('cobertura', 'Pasta Americana', 20, this)">
+                <h4>Pasta Americana</h4>
+                <span>Para decorações precisas</span>
+                <strong class="w-add">+ R$ 20,00</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- ETAPA 5: DECORAÇÃO -->
+          <div class="w-step-pane" id="wStep5">
+            <h3>5. Decoração e Extras</h3>
+            <p>Dê vida e personalidade ao seu bolo.</p>
+            
+            <div class="w-sub">
+              <h4>Estilo do Bolo</h4>
+              <div class="w-grid w-grid-2">
+                <div class="w-card w-card-sm" onclick="selectWizardOption('estilo', 'Simples', 0, this)">Simples</div>
+                <div class="w-card w-card-sm" onclick="selectWizardOption('estilo', 'Elegante', 20, this)">Elegante <span class="w-add">+R$20</span></div>
+                <div class="w-card w-card-sm" onclick="selectWizardOption('estilo', 'Temático', 30, this)">Temático <span class="w-add">+R$30</span></div>
+                <div class="w-card w-card-sm" onclick="selectWizardOption('estilo', 'Infantil', 0, this)">Infantil</div>
+              </div>
+            </div>
+
+            <div class="w-sub">
+              <h4>Cor Principal da Cobertura</h4>
+              <div class="w-colors">
+                <div class="w-color-btn active" style="background:#ffffff" onclick="selectWizardColor('#ffffff', this)" title="Branco"></div>
+                <div class="w-color-btn" style="background:#f8bbd0" onclick="selectWizardColor('#f8bbd0', this)" title="Rosa"></div>
+                <div class="w-color-btn" style="background:#b3e5fc" onclick="selectWizardColor('#b3e5fc', this)" title="Azul Claro"></div>
+                <div class="w-color-btn" style="background:#c8e6c9" onclick="selectWizardColor('#c8e6c9', this)" title="Verde Claro"></div>
+                <div class="w-color-btn" style="background:#fff9c4" onclick="selectWizardColor('#fff9c4', this)" title="Amarelo Claro"></div>
+                <div class="w-color-btn" style="background:#3e2723" onclick="selectWizardColor('#3e2723', this)" title="Chocolate"></div>
+              </div>
+            </div>
+
+            <div class="w-sub">
+              <h4>Extras (Opcionais)</h4>
+              <label class="w-check-card sm"><input type="checkbox" name="w_extras" value="Flores" data-price="10" onchange="handleExtras()"> Flores Comestíveis <span class="w-add">+R$ 10,00</span></label>
+              <label class="w-check-card sm"><input type="checkbox" name="w_extras" value="Frutas" data-price="12" onchange="handleExtras()"> Frutas Vermelhas <span class="w-add">+R$ 12,00</span></label>
+              <label class="w-check-card sm"><input type="checkbox" name="w_extras" value="Confeitos" data-price="8" onchange="handleExtras()"> Confeitos Especiais <span class="w-add">+R$ 8,00</span></label>
+              <label class="w-check-card sm"><input type="checkbox" name="w_extras" value="Personagens" data-price="20" onchange="handleExtras()"> Personagens (Topo) <span class="w-add">+R$ 20,00</span></label>
+            </div>
+          </div>
+
+          <!-- ETAPA 6: PERSONALIZAÇÃO FINAL -->
+          <div class="w-step-pane" id="wStep6">
+            <h3>6. Toques Finais</h3>
+            <p>Seja específico para que saia exatamente como imaginou.</p>
+            <div class="w-form">
+              <div class="c-field full">
+                <label>Nome no Bolo (Topo)</label>
+                <input type="text" id="wNome" placeholder="Ex: Maria" maxlength="20" onchange="updateWizardState()">
+              </div>
+              <div class="c-field full">
+                <label>Idade / Número (Topo)</label>
+                <input type="number" id="wIdade" placeholder="Ex: 30" min="1" max="150" onchange="updateWizardState()">
+              </div>
+              <div class="c-field full">
+                <label>Mensagem ou Detalhes Específicos</label>
+                <textarea id="wMensagem" placeholder="Ex: Gostaria de bastante brilho..." maxlength="200" onchange="updateWizardState()"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- ETAPA 7: REVISÃO -->
+          <div class="w-step-pane" id="wStep7">
+            <h3>7. Revisão do Pedido</h3>
+            <p>Confira se tudo está correto antes de enviar para nós.</p>
+            <div class="w-summary-box" id="wSummaryContent">
+              <!-- Gerado via JS -->
+            </div>
+            <div class="w-disclaimer">
+              <p>⏳ <strong>Prazo de Produção:</strong> Mínimo de 3 dias úteis. Confirmação mediante disponibilidade de agenda.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="wizard-nav">
+          <div class="w-nav-left">
+            <button class="btn-w-nav btn-outline" id="btnWPrev" onclick="navWizard(-1)" style="display: none;">Voltar</button>
+          </div>
+          <div class="w-nav-right">
+            <span class="w-nav-total" id="wNavTotal">Total: R$ 0,00</span>
+            <button class="btn-w-nav" id="btnWNext" onclick="navWizard(1)">Próximo Passo ♥</button>
+            <button class="btn-cro primary" id="btnWFinish" onclick="finishWizard()" style="display: none;">📦 Finalizar Orçamento</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="div-ornamental"><span>♥ ♥ ♥</span></div>
+  </section>
+
+  <!-- ===== ASSINATURA DOCEVILLA ===== -->
+  <section class="assinatura lace-bg reveal" id="assinatura">
+    <div class="assinatura-inner">
+      <div class="ass-text">
+        <p class="sec-label">♥ Clube de Vantagens ♥</p>
+        <h2>Assinatura <em>DoceVilla</em></h2>
+        <p>Receba uma caixa misteriosa de doces exclusivos todo mês na sua porta. Prioridade em encomendas e brindes artesanais.</p>
+        <ul class="ass-features">
+          <li>12 Doces Variados por mês</li>
+          <li>Frete Grátis em todas as compras</li>
+          <li>Brinde exclusivo de aniversário</li>
+          <li>Acesso antecipado a novos sabores</li>
+        </ul>
+        <div class="ass-price">
+          <span>R$ 89,90 <em>/ mês</em></span>
+          <button class="btn-primary">Assinar Agora ♥</button>
+        </div>
+      </div>
+      <div class="ass-img">
+        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80" alt="Caixa de Assinatura" loading="lazy">
+      </div>
+    </div>
+    <div class="div-ornamental"><span>♥ ♥ ♥</span></div>
+  </section>
+
+  <!-- ===== DOCEMOMENTOS (GALERIA DE CLIENTES) ===== -->
+  <section class="galeria-clientes reveal" id="galeria">
+    <div class="sec-header">
+      <p class="sec-label">♥ #DoceMomentos ♥</p>
+      <h2>Histórias reais, <em>vidas adoçadas</em></h2>
+    </div>
+    <div class="gc-grid">
+      <div class="gc-item">
+        <img src="https://images.unsplash.com/photo-1464347601390-25e2842a37f7?w=400&q=80" alt="Cliente 1">
+        <div class="gc-tag">@marina_doces</div>
+      </div>
+      <div class="gc-item">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80" alt="Cliente 2">
+        <div class="gc-tag">@pedro_viana</div>
+      </div>
+      <div class="gc-item">
+        <img src="https://images.unsplash.com/photo-1558961363-fa4f0c5f6244?w=400&q=80" alt="Cliente 3">
+        <div class="gc-tag">@bia_festas</div>
+      </div>
+      <div class="gc-item">
+        <img src="https://images.unsplash.com/photo-1481391243133-f96216d51df7?w=400&q=80" alt="Cliente 4">
+        <div class="gc-tag">@casal_vintage</div>
+      </div>
+    </div>
+    <div class="div-ornamental"><span>♥ ♥ ♥</span></div>
+  </section>
+
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section class="depoimentos lace-bg" id="depoimentos">
+    <div class="sec-header reveal">
+      <p class="sec-label">♥ Depoimentos ♥</p>
+      <h2>O que nossos clientes <em>dizem</em></h2>
+    </div>
+    <div class="dep-grid">
+      <div class="dep-card reveal">
+        <div class="dq">❝</div>
+
+        <p>"O bolo de casamento foi simplesmente perfeito! A decoração vintage era exatamente o que sempre sonhamos.
+          Todos os convidados ficaram completamente encantados!"</p>
+        <div class="dauthor">
+          <div class="dav">M</div>
+          <div><strong>Marina & Pedro</strong><small>Casamento, Março 2025</small></div>
+        </div>
+      </div>
+      <div class="dep-card reveal rd1">
+        <div class="dq">❝</div>
+
+        <p>"Os donuts vintage são uma obra de arte! Pedi para o aniversário da minha filha e foi o hit da festa. As
+          pessoas pediam pra não comer de tão lindos!"</p>
+        <div class="dauthor">
+          <div class="dav">A</div>
+          <div><strong>Ana Paula F.</strong><small>Cliente desde 2022</small></div>
+        </div>
+      </div>
+      <div class="dep-card reveal rd2">
+        <div class="dq">❝</div>
+
+        <p>"A caixa de bombons era tão linda que quase não tive coragem de abrir. O sabor então... simplesmente divino.
+          A Docevilla é o presente mais especial!"</p>
+      </div>
+    </div>
+    </div>
+    <div class="div-ornamental"><span>♥ ♥ ♥</span></div>
+  </section>
+
+  <!-- ===== PERSONALIZADOS / ENCOMENDAS ===== -->
+  <section class="encomendas lace-bg reveal" id="encomendas">
+    <div class="lace-divider" style="position: absolute; top: 0; transform: rotate(180deg);"></div>
+    <div class="sec-header" style="padding-top: 3rem;">
+      <p class="sec-label">♥ 5. Personalizados / Encomendas ♥</p>
+      <h2>Pedidos <em>Sob Medida</em></h2>
+      <p>Realizamos o seu sonho em forma de doce para tornar seu evento ainda mais especial.</p>
+    </div>
+
+    <!-- 5.1 Explicação do Serviço -->
+    <div class="sobre-inner" style="margin-bottom: 4rem;">
+      <div class="sobre-content">
+        <p class="sec-label">♥ 5.1 Como Funciona ♥</p>
+        <h2>O Processo de <em>Criação</em></h2>
+        <p>Acreditamos que cada comemoração é única, e por isso criamos doces exclusivos que combinam com o seu evento. Nosso processo de personalização funciona em três etapas simples:</p>
+        <ul class="dif-list" style="margin-top: 1.5rem;">
+          <li><strong>1. Inspiração:</strong> Você nos envia suas ideias, referências de cores, tema e estilo.</li>
+          <li><strong>2. Proposta:</strong> Retornamos com sugestões de design, tamanhos e orçamento detalhado.</li>
+          <li><strong>3. Execução:</strong> Colocamos as mãos na massa com ingredientes premium para entregar a sua encomenda perfeita.</li>
+        </ul>
+        <p style="margin-top: 1.5rem; color: var(--rose-deep); font-weight: 600;">♥ Prazos de Encomenda: Pedimos uma antecedência mínima de 7 dias para bolos personalizados e 15 dias para grandes eventos e casamentos.</p>
+      </div>
+      <div class="sobre-visual">
+        <div class="sv-main">
+          <img src="https://images.unsplash.com/photo-1558961363-fa4f0c5f6244?w=600&q=80" alt="Processo Criativo" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 5.3 Exemplos de Trabalhos -->
+    <div class="kitchen-gallery" style="margin-bottom: 5rem;">
+      <div class="sec-header">
+        <p class="sec-label">♥ 5.3 Inspirações ♥</p>
+        <h2>Galeria de <em>Trabalhos Personalizados</em></h2>
+      </div>
+      <div class="kg-grid">
+        <div class="kg-item">
+          <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80" alt="Bolo de Casamento" loading="lazy">
+          <div class="kg-overlay"><span>Casamentos</span></div>
+        </div>
+        <div class="kg-item">
+          <img src="https://images.unsplash.com/photo-1514055263229-3aa96e1a49c9?w=600&q=80" alt="Festa Infantil" loading="lazy">
+          <div class="kg-overlay"><span>Festas Temáticas</span></div>
+        </div>
+        <div class="kg-item">
+          <img src="https://images.unsplash.com/photo-1621236378699-8597faf6a176?w=600&q=80" alt="Eventos Corporativos" loading="lazy">
+          <div class="kg-overlay"><span>Eventos Corporativos</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5.2 Formulário de Pedido -->
+    <div class="contato-inner" style="margin-top: 2rem;">
+      <form class="cform" id="customOrderForm" novalidate style="margin: 0 auto; max-width: 800px; width: 100%;">
+        <div class="cform-title"><span class="ch">♥</span> 5.2 Solicitar Orçamento <span class="ch">♥</span></div>
+        <div class="frow">
+          <div class="fg"><label for="encNome">Nome Completo *</label><input type="text" id="encNome" placeholder="Seu nome" required /></div>
+          <div class="fg"><label for="encWhats">Contato (WhatsApp) *</label><input type="tel" id="encWhats" placeholder="(11) 99999-9999" required /></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label for="encData">Data do Evento *</label><input type="date" id="encData" required /></div>
+          <div class="fg">
+            <label for="encProduto">Tipo de Produto *</label>
+            <select id="encProduto" required>
+              <option value="">Selecione...</option>
+              <option>Bolo Personalizado</option>
+              <option>Cupcakes Temáticos</option>
+              <option>Donuts Personalizados</option>
+              <option>Mesa de Doces Completa</option>
+              <option>Lembrancinhas</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="encTema">Tema / Estilo do Evento</label>
+          <input type="text" id="encTema" placeholder="Ex: Vintage Anos 50, Casamento Romântico, Chá de Bebê Ursinho..." />
+        </div>
+        <div class="fg">
+          <label>Referências (Upload de Imagem)</label>
+          <div class="upload-btn-wrapper" style="margin-top: 0.5rem;">
+            <button type="button" class="btn-upload">Escolher Imagem</button>
+            <input type="file" id="encFile" accept="image/*" />
+            <span id="encFileName" class="file-name-hint">Nenhuma referência anexada</span>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="encObs">Observações e Detalhes</label>
+          <textarea id="encObs" placeholder="Conte-nos os detalhes: quantidade de convidados, sabores desejados, restrições alimentares..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit" style="margin-top: 1rem;">Enviar Solicitação ♥</button>
+      </form>
+    </div>
+
+    <div class="lace-divider" style="margin-top: 4rem;"></div>
+  </section>
+
+  <!-- ===== CONTATO ===== -->
+  <section class="contato lace-bg" id="contato">
+    <div class="lace-divider" style="position: absolute; top: 0; transform: rotate(180deg);"></div>
+    <div class="contato-inner">
+      <div class="contato-info reveal">
+        <p class="sec-label">♥ Fale Conosco ♥</p>
+        <h2>Vamos criar algo <em>especial juntos?</em></h2>
+        <p>Entre em contato para fazer seu pedido. Respondemos em até 24 horas e adoramos personalizar cada encomenda!
+        </p>
+        <div class="cinfo">
+          <div class="ci">
+            <div class="ci-i"></div>
+            <div><strong>Endereço</strong><span>Rua das Flores, 142 – Centro</span></div>
+          </div>
+          <div class="ci">
+            <div class="ci-i"></div>
+            <div><strong>WhatsApp</strong><span>(11) 99999-8888</span></div>
+          </div>
+          <div class="ci">
+            <div class="ci-i"></div>
+            <div><strong>E-mail</strong><span>contato@docevilla.com.br</span></div>
+          </div>
+          <div class="ci">
+            <div class="ci-i"></div>
+            <div><strong>Horário</strong><span>Ter–Dom: 9h às 19h</span></div>
+          </div>
+          <div class="ci">
+            <div class="ci-i"></div>
+            <div><strong>Instagram</strong><span>@docevilla.retro</span></div>
+          </div>
+        </div>
+        <div class="soc-row">
+          <a href="#" class="soc-btn" id="soc-ig">Instagram</a>
+          <a href="#" class="soc-btn" id="soc-fb">Facebook</a>
+          <a href="#" class="soc-btn" id="soc-wa">WhatsApp</a>
+          <a href="#" class="soc-btn" id="soc-tt">TikTok</a>
+        </div>
+      </div>
+
+      <form class="cform reveal rd2" id="contactForm" novalidate>
+        <div class="cform-title"><span class="ch">♥</span> Fazer Pedido <span class="ch">♥</span></div>
+        <div class="frow">
+          <div class="fg"><label for="nome">Seu nome *</label><input type="text" id="nome" name="nome"
+              placeholder="Maria Souza" required /></div>
+          <div class="fg"><label for="email">E-mail *</label><input type="email" id="email" name="email"
+              placeholder="seu@email.com" required /></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label for="whats">WhatsApp</label><input type="tel" id="whats" name="whats"
+              placeholder="(11) 99999-9999" /></div>
+          <div class="fg"><label for="data">Data do evento</label><input type="date" id="data" name="data" /></div>
+        </div>
+        <div class="fg">
+          <label for="produto">Produto de interesse</label>
+          <select id="produto" name="produto">
+            <option value="">Selecione uma categoria... ♥</option>
+            <optgroup label="Bolos">
+              <option>Bolo Vintage Cereja</option>
+              <option>Bolo Coração Rosa</option>
+              <option>Bolo Floral Aquarela</option>
+              <option>Bolo Carrossel Retrô</option>
+              <option>Choco Velvet Retrô</option>
+              <option>Limão Siciliano Merengue</option>
+            </optgroup>
+            <optgroup label="Cupcakes">
+              <option>Kit Paris Vintage</option>
+              <option>Kit Rosas Retrô</option>
+              <option>Kit Borboletas Vintage</option>
+              <option>Kit Noite Estrelada</option>
+              <option>Kit Jardim Secreto</option>
+            </optgroup>
+            <optgroup label="Donuts">
+              <option>Kit Retrô Pink</option>
+              <option>Kit Jardim Florido</option>
+              <option>Kit Chocolate Luxo</option>
+              <option>Kit Arco-Íris Vintage</option>
+              <option>Kit Festivo Personalizado</option>
+            </optgroup>
+            <optgroup label="Chocolates">
+              <option>Caixa de Bombons Retrô</option>
+              <option>Morangos com Chocolate</option>
+              <option>Tabletes Artesanais</option>
+              <option>Trufas Douradas</option>
+              <option>Brigadeiros de Luxo</option>
+              <option>Caixa Coração Luxo</option>
+            </optgroup>
+            <optgroup label="Tortas">
+              <option>Torta Morango Vintage</option>
+              <option>Torta Floresta Negra</option>
+              <option>Torta Limão Merengue</option>
+              <option>Maçã & Canela Vintage</option>
+              <option>Torta Coco & Maracujá</option>
+            </optgroup>
+            <optgroup label="Kits Presente">
+              <option>Cesta Vintage Completa</option>
+              <option>Kit Amor & Doçura</option>
+              <option>Kit Mãe Rainha</option>
+              <option>Kit Festa Surpresa</option>
+              <option>Mini Kit Carinho</option>
+              <option>Kit Noivado Luxo</option>
+            </optgroup>
+            <option>Outro / Personalizado</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="ocasiao">Ocasião</label>
+          <select id="ocasiao" name="ocasiao">
+            <option value="">Selecionar ocasião...</option>
+            <option>Casamento</option>
+            <option>Aniversário</option>
+            <option>Chá de Bebê</option>
+            <option>Formatura</option>
+            <option>Dia dos Namorados</option>
+            <option>Dia das Mães</option>
+            <option>Corporativo</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="mensagem">Detalhes do pedido ♥</label>
+          <textarea id="mensagem" name="mensagem"
+            placeholder="Conte sobre seu pedido: tema, cores, sabores, data, local de entrega..."></textarea>
+        </div>
+        <div class="form-success" id="formSuccess">♥ Mensagem enviada! Entraremos em contato em breve.</div>
+        <button type="submit" class="btn-cro primary" id="submitBtn">Solicitar Orçamento ♥</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== USER DASHBOARD (MINHA CONTA PREMIUM) ===== -->
+  <section class="user-dashboard lace-bg" id="userDashboard" style="display: none; padding-top: 5rem;">
+    <div class="sec-header reveal">
+      <p class="sec-label">♥ Sua Experiência Exclusiva ♥</p>
+      <h2>Minha <em>Conta</em></h2>
+    </div>
+    
+    <div class="dashboard-grid">
+      <!-- Sidebar / Navigation -->
+      <aside class="db-sidebar">
+        <div class="db-user-profile">
+          <div class="db-avatar-wrapper">
+            <div class="db-avatar" id="dbAvatar"></div>
+            <button class="db-avatar-edit" aria-label="Alterar foto">Editar</button>
+          </div>
+          <h3 id="dbUserName">Carregando...</h3>
+          <p id="dbUserEmail">...</p>
+          <div class="db-badge">Cliente Diamond ♥</div>
+        </div>
+        <nav class="db-nav">
+          <button class="db-tab-btn active" data-tab="dbProfile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            Dados Pessoais
+          </button>
+          <button class="db-tab-btn" data-tab="dbAddresses">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Meus Endereços
+          </button>
+          <button class="db-tab-btn" data-tab="dbOrders">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            Meus Pedidos
+          </button>
+          <button class="db-tab-btn" data-tab="dbSettings">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            Configurações
+          </button>
+          <button class="db-tab-btn logout" id="btnLogout">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            Sair
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="db-main">
+        <!-- Profile Tab -->
+        <div class="db-pane active" id="dbProfile">
+          <div class="db-pane-header">
+            <h3>Informações Pessoais</h3>
+            <p>Gerencie seus dados e como entraremos em contato.</p>
+          </div>
+          <form id="dbProfileForm" class="db-form">
+            <div class="frow">
+              <div class="auth-fg">
+                <label>Nome Completo</label>
+                <input type="text" id="dbName" placeholder="Seu nome">
+              </div>
+              <div class="auth-fg">
+                <label>E-mail (Principal)</label>
+                <input type="email" id="dbEmailDisplay" disabled style="opacity: 0.6; cursor: not-allowed;">
+              </div>
+            </div>
+            <div class="frow">
+              <div class="auth-fg">
+                <label>Telefone / WhatsApp</label>
+                <input type="tel" id="dbTel" placeholder="(00) 00000-0000" class="mask-tel">
+              </div>
+              <div class="auth-fg">
+                <label>Data de Nascimento</label>
+                <input type="date" id="dbBirth">
+              </div>
+            </div>
+            
+            <div class="db-pref-section">
+              <h4>Suas Preferências ♥</h4>
+              <div class="pref-grid">
+                <label class="pref-check"><input type="checkbox" name="pref" value="bolos"> Bolos</label>
+                <label class="pref-check"><input type="checkbox" name="pref" value="cupcakes"> Cupcakes</label>
+                <label class="pref-check"><input type="checkbox" name="pref" value="doces"> Doces Finos</label>
+                <label class="pref-check"><input type="checkbox" name="pref" value="presentes"> Kits Presente</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-cro primary">Atualizar Perfil ♥</button>
+          </form>
+        </div>
+
+        <!-- Addresses Tab -->
+        <div class="db-pane" id="dbAddresses" style="display: none;">
+          <div class="db-pane-header">
+            <div>
+              <h3>Endereços de Entrega</h3>
+              <p>Cadastre seus endereços para facilitar seus pedidos.</p>
+            </div>
+            <button class="btn-cro secondary sm" onclick="toggleAddressForm()">+ Novo Endereço</button>
+          </div>
+          
+          <div id="dbAddressList" class="db-address-list">
+            <!-- Addresses will be loaded here -->
+            <div class="db-address-empty">
+              <span class="empty-icon"></span>
+              <p>Você ainda não tem endereços salvos.</p>
+            </div>
+          </div>
+
+          <form id="dbAddressForm" class="db-form" style="display: none; margin-top: 2.5rem; border-top: 1px dashed var(--cream-md); padding-top: 2rem;">
+            <h4>Adicionar Novo Endereço</h4>
+            <div class="frow">
+              <div class="auth-fg" style="max-width: 200px;">
+                <label>CEP</label>
+                <input type="text" id="dbCEP" placeholder="00000-000" class="mask-cep" onblur="checkCEP(this)">
+              </div>
+              <div class="auth-fg">
+                <label>Rua / Logradouro</label>
+                <input type="text" id="dbRua" required>
+              </div>
+            </div>
+            <div class="frow">
+              <div class="auth-fg" style="max-width: 120px;">
+                <label>Número</label>
+                <input type="text" id="dbNum" required>
+              </div>
+              <div class="auth-fg">
+                <label>Complemento (Opcional)</label>
+                <input type="text" id="dbComp" placeholder="Apto, Bloco, etc.">
+              </div>
+            </div>
+            <div class="frow">
+              <div class="auth-fg">
+                <label>Bairro</label>
+                <input type="text" id="dbBairro" required>
+              </div>
+              <div class="auth-fg">
+                <label>Cidade</label>
+                <input type="text" id="dbCidade" required>
+              </div>
+              <div class="auth-fg" style="max-width: 100px;">
+                <label>Estado</label>
+                <input type="text" id="dbEstado" maxlength="2" required>
+              </div>
+            </div>
+            <div class="db-form-actions">
+              <button type="submit" class="btn-cro primary">Salvar Endereço ♥</button>
+              <button type="button" class="btn-cro secondary btn-cancel" onclick="toggleAddressForm()">Cancelar</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Orders Tab -->
+        <div class="db-pane" id="dbOrders" style="display: none;">
+          <div class="db-pane-header">
+            <h3>Histórico de Pedidos</h3>
+            <p>Acompanhe o status e reveja suas delícias favoritas.</p>
+          </div>
+          <div id="dbOrderList" class="db-order-list">
+            <!-- Orders will be loaded here -->
+            <div class="db-order-empty">
+              <span class="empty-icon"></span>
+              <p>Nenhum pedido realizado ainda. Que tal começar agora?</p>
+              <a href="#produtos" class="btn-cro secondary sm" style="margin-top: 1rem;">Ver Cardápio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div class="db-pane" id="dbSettings" style="display: none;">
+          <div class="db-pane-header">
+            <h3>Configurações de Segurança</h3>
+            <p>Mantenha sua conta protegida e atualizada.</p>
+          </div>
+          <form id="dbPassForm" class="db-form">
+            <div class="auth-fg">
+              <label>Alterar Senha</label>
+              <input type="password" id="dbNewPass" placeholder="Nova senha (mín. 6 caracteres)" minlength="6">
+            </div>
+            <div class="auth-fg">
+              <label>Confirmar Nova Senha</label>
+              <input type="password" id="dbConfirmPass" placeholder="Confirme a nova senha">
+            </div>
+            <button type="submit" class="btn-cro primary">Alterar Senha ♥</button>
+          </form>
+          
+          <div class="db-danger-zone">
+            <h4>Zona Crítica</h4>
+            <p>Estas ações não podem ser desfeitas.</p>
+            <button class="btn-delete-acc">Excluir Minha Conta</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="fbrand">
+        <a href="#home" class="nav-logo fl">
+          Doce<em>villa</em>
+        </a>
+        <p>Alta confeitaria artesanal. Sofisticação e sabor em cada detalhe, criados para transformar seus momentos em memórias inesquecíveis.</p>
+        <div class="fsoc">
+          <a href="#" class="soc-btn">Instagram</a>
+          <a href="#" class="soc-btn">WhatsApp</a>
+          <a href="#" class="soc-btn">Pinterest</a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#produtos">Cardápio</a></li>
+          <li><a href="#wizard">Monte seu Bolo</a></li>
+          <li><a href="#sobre">Nossa História</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Coleções</h4>
+        <ul>
+          <li><a href="#produtos">Bolos de Luxo</a></li>
+          <li><a href="#produtos">Doces Finos</a></li>
+          <li><a href="#produtos">Macarons</a></li>
+          <li><a href="#produtos">Chocolate Belga</a></li>
+          <li><a href="#produtos">Presentes</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-btm">
+      <p>© 2025 Docevilla – Todos os direitos reservados. <a href="javascript:void(0)" id="adminTrigger" style="opacity: 0.1; color: inherit; text-decoration: none;">.</a></p>
+      <p>Essência, Arte e Confeitaria</p>
+    </div>
+  </footer>
+
+  <!-- ===== NEW PREMIUM AUTH SPLIT MODAL ===== -->
+  <div class="auth-overlay" id="authOverlay">
+    <div class="auth-split-container">
+      <button class="auth-close-btn" onclick="closeAuth()" aria-label="Fechar">✕</button>
+      
+      <!-- Lado Esquerdo: Imagem Decorativa -->
+      <div class="auth-split-visual">
+        <div class="auth-visual-overlay"></div>
+        <img src="img/login_bakery_vintage.png" alt="DoceVilla Vintage Bakery" class="auth-visual-img">
+        <div class="auth-visual-content">
+          <div class="fleuron">❧</div>
+          <h2>Feito com amor,<br>servido com <em>elegância</em></h2>
+          <p>Junte-se ao nosso clube exclusivo de confeitaria artesanal.</p>
+        </div>
+      </div>
+
+      <!-- Lado Direito: Formulários -->
+      <div class="auth-split-form">
+        
+        <!-- LOGIN SECTION -->
+        <div id="loginSection" class="auth-section">
+          <div class="auth-header">
+            <h2>Bem-vindo de <em>volta</em></h2>
+            <p>Acesse sua conta premium DoceVilla</p>
+          </div>
+          
+          <form id="loginForm" class="auth-form-premium">
+            <div class="auth-fg">
+              <label for="loginEmail">E-mail</label>
+              <div class="input-wrap">
+                <span class="input-icon"></span>
+                <input type="email" id="loginEmail" placeholder="seu@email.com" required>
+              </div>
+            </div>
+            <div class="auth-fg">
+              <label for="loginPass">Senha</label>
+              <div class="input-wrap">
+                <span class="input-icon"></span>
+                <input type="password" id="loginPass" placeholder="••••••••" required>
+                <button type="button" class="btn-toggle-pass" onclick="togglePassVisibility('loginPass')">Ver</button>
+              </div>
+            </div>
+            
+            <div class="auth-meta-row">
+              <label class="auth-remember">
+                <input type="checkbox" id="rememberMe"> Manter conectado
+              </label>
+              <a href="javascript:void(0)" onclick="switchAuth('recovery')" class="auth-link">Esqueceu a senha?</a>
+            </div>
+
+            <button type="submit" class="btn-cro primary w100">Entrar na Conta ♥</button>
+          </form>
+
+          <div class="auth-divider"><span>ou continue com</span></div>
+          
+          <button class="btn-google-premium" id="googleLogin">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+            Google
+          </button>
+
+          <div class="auth-footer-text">
+            Novo por aqui? <a href="javascript:void(0)" onclick="switchAuth('register')">Crie sua conta agora</a>
+          </div>
+        </div>
+
+        <!-- REGISTER SECTION (MULTI-STEP) -->
+        <div id="registerSection" class="auth-section" style="display: none;">
+          <div class="auth-header">
+            <h2>Criar <em>Conta</em></h2>
+            <p>Cadastre-se para uma experiência completa</p>
+          </div>
+
+          <!-- Progress Dots -->
+          <div class="auth-progress">
+            <div class="ap-dot active" data-step="1"></div>
+            <div class="ap-dot" data-step="2"></div>
+            <div class="ap-dot" data-step="3"></div>
+          </div>
+          
+          <form id="registerForm" class="auth-form-premium">
+            
+            <!-- Step 1: Dados Pessoais -->
+            <div class="reg-step active" id="regStep1">
+              <div class="auth-fg">
+                <label>Nome Completo *</label>
+                <input type="text" id="regName" placeholder="Ex: Maria Silva" required>
+              </div>
+              <div class="auth-fg">
+                <label>E-mail *</label>
+                <input type="email" id="regEmail" placeholder="seu@email.com" required>
+              </div>
+              <div class="auth-fg">
+                <label>Telefone / WhatsApp *</label>
+                <input type="tel" id="regTel" placeholder="(00) 00000-0000" class="mask-tel" required>
+              </div>
+              <button type="button" class="btn-cro primary w100" onclick="nextRegStep(2)">Próximo Passo ♥</button>
+            </div>
+
+            <!-- Step 2: Segurança & Endereço -->
+            <div class="reg-step" id="regStep2">
+              <div class="auth-fg">
+                <label>Senha (mín. 6 caracteres) *</label>
+                <input type="password" id="regPass" placeholder="••••••••" minlength="6" required>
+              </div>
+              <div class="frow">
+                <div class="auth-fg">
+                  <label>CEP *</label>
+                  <input type="text" id="regCEP" placeholder="00000-000" class="mask-cep" onblur="checkCEP(this, 'reg')">
+                </div>
+                <div class="auth-fg">
+                  <label>Rua *</label>
+                  <input type="text" id="regRua" required>
+                </div>
+              </div>
+              <div class="frow">
+                <div class="auth-fg" style="max-width: 100px;">
+                  <label>Nº *</label>
+                  <input type="text" id="regNum" required>
+                </div>
+                <div class="auth-fg">
+                  <label>Bairro *</label>
+                  <input type="text" id="regBairro" required>
+                </div>
+              </div>
+              <div class="auth-btns-row">
+                <button type="button" class="btn-cro secondary" onclick="nextRegStep(1)">Voltar</button>
+                <button type="button" class="btn-cro primary" onclick="nextRegStep(3)">Último Passo</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Preferências & Finalização -->
+            <div class="reg-step" id="regStep3">
+              <div class="auth-fg">
+                <label>Data de Nascimento (Opcional)</label>
+                <input type="date" id="regBirth">
+                <small>Enviamos mimos no seu aniversário!</small>
+              </div>
+              <div class="auth-fg">
+                <label>O que você mais gosta?</label>
+                <div class="pref-grid-sm">
+                  <label><input type="checkbox" name="regPref" value="bolos"> Bolos</label>
+                  <label><input type="checkbox" name="regPref" value="cupcakes"> Cupcakes</label>
+                  <label><input type="checkbox" name="regPref" value="personalizados"> Doces Temáticos</label>
+                </div>
+              </div>
+              <div class="auth-terms">
+                <label>
+                  <input type="checkbox" id="regTerms" required>
+                  Aceito os <a href="#">termos e políticas de privacidade</a>.
+                </label>
+              </div>
+              <div class="auth-btns-row">
+                <button type="button" class="btn-cro secondary" onclick="nextRegStep(2)">Voltar</button>
+                <button type="submit" class="btn-cro primary">Criar Minha Conta ♥</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="auth-footer-text">
+            Já tem conta? <a href="javascript:void(0)" onclick="switchAuth('login')">Fazer Login</a>
+          </div>
+        </div>
+
+        <!-- RECOVERY SECTION -->
+        <div id="recoverySection" class="auth-section" style="display: none;">
+          <div class="auth-header">
+            <h2>Recuperar <em>Senha</em></h2>
+            <p>Enviaremos um link seguro para o seu e-mail</p>
+          </div>
+          
+          <form id="recoveryForm" class="auth-form-premium">
+            <div class="auth-fg">
+              <label>E-mail de cadastro</label>
+              <div class="input-wrap">
+                <span class="input-icon"></span>
+                <input type="email" id="recoveryEmail" placeholder="seu@email.com" required>
+              </div>
+            </div>
+            <button type="submit" class="btn-cro primary w100">Enviar Link de Recuperação ♥</button>
+          </form>
+
+          <div class="auth-footer-text">
+            <a href="javascript:void(0)" onclick="switchAuth('login')">Voltar para o login</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Product Modal (Premium Detailed View) -->
+  <div class="pm-overlay" id="productModal">
+    <div class="pm-content">
+      <button class="pm-close" onclick="closeProductModal()">&times;</button>
+      <div class="pm-layout">
+        
+        <!-- Gallery -->
+        <div class="pm-gallery">
+          <div class="pm-main-img">
+            <img src="" id="pmMainImage" alt="Produto" />
+          </div>
+          <div class="pm-thumbnails" id="pmThumbnails">
+            <!-- Thumbnails injected via JS -->
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="pm-info">
+          <h2 class="pm-title" id="pmTitle">Nome do Produto</h2>
+          <div class="pm-reviews-summary">
+            <span class="pm-review-stars">★★★★★</span>
+            <span id="pmReviewCount">(0 avaliações)</span>
+          </div>
+          <p class="pm-price" id="pmPrice">R$ 0</p>
+          <p class="pm-short-desc" id="pmDesc">Descrição curta do produto aqui.</p>
+          
+          <div class="pm-options">
+            <label class="pm-label">Tamanho / Quantidade</label>
+            <select class="pm-select" id="pmSize">
+              <option>Padrão</option>
+            </select>
+          </div>
+
+          <div class="pm-actions">
+            <button class="btn-cro primary" id="pmBtnCart">Adicionar ao Carrinho ♥</button>
+            <button class="btn-cro secondary" id="pmBtnWhats">Comprar via WhatsApp</button>
+          </div>
+          
+          <!-- Tabs -->
+          <div class="pm-tabs">
+            <div class="pm-tabs-nav">
+              <button class="pm-tab-btn active" onclick="switchPmTab('desc')">Descrição</button>
+              <button class="pm-tab-btn" onclick="switchPmTab('ingr')">Ingredientes</button>
+              <button class="pm-tab-btn" onclick="switchPmTab('revs')">Avaliações</button>
+            </div>
+            
+            <div class="pm-tab-content active" id="pm-tab-desc">
+              <p>Elaborado de forma 100% artesanal, cada detalhe deste produto é feito com extremo cuidado. A textura macia e o sabor inconfundível o tornam a escolha perfeita para encantar seus momentos mais doces.</p>
+            </div>
+            
+            <div class="pm-tab-content" id="pm-tab-ingr">
+              <p><strong>Massa:</strong> Farinha de trigo especial, manteiga premium, ovos caipiras, extrato de baunilha de Madagascar.<br><br>
+              <strong>Recheio/Cobertura:</strong> Produtos selecionados, garantindo a mais alta qualidade (pode conter traços de nozes/amendoim).</p>
+            </div>
+            
+            <div class="pm-tab-content" id="pm-tab-revs">
+              <div class="pm-review-item">
+                <div class="pm-review-header">
+                  <strong>Camila Rodrigues</strong>
+                  <span class="pm-review-stars">★★★★★</span>
+                </div>
+                <p>"Simplesmente divino! O sabor é maravilhoso e a apresentação impecável. Chegou no horário e intacto."</p>
+              </div>
+              <div style="margin-top:2rem;">
+                <h4 style="font-family:var(--ff-head); color:var(--bord); margin-bottom:1rem;">Deixe sua avaliação</h4>
+                <textarea class="pm-select" placeholder="Conte o que achou..." style="height:80px; resize:none;"></textarea>
+                <button class="btn-cro secondary" style="min-height:40px; padding: 0.5rem 1.5rem; font-size:0.85rem;">Enviar Avaliação</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
