@@ -304,31 +304,6 @@ if(document.getElementById('modalMainImg')) {
   });
 }
 
-function openProductModal(name, price, img, cat, desc, ingredients) {
-  mCurrentProd = { name, price, img, cat, desc };
-  document.getElementById('modalTitle').textContent = name;
-  document.getElementById('modalPrice').textContent = `R$ ${price.toFixed(2)}`;
-  document.getElementById('modalMainImg').src = img;
-  document.getElementById('modalDescFull').textContent = desc + " Nossa receita artesanal utiliza ingredientes premium para garantir uma experiência inesquecível de sabor e nostalgia.";
-  document.getElementById('modalIngredientsText').textContent = ingredients || "Farinha de trigo, açúcar, ovos, manteiga e ingredientes secretos da DoceVilla.";
-  document.getElementById('modalQty').value = 1;
-  
-  const custSection = document.getElementById('customizationSection');
-  if (cat.includes('Bolos') || cat.includes('Kits')) {
-    custSection.style.display = 'block';
-  } else {
-    custSection.style.display = 'none';
-  }
-
-  const thumbs = document.getElementById('modalThumbs');
-  thumbs.innerHTML = `
-    <img src="${img}" class="active" onclick="setMImg(this.src, this)">
-    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=200&q=80" onclick="setMImg(this.src, this)">
-    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b19b?w=200&q=80" onclick="setMImg(this.src, this)">
-  `;
-  pModal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
 
 function closePModal() {
   pModal.classList.remove('open');
@@ -374,34 +349,51 @@ if(pModal) {
   };
 }
 
-/* ── CART LOGIC ── */
+/* ── CART LOGIC (PREMIUM DRAWER) ── */
 let cart = JSON.parse(localStorage.getItem('docevilla_cart')) || [];
 let shippingValue = 0;
 let discountValue = 0;
+let checkoutStep = 1;
 
 function saveCart() {
   localStorage.setItem('docevilla_cart', JSON.stringify(cart));
   updateCartUI();
 }
 
+
 function addToCart(name, price, img, customization = null) {
-  if (customization) {
-    cart.push({ name, price, img, quantity: 1, customization });
+  // Create a unique key for the item based on name and variation
+  const itemKey = customization ? `${name}-${customization.size}` : name;
+  const qtyToAdd = (customization && customization.quantity) ? customization.quantity : 1;
+  
+  const existing = cart.find(item => {
+    const existingKey = item.customization ? `${item.name}-${item.customization.size}` : item.name;
+    return existingKey === itemKey;
+  });
+  
+  if (existing) {
+    existing.quantity += qtyToAdd;
   } else {
-    const existing = cart.find(item => item.name === name && !item.customization);
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      cart.push({ name, price, img, quantity: 1 });
-    }
+    cart.push({ 
+      id: Date.now().toString(), // Real ID for logic
+      name, 
+      price, 
+      img, 
+      quantity: qtyToAdd, 
+      customization 
+    });
   }
+  
   saveCart();
   openCart();
+  if (typeof showToast === 'function') showToast(`♥ ${qtyToAdd}x ${name} adicionado!`);
 }
 
 function removeFromCart(index) {
+  const item = cart[index];
   cart.splice(index, 1);
   saveCart();
+  if (typeof showToast === 'function') showToast(`Removido: ${item.name}`);
 }
 
 function updateQuantity(index, delta) {
@@ -410,7 +402,59 @@ function updateQuantity(index, delta) {
   else saveCart();
 }
 
+function openCart() {
+  const drawer = document.getElementById('cartDrawer');
+  const overlay = document.getElementById('cartOverlay');
+  if(drawer) drawer.classList.add('active');
+  if(overlay) overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  const drawer = document.getElementById('cartDrawer');
+  const overlay = document.getElementById('cartOverlay');
+  if(drawer) drawer.classList.remove('active');
+  if(overlay) overlay.classList.remove('active');
+  if (!document.getElementById('checkoutOverlay') || !document.getElementById('checkoutOverlay').classList.contains('active')) {
+    document.body.style.overflow = '';
+  }
+}
+
+// Close on ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeCart();
+    if (typeof closeProductModal === 'function') closeProductModal();
+    if (typeof closeCheckout === 'function') closeCheckout();
+    if (typeof closeAuth === 'function') closeAuth();
+  }
+});
+
+if(document.getElementById('cartClose')) document.getElementById('cartClose').onclick = closeCart;
+
+if(document.getElementById('cartOverlay')) document.getElementById('cartOverlay').onclick = closeCart;
+
+
+function checkCEP(input, prefix = 'db') {
+  const cep = input.value.replace(/\D/g, '');
+  if (cep.length !== 8) return;
+
+  fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    .then(res => res.json())
+    .then(data => {
+      if (!data.erro) {
+        document.getElementById(`${prefix}Rua`).value = data.logradouro;
+        document.getElementById(`${prefix}Bairro`).value = data.bairro;
+        if (prefix === 'db') {
+          document.getElementById('dbCidade').value = data.localidade;
+          document.getElementById('dbEstado').value = data.uf;
+        }
+      }
+    });
+}
+
 function calcShip() {
+
   const zip = document.getElementById('cartZip').value.trim();
   if (zip.length < 8) {
     document.getElementById('shipRes').textContent = "CEP inválido";
@@ -434,6 +478,7 @@ function applyC() {
 }
 
 function updateCartUI() {
+
   const itemsContainer = document.getElementById('cartItems');
   const countBadge = document.querySelector('.cart-count');
   if(!itemsContainer) return;
@@ -444,50 +489,253 @@ function updateCartUI() {
   if (cart.length === 0) {
     itemsContainer.innerHTML = '<div class="cart-empty">Seu carrinho está vazio</div>';
     shippingValue = 0;
-    discountValue = 0;
   } else {
+
     itemsContainer.innerHTML = cart.map((item, index) => {
       totalCount += item.quantity;
-      subtotal += item.price * item.quantity;
-      let custDetails = item.customization ? `<div class="item-cust-summary">Personalizado: ${item.customization.tamanho} / ${item.customization.massa}</div>` : "";
-      return `<div class="cart-item"><img src="${item.img}"><div class="ci-details"><h4>${item.name}</h4>${custDetails}<p>R$ ${item.price.toFixed(2)}</p><div class="ci-qty"><button onclick="updateQuantity(${index}, -1)">-</button><span>${item.quantity}</span><button onclick="updateQuantity(${index}, 1)">+</button></div></div><button class="ci-remove" onclick="removeFromCart(${index})">✕</button></div>`;
+      const itemSub = item.price * item.quantity;
+      subtotal += itemSub;
+      
+      const custText = item.customization ? `Tamanho: ${item.customization.size}` : 'Tradicional';
+      
+      return `
+        <div class="cart-item">
+          <img src="${item.img}" class="ci-img">
+          <div class="ci-info">
+            <h4>${item.name}</h4>
+            <p style="font-size: 0.75rem; color: var(--rose-deep); font-weight: 600;">${custText}</p>
+            <div class="ci-qty">
+              <button onclick="updateQuantity(${index}, -1)">-</button>
+              <span>${item.quantity}</span>
+              <button onclick="updateQuantity(${index}, 1)">+</button>
+            </div>
+          </div>
+          <div class="ci-price">
+            <span class="ci-sub">R$ ${itemSub.toFixed(2)}</span>
+            <button class="ci-del" onclick="removeFromCart(${index})">Remover</button>
+          </div>
+        </div>
+      `;
     }).join('');
+
   }
   
   const discAmt = subtotal * discountValue;
   const total = subtotal + shippingValue - discAmt;
+  
   if(countBadge) countBadge.textContent = totalCount;
-  document.getElementById('cartSubtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
-  document.getElementById('cartShipping').textContent = `R$ ${shippingValue.toFixed(2)}`;
-  document.getElementById('cartDiscount').textContent = `- R$ ${discAmt.toFixed(2)}`;
-  document.getElementById('cartTotalAmount').textContent = `R$ ${total.toFixed(2)}`;
-  const cartToggle = document.getElementById('cartToggle');
-  if(cartToggle) cartToggle.style.display = totalCount > 0 ? 'flex' : 'none';
+  
+  const subEl = document.getElementById('cartSubtotal');
+  const shipEl = document.getElementById('cartShipping');
+  const discEl = document.getElementById('cartDiscount');
+  const totalEl = document.getElementById('cartTotalAmount');
+
+  if(subEl) subEl.textContent = `R$ ${subtotal.toFixed(2)}`;
+  if(shipEl) shipEl.textContent = `R$ ${shippingValue.toFixed(2)}`;
+  if(discEl) discEl.textContent = `- R$ ${discAmt.toFixed(2)}`;
+  if(totalEl) totalEl.textContent = `R$ ${total.toFixed(2)}`;
+  
+  // Also update checkout summaries if visible
+  if (document.getElementById('chkSubtotal')) {
+    document.getElementById('chkSubtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
+    document.getElementById('chkShipping').textContent = `R$ ${shippingValue.toFixed(2)}`;
+    document.getElementById('chkDiscount').textContent = `- R$ ${discAmt.toFixed(2)}`;
+    document.getElementById('chkTotal').textContent = `R$ ${total.toFixed(2)}`;
+  }
 }
 
-function openCart() { document.getElementById('cartDrawer').classList.add('open'); }
-function closeCart() { document.getElementById('cartDrawer').classList.remove('open'); }
+/* ── CHECKOUT NAVIGATION & LOGIC ── */
 
-if(document.getElementById('cartToggle')) document.getElementById('cartToggle').addEventListener('click', openCart);
-if(document.getElementById('cartClose')) document.getElementById('cartClose').addEventListener('click', closeCart);
+function openCheckout() {
+  if (cart.length === 0) return alert('Seu carrinho está vazio!');
+  closeCart();
+  document.getElementById('checkoutOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  
+  const user = auth ? auth.currentUser : null;
+  if (user) {
+    nextCheckoutStep(2); // Skip identification if logged in
+    fillCheckoutData(user);
+  } else {
+    nextCheckoutStep(1);
+  }
+}
 
-if(document.getElementById('checkoutBtn')) {
-  document.getElementById('checkoutBtn').addEventListener('click', () => {
-    if (cart.length === 0) return;
-    const payMethod = document.querySelector('input[name="pMethod"]:checked').value;
-    const date = document.getElementById('cartDate').value || "Não informada";
-    const zip = document.getElementById('cartZip').value || "Não informado";
-    let message = "Olá DoceVilla! Gostaria de fazer um pedido:\n\n";
-    cart.forEach(item => {
-      message += `*• ${item.quantity}x ${item.name}* - R$ ${(item.price * item.quantity).toFixed(2)}\n`;
-      if (item.customization) {
-        message += `   - Massa: ${item.customization.massa}\n   - Recheio: ${item.customization.recheio}\n   - Cobertura: ${item.customization.cobertura}\n   - Tamanho: ${item.customization.tamanho}\n`;
+function closeCheckout() {
+  document.getElementById('checkoutOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function nextCheckoutStep(step) {
+  // Simple validation for certain steps
+  if (step === 2 && checkoutStep === 1) {
+    // Guest identification
+  }
+  if (step === 3 && checkoutStep === 2) {
+    const name = document.getElementById('chkName').value;
+    const tel = document.getElementById('chkTel').value;
+    const cep = document.getElementById('chkCEP').value;
+    if (!name || !tel || cep.length < 9) {
+      alert('Por favor, preencha seus dados de entrega corretamente.');
+      return;
+    }
+  }
+
+  checkoutStep = step;
+  
+  // Update panes
+  document.querySelectorAll('.checkout-pane').forEach(p => p.classList.remove('active'));
+  const targetPane = document.getElementById(`checkoutStep${step}`);
+  if (targetPane) targetPane.classList.add('active');
+  
+  const successPane = document.getElementById('checkoutSuccess');
+  if (step === 6 && successPane) successPane.classList.add('active');
+
+  // Update stepper
+  document.querySelectorAll('.cs-step').forEach(s => {
+    const sNum = parseInt(s.dataset.step);
+    s.classList.toggle('active', sNum === step);
+    s.classList.toggle('done', sNum < step);
+  });
+
+  if (step === 5) renderReview();
+}
+
+function fillCheckoutData(user) {
+  db.collection('users').doc(user.uid).get().then(doc => {
+    if (doc.exists) {
+      const data = doc.data();
+      document.getElementById('chkName').value = data.nome || user.displayName || '';
+      document.getElementById('chkTel').value = data.telefone || '';
+      
+      if (data.enderecos && data.enderecos.length > 0) {
+        const addr = data.enderecos[0];
+        document.getElementById('chkCEP').value = addr.cep || '';
+        document.getElementById('chkRua').value = addr.rua || '';
+        document.getElementById('chkNum').value = addr.num || '';
+        document.getElementById('chkBairro').value = addr.bairro || '';
+        document.getElementById('chkComp').value = addr.comp || '';
       }
-    });
-    message += `\n--- Resumo ---\nSubtotal: ${document.getElementById('cartSubtotal').textContent}\nFrete: ${document.getElementById('cartShipping').textContent}\n*Total Final: ${document.getElementById('cartTotalAmount').textContent}*\n\nData: ${date}\nPagamento: ${payMethod}`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+    }
   });
 }
+
+const checkoutAddressForm = document.getElementById('checkoutAddressForm');
+if (checkoutAddressForm) {
+  checkoutAddressForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    nextCheckoutStep(3);
+  });
+}
+
+function updateShipping(value) {
+  shippingValue = value;
+  updateCartUI();
+}
+
+function switchPayTab(method) {
+  document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  document.querySelectorAll('.pay-pane').forEach(p => p.classList.remove('active'));
+  if (method === 'pix') {
+    document.getElementById('payPix').classList.add('active');
+    discountValue = 0.1; // 10% OFF for PIX
+  } else {
+    document.getElementById('payCard').classList.add('active');
+    discountValue = 0;
+    updateInstallments();
+  }
+  updateCartUI();
+}
+
+function updateInstallments() {
+  const totalStr = document.getElementById('cartTotalAmount').textContent.replace('R$ ', '').replace(',', '.');
+  const total = parseFloat(totalStr);
+  const select = document.getElementById('cardInstallments');
+  if(!select) return;
+  select.innerHTML = '';
+  for (let i = 1; i <= 6; i++) {
+    const val = (total / i).toFixed(2);
+    select.innerHTML += `<option>${i}x de R$ ${val} (Sem juros)</option>`;
+  }
+}
+
+
+function renderReview() {
+  const container = document.getElementById('reviewItems');
+  container.innerHTML = cart.map(item => {
+    const cust = item.customization ? `(${item.customization.size})` : '';
+    return `
+      <div class="ri-item">
+        <span>${item.quantity}x ${item.name} ${cust}</span>
+        <strong>R$ ${(item.price * item.quantity).toFixed(2)}</strong>
+      </div>
+    `;
+  }).join('');
+
+  const isPickup = document.querySelector('input[name="shipMethod"]:checked')?.value === 'pickup';
+  const addr = isPickup ? 'Retirada na Unidade (Rua das Flores, 123)' : `${document.getElementById('chkRua').value}, ${document.getElementById('chkNum').value} - ${document.getElementById('chkBairro').value}`;
+  document.getElementById('reviewAddr').textContent = addr;
+  
+  const payActive = document.querySelector('.pay-tab.active');
+  const payMethod = payActive ? payActive.textContent : 'Não selecionado';
+  document.getElementById('reviewPay').textContent = payMethod;
+}
+
+function finalizeOrder() {
+  const btn = document.getElementById('btnFinalizeOrder');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
+
+  const orderNum = Math.floor(100000 + Math.random() * 900000);
+  const user = auth ? auth.currentUser : null;
+  
+  const totalVal = document.getElementById('chkTotal').textContent;
+  const orderDetails = {
+    id: orderNum,
+    items: cart,
+    total: totalVal,
+    payment: document.querySelector('.pay-tab.active')?.textContent || 'PIX',
+    status: 'Aguardando Pagamento',
+    data: new Date().toISOString()
+  };
+
+  if (user) {
+    db.collection('users').doc(user.uid).get().then(doc => {
+      let orders = doc.data().pedidos || [];
+      orders.unshift(orderDetails);
+      return db.collection('users').doc(user.uid).update({ pedidos: orders });
+    }).then(() => finishProcess(orderNum));
+  } else {
+    setTimeout(() => finishProcess(orderNum), 2000);
+  }
+}
+
+function finishProcess(num) {
+  document.getElementById('orderNum').textContent = num;
+  document.querySelectorAll('.checkout-pane').forEach(p => p.classList.remove('active'));
+  document.getElementById('checkoutSuccess').classList.add('active');
+  
+  // Clear cart
+  cart = [];
+  saveCart();
+}
+
+function closeCheckout() {
+  const overlay = document.getElementById('checkoutOverlay');
+  if(overlay) overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+
+function copyPix() {
+  navigator.clipboard.writeText('pix@docevilla.com.br');
+  if (typeof showToast === 'function') showToast('Chave PIX copiada!');
+}
+
+if(document.getElementById('checkoutBtn')) document.getElementById('checkoutBtn').onclick = openCheckout;
+
 
 /* ── WIZARD (MONTE SEU BOLO) ── */
 const wizardState = {
@@ -647,20 +895,6 @@ function saveOrderToFirestore(uid, order) {
 /* ── ADMIN & USER ── */
 // Legacy logic removed for Firebase integration
 
-/* ── AI CHAT ── */
-const aiChatBtn = document.getElementById('aiChatBtn');
-const aiChatWindow = document.getElementById('aiChatWindow');
-if(aiChatBtn) aiChatBtn.onclick = () => aiChatWindow.classList.toggle('open');
-if(document.getElementById('closeAiChat')) document.getElementById('closeAiChat').onclick = () => aiChatWindow.classList.remove('open');
-
-function addChatMsg(text, type) {
-  const msg = document.createElement('div');
-  msg.className = `ai-msg ${type}`;
-  msg.innerHTML = text;
-  const body = document.getElementById('aiChatBody');
-  if(body) { body.appendChild(msg); body.scrollTop = body.scrollHeight; }
-}
-
 
 
 function initSocialProof() {
@@ -679,15 +913,13 @@ function initSocialProof() {
 }
 
 function showToast(msg) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
   const t = document.createElement('div');
-  t.className = 'toast-msg';
+  t.className = 'premium-toast';
   t.innerHTML = msg;
-  document.body.appendChild(t);
-  setTimeout(() => t.classList.add('show'), 100);
-  setTimeout(() => {
-    t.classList.remove('show');
-    setTimeout(() => t.remove(), 500);
-  }, 4000);
+  container.appendChild(t);
+  setTimeout(() => t.remove(), 4000);
 }
 
 /* ── AUTHENTICATION LOGIC (FIREBASE PREMIUM) ── */
@@ -811,24 +1043,27 @@ if (typeof firebase !== 'undefined') {
       .then((result) => {
         const user = result.user;
         // Check if user exists in Firestore
-        return db.collection('users').doc(user.uid).get();
+        return db.collection('users').doc(user.uid).get().then(doc => {
+          if (!doc.exists) {
+            // First time login - create record
+            return db.collection('users').doc(user.uid).set({
+              nome: user.displayName,
+              email: user.email,
+              dataCriacao: firebase.firestore.FieldValue.serverTimestamp(),
+              provider: 'google',
+              enderecos: [],
+              pedidos: []
+            });
+          }
+        });
       })
-      .then((doc) => {
-        if (!doc.exists) {
-          // New user from Google, maybe redirect to complete registration or just save basics
-          const user = auth.currentUser;
-          db.collection('users').doc(user.uid).set({
-            nome: user.displayName,
-            email: user.email,
-            foto: user.photoURL,
-            dataCriacao: firebase.firestore.FieldValue.serverTimestamp()
-          });
-        }
+      .then(() => {
         closeAuth();
+        showToast("♥ Login com Google realizado com sucesso!");
       })
       .catch(error => {
-        console.error(error);
-        alert('Erro no login com Google: ' + error.message);
+        console.error("Erro no Google Login:", error);
+        showToast("Erro ao entrar com Google.");
       });
   });
 
@@ -966,7 +1201,9 @@ if (typeof firebase !== 'undefined') {
           });
         }
 
+        // Render Addresses
         renderAddresses(data.enderecos || []);
+        // Render Orders
         renderOrders(data.pedidos || []);
       }
     });
@@ -1204,38 +1441,163 @@ if (typeof firebase !== 'undefined') {
 /* ================================================================
    PRODUCT MODAL LOGIC (PREMIUM)
    ================================================================ */
-function openProductModal(name, price, img, desc) {
+
+/* ================================================================
+   PRODUCT DATABASE (MOCK)
+   ================================================================ */
+const PRODUCT_DB = {
+  'Bolo Vintage Rose': {
+    price: 180,
+    desc: 'Bolo artesanal com massa amanteigada de baunilha, recheio de creme de frutas vermelhas e cobertura de buttercream suíço.',
+    fullDesc: 'O Bolo Vintage Rose é o nosso carro-chefe. Inspirado nas confeitarias europeias do século XIX, ele combina uma massa extremamente leve com um recheio equilibrado de compota de framboesa e morango. A decoração é feita à mão com bicos clássicos, trazendo nostalgia e elegância para sua mesa.',
+    ingredients: 'Farinha de trigo orgânica, manteiga extra, ovos caipiras, framboesas frescas, morangos, açúcar demerara, fava de baunilha.',
+    reviews: [
+      { name: 'Alice Silva', stars: 5, text: 'O bolo mais lindo e gostoso que já comi! A massa derrete na boca.', date: '12/11/2023' },
+      { name: 'Pedro Santos', stars: 4, text: 'Muito bom, mas achei um pouco doce demais para o meu paladar.', date: '05/11/2023' }
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80',
+      'https://images.unsplash.com/photo-1464349095431-e9a21285b19b?w=800&q=80',
+      'https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=800&q=80'
+    ]
+  },
+  'Donuts Gourmet': {
+    price: 45,
+    desc: 'Combo com 6 donuts artesanais com coberturas variadas: chocolate belga, pistache e glaciado clássico.',
+    fullDesc: 'Nossos donuts são fermentados naturalmente por 24 horas, resultando em uma massa aerada e leve. Cada unidade é finalizada com ingredientes premium, como chocolate belga 54% e pistache siciliano torrado.',
+    ingredients: 'Farinha T45, fermento natural, leite integral, cacau em pó Callebaut, pistache, açúcar de confeiteiro.',
+    reviews: [
+      { name: 'Juliana Lima', stars: 5, text: 'Os melhores donuts da cidade, sem dúvida!', date: '20/10/2023' }
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800&q=80',
+      'https://images.unsplash.com/photo-1533910534207-90f27029a78e?w=800&q=80'
+    ]
+  },
+  'Tabletes Artesanais': {
+    price: 112,
+    desc: 'Conjunto de 4 tabletes de chocolate bean-to-bar com inclusões de castanhas e flores.',
+    fullDesc: 'Chocolate feito do grão à barra com cacau de origem única do sul da Bahia. Inclui sabores como Chocolate 70% com Flor de Sal e Chocolate ao Leite com Avelãs Crocantes.',
+    ingredients: 'Cacau orgânico, manteiga de cacau, leite em pó, avelãs, flor de sal, açúcar orgânico.',
+    reviews: [
+      { name: 'Marcos Reus', stars: 5, text: 'Qualidade excepcional do chocolate.', date: '15/09/2023' }
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=800&q=80',
+      'https://images.unsplash.com/photo-1511381939415-e44015466834?w=800&q=80'
+    ]
+  }
+};
+
+/* ================================================================
+   PRODUCT MODAL LOGIC (PREMIUM)
+   ================================================================ */
+let pmCurrentPrice = 0;
+let pmBasePrice = 0;
+
+function openProductModal(name, price, img, descFromCard = '') {
   const modal = document.getElementById('productModal');
   if(!modal) return;
   
+  const data = PRODUCT_DB[name] || {
+    price: price,
+    desc: descFromCard,
+    fullDesc: 'Produzido com ingredientes de alta qualidade seguindo nossas receitas tradicionais.',
+    ingredients: 'Farinha, açúcar, ovos e amor.',
+    reviews: [],
+    gallery: [img]
+  };
+
+  pmBasePrice = data.price;
+  pmCurrentPrice = data.price;
+
+  // Reset inputs
+  const qtyInput = document.getElementById('pmQty');
+  if(qtyInput) qtyInput.value = 1;
+  const sizeSelect = document.getElementById('pmSize');
+  if(sizeSelect) sizeSelect.selectedIndex = 0;
+
   // Populate data
   document.getElementById('pmTitle').textContent = name;
-  document.getElementById('pmPrice').textContent = `R$ ${price}`;
-  document.getElementById('pmMainImage').src = img;
+  document.getElementById('pmDesc').textContent = data.desc;
+  document.getElementById('pm-tab-desc').innerHTML = `<p>${data.fullDesc}</p>`;
+  document.getElementById('pm-tab-ingr').innerHTML = `<p>${data.ingredients}</p>`;
   
-  if(desc) {
-    document.getElementById('pmDesc').textContent = desc;
+  // Render Reviews
+  const revList = document.querySelector('.pm-review-list');
+  if (data.reviews.length > 0) {
+    revList.innerHTML = data.reviews.map(r => `
+      <div class="pm-review-item">
+        <div class="pm-review-header">
+          <strong>${r.name}</strong>
+          <span class="pm-review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</span>
+        </div>
+        <p>"${r.text}"</p>
+        <small>${r.date}</small>
+      </div>
+    `).join('');
+    document.getElementById('pmReviewCount').textContent = `(${data.reviews.length} avaliações)`;
   } else {
-    document.getElementById('pmDesc').textContent = "Feito com ingredientes selecionados e muito carinho, nossa especialidade traz um sabor inesquecível para tornar o seu momento perfeito.";
+    revList.innerHTML = '<p class="cart-empty">Ainda não há avaliações para este produto.</p>';
+    document.getElementById('pmReviewCount').textContent = '(0 avaliações)';
   }
 
-  // Thumbnails mock (duplicando a principal)
-  const thumbContainer = document.getElementById('pmThumbnails');
-  thumbContainer.innerHTML = `
-    <div class="pm-thumb active"><img src="${img}" alt="thumb"></div>
-    <div class="pm-thumb"><img src="${img}" alt="thumb"></div>
-  `;
+  updatePmPrice();
 
-  // Update Cart Button Action
+  // Gallery
+  const thumbContainer = document.getElementById('pmThumbnails');
+  const mainImg = document.getElementById('pmMainImage');
+  mainImg.src = data.gallery[0];
+  
+  thumbContainer.innerHTML = data.gallery.map((src, i) => `
+    <div class="pm-thumb ${i===0?'active':''}" onclick="setPmImg('${src}', this)">
+      <img src="${src}" alt="thumb">
+    </div>
+  `).join('');
+
+  // Buttons Actions
   const btnCart = document.getElementById('pmBtnCart');
   btnCart.onclick = function() {
-    addToCart(name, price, img);
+    const qty = parseInt(document.getElementById('pmQty').value);
+    const size = document.getElementById('pmSize').options[document.getElementById('pmSize').selectedIndex].text;
+    addToCart(name, pmCurrentPrice / qty, data.gallery[0], { size, quantity: qty });
     closeProductModal();
   };
 
-  // Open Modal
+  const btnWhats = document.getElementById('pmBtnWhats');
+  btnWhats.onclick = function() {
+    const qty = document.getElementById('pmQty').value;
+    const size = document.getElementById('pmSize').options[document.getElementById('pmSize').selectedIndex].text;
+    const msg = `Olá DoceVilla! Gostaria de saber mais sobre: ${name}\n- Tamanho: ${size}\n- Quantidade: ${qty}\n- Valor: R$ ${pmCurrentPrice.toFixed(2)}`;
+    window.open(`https://wa.me/5511999998888?text=${encodeURIComponent(msg)}`, '_blank');
+  };
+
   modal.classList.add('active');
-  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  document.body.style.overflow = 'hidden';
+  switchPmTab('desc'); // Reset to description tab
+}
+
+function setPmImg(src, el) {
+  document.getElementById('pmMainImage').src = src;
+  document.querySelectorAll('.pm-thumb').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function changePmQty(delta) {
+  const input = document.getElementById('pmQty');
+  let val = parseInt(input.value) + delta;
+  if(val < 1) val = 1;
+  input.value = val;
+  updatePmPrice();
+}
+
+function updatePmPrice() {
+  const sizeSelect = document.getElementById('pmSize');
+  const qty = parseInt(document.getElementById('pmQty').value);
+  const extra = parseFloat(sizeSelect.options[sizeSelect.selectedIndex].dataset.price);
+  
+  pmCurrentPrice = (pmBasePrice + extra) * qty;
+  document.getElementById('pmPrice').textContent = `R$ ${pmCurrentPrice.toFixed(2)}`;
 }
 
 function closeProductModal() {
@@ -1247,42 +1609,225 @@ function closeProductModal() {
 }
 
 function switchPmTab(tabId) {
-  // Update Buttons
   document.querySelectorAll('.pm-tab-btn').forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  if (event) event.target.classList.add('active');
   
-  // Update Content
   document.querySelectorAll('.pm-tab-content').forEach(content => content.classList.remove('active'));
-  document.getElementById(`pm-tab-${tabId}`).classList.add('active');
+  const target = document.getElementById(`pm-tab-${tabId}`);
+  if(target) target.classList.add('active');
 }
 
-// Override button clicks on product cards to open modal instead of adding directly
-document.addEventListener('DOMContentLoaded', () => {
-  const pedirBtns = document.querySelectorAll('.btn-pedir');
-  pedirBtns.forEach(btn => {
-    // Save original onclick string if any
-    const onclickStr = btn.getAttribute('onclick');
-    if(onclickStr && onclickStr.includes('addToCart')) {
-      // Extract args: addToCart('Bolo de Morango', 120, 'img.png')
-      const argsMatch = onclickStr.match(/addToCart\((.*?)\)/);
-      if(argsMatch) {
-        btn.removeAttribute('onclick');
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          // Evaluate args safely
-          const args = eval(`[${argsMatch[1]}]`);
-          openProductModal(args[0], args[1], args[2], btn.closest('.pcard-body').querySelector('p')?.textContent);
-        });
-      }
-    }
-  });
-});
+
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
+
   updateCartUI();
+
+
+  // Apply masks to checkout fields
+  document.querySelectorAll('.mask-card').forEach(el => applyMask(el, '0000 0000 0000 0000'));
+  document.querySelectorAll('.mask-date').forEach(el => applyMask(el, '00/00'));
 
   initSocialProof();
   console.log('%c♥ Docevilla – Carregado', 'color:#7C1D2B;font-weight:bold;');
 });
 
+/* ================================================================
+   AI ASSISTANT LOGIC (Chef Anna)
+   ================================================================ */
+const aiChatWindow = document.getElementById('aiChatWindow');
+const aiMessages = document.getElementById('aiMessages');
+const aiChatForm = document.getElementById('aiChatForm');
+const aiInput = document.getElementById('aiInput');
+
+function toggleAIChat() {
+  if (!aiChatWindow) return;
+  aiChatWindow.classList.toggle('active');
+  if (aiChatWindow.classList.contains('active')) {
+    aiInput.focus();
+    // Mark as read
+    const badge = document.querySelector('.ai-trigger .badge');
+    if (badge) badge.style.display = 'none';
+  }
+}
+
+if (aiChatForm) {
+  aiChatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const msg = aiInput.value.trim();
+    if (!msg) return;
+
+    appendMessage('user', msg);
+    aiInput.value = '';
+    
+    // Process response
+    processAIResponse(msg);
+  });
+}
+
+function appendMessage(type, text, html = false) {
+  const div = document.createElement('div');
+  div.className = `ai-msg ${type}`;
+  if (html) div.innerHTML = text;
+  else div.textContent = text;
+  aiMessages.appendChild(div);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+  return div;
+}
+
+function showTyping() {
+  const div = document.createElement('div');
+  div.className = 'ai-msg bot ai-typing-wrapper';
+  div.innerHTML = '<div class="ai-typing"><span></span><span></span><span></span></div>';
+  aiMessages.appendChild(div);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+  return div;
+}
+
+/**
+ * Chef Anna - Real Intelligence Logic
+ */
+async function processAIResponse(query) {
+  const typing = showTyping();
+  
+  // Artificial delay for realism
+  await new Promise(resolve => setTimeout(resolve, 1500));
+  typing.remove();
+
+  const q = query.toLowerCase();
+  let response = "";
+  let recs = [];
+
+  // 1. Search in PRODUCT_DB
+  const foundProducts = Object.keys(PRODUCT_DB).filter(name => 
+    name.toLowerCase().includes(q) || 
+    PRODUCT_DB[name].desc.toLowerCase().includes(q) ||
+    PRODUCT_DB[name].fullDesc.toLowerCase().includes(q)
+  );
+
+  if (foundProducts.length > 0) {
+    const pName = foundProducts[0];
+    response = `Encontrei algumas delícias que você vai amar! O que acha dessas opções de <strong>${pName}</strong>?`;
+    recs = foundProducts.slice(0, 2).map(name => ({
+      name: name,
+      price: PRODUCT_DB[name].price,
+      img: PRODUCT_DB[name].gallery[0]
+    }));
+  } 
+  // 2. Fallback Keyword Logic
+  else if (q.includes('bolo')) {
+    response = "Nossos bolos vintage são famosos pela delicadeza. Recomendo o <strong>Bolo Vintage Rose</strong>, é o nosso favorito! Qual o sabor que você mais gosta?";
+    recs = [{ name: 'Bolo Vintage Rose', price: 180, img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80' }];
+  } 
+  else if (q.includes('chocolate')) {
+    response = "Para os amantes de chocolate, temos os <strong>Tabletes Artesanais</strong> e o nosso famoso <strong>Choco Velvet</strong>. Quer ver os detalhes?";
+    recs = [{ name: 'Tabletes Artesanais', price: 112, img: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=800&q=80' }];
+  }
+  else if (q.includes('presente') || q.includes('kit') || q.includes('cesta')) {
+    response = "Nossos kits de presente são montados em caixas vintage artesanais. O <strong>Kit Paris</strong> é um encanto!";
+    recs = [{ name: 'Donuts Gourmet', price: 45, img: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800&q=80' }];
+  }
+  else if (q.includes('preço') || q.includes('quanto') || q.includes('valor')) {
+    response = "Nossos preços variam conforme o produto e o tamanho. Bolos começam em R$ 149 e kits a partir de R$ 88. Posso te sugerir algo dentro do seu orçamento?";
+  }
+  else if (q.includes('entrega') || q.includes('prazo') || q.includes('onde')) {
+    response = "Entregamos em toda a região! O prazo médio é de 24h a 48h. Se precisar de algo urgente, recomendo falar conosco pelo WhatsApp (11) 99999-8888. ♥";
+  }
+  else if (q.includes('aniversário') || q.includes('festa')) {
+    response = "Para festas, recomendo nossos <strong>Kits de Cupcakes</strong> ou um <strong>Bolo Personalizado</strong>. Quantas pessoas você pretende servir?";
+  }
+  else if (q.includes('oi') || q.includes('olá') || q.includes('bom dia')) {
+    response = "Olá! Que alegria te ver por aqui. Eu sou a Anna, a mestre confeiteira virtual da DoceVilla. Como posso adoçar seu dia hoje? ♥";
+  }
+  else {
+    response = "Ainda estou aprendendo, mas adoraria te ajudar! Você está procurando algum sabor específico ou gostaria de ver nossos destaques do cardápio?";
+  }
+
+  appendMessage('bot', response, true);
+  
+  if (recs.length > 0) {
+    let recsHtml = '<div class="ai-recs">';
+    recs.forEach(r => {
+      recsHtml += `
+          <a href="#produtos" class="ai-rec-card" onclick="toggleAIChat(); openProductModal('${r.name}', ${r.price}, '${r.img}', 'Sugestão da Chef Anna ♥')">
+            <img src="${r.img}" class="ai-rec-img">
+            <div class="ai-rec-info">
+              <h4>${r.name}</h4>
+              <span>R$ ${r.price}</span>
+            </div>
+          </a>
+      `;
+    });
+    recsHtml += '</div>';
+    appendMessage('bot', recsHtml, true);
+  }
+}
+
+/* ── CURSOR & MOUSE INTERACTIONS (ROMANTIC PREMIUM) ── */
+const cursor = document.getElementById('custom-cursor');
+
+if (cursor) {
+  window.addEventListener('mousemove', (e) => {
+    const { clientX: x, clientY: y } = e;
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+    
+    // Trail logic
+    createTrail(x, y);
+  });
+
+  document.querySelectorAll('a, button, .pcard, .kg-item, input, .db-tab-btn, .ai-trigger').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+}
+
+function createTrail(x, y) {
+  if (Math.random() > 0.8) {
+    const span = document.createElement('span');
+    span.className = 'cursor-trail';
+    span.innerHTML = Math.random() > 0.5 ? '🌸' : '✨';
+    span.style.left = x + 'px';
+    span.style.top = y + 'px';
+    span.style.fontSize = Math.random() * 10 + 8 + 'px';
+    span.style.position = 'fixed';
+    span.style.pointerEvents = 'none';
+    span.style.zIndex = '9999';
+    span.style.transition = 'all 1s cubic-bezier(0.1, 0.5, 0.5, 1)';
+    
+    document.body.appendChild(span);
+    
+    const tx = (Math.random() - 0.5) * 150;
+    const ty = (Math.random() - 0.5) * 150;
+    
+    requestAnimationFrame(() => {
+      span.style.transform = `translate(${tx}px, ${ty}px) rotate(${Math.random() * 360}deg) scale(0)`;
+      span.style.opacity = '0';
+    });
+
+    setTimeout(() => span.remove(), 1000);
+  }
+}
+
+// Pressed effect
+window.addEventListener('mousedown', () => {
+  if (cursor) cursor.style.transform = 'scale(0.8)';
+});
+window.addEventListener('mouseup', () => {
+  if (cursor) cursor.style.transform = 'scale(1)';
+});
+
+// Parallax on Mouse Move for specific images
+document.querySelectorAll('.momento-visual img, .pcard-img img, .kg-item img').forEach(img => {
+  const parent = img.parentElement;
+  parent.addEventListener('mousemove', (e) => {
+    const { width, height, left, top } = parent.getBoundingClientRect();
+    const x = (e.clientX - left) / width - 0.5;
+    const y = (e.clientY - top) / height - 0.5;
+    img.style.transform = `scale(1.1) translate(${x * 25}px, ${y * 25}px)`;
+  });
+  parent.addEventListener('mouseleave', () => {
+    img.style.transform = 'scale(1) translate(0, 0)';
+  });
+});
